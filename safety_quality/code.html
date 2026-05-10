@@ -1,0 +1,806 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Safety &amp; Quality - TALIA Oilfield Services</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "petroleum-navy": "#0B1D2D",
+              "industrial-red": "#E03131",
+              "warm-sand": "#C8A86A",
+              "inverse-primary": "#b7c8de",
+              "surface-dim": "#d0dbe8",
+              "inverse-on-surface": "#e6f2ff",
+              "on-tertiary-fixed-variant": "#5a430e",
+              "surface-container-lowest": "#ffffff",
+              "on-primary": "#ffffff",
+              "on-tertiary-fixed": "#261900",
+              "on-tertiary-container": "#9d8046",
+              "primary-fixed-dim": "#b7c8de",
+              "on-secondary-container": "#fffbff",
+              "secondary-fixed": "#ffdad6",
+              background: "#f7f9ff",
+              "on-secondary-fixed": "#410003",
+              "on-surface": "#121d26",
+              outline: "#74777d",
+              "on-error": "#ffffff",
+              "primary-container": "#0B1D2D",
+              "error-container": "#ffdad6",
+              "tertiary-fixed": "#ffdea2",
+              tertiary: "#C8A86A",
+              "on-primary-fixed": "#0b1d2d",
+              secondary: "#E03131",
+              "secondary-fixed-dim": "#ffb3ac",
+              "secondary-container": "#E03131",
+              "inverse-surface": "#27323b",
+              "on-background": "#121d26",
+              "tertiary-container": "#271a00",
+              primary: "#0B1D2D",
+              "outline-variant": "#c4c6cc",
+              "surface-bright": "#f7f9ff",
+              "surface-container-high": "#dee9f6",
+              "on-surface-variant": "#43474c",
+              "on-secondary-fixed-variant": "#93000f",
+              "on-primary-fixed-variant": "#38485a",
+              "surface-container-low": "#ecf4ff",
+              "surface-tint": "#4f6073",
+              "on-primary-container": "#758699",
+              "on-error-container": "#93000a",
+              "surface-container": "#e4effc",
+              surface: "#f7f9ff",
+              "surface-variant": "#d8e4f1",
+              "on-secondary": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "tertiary-fixed-dim": "#e4c282",
+              "primary-fixed": "#d3e4fa",
+              "surface-container-highest": "#d8e4f1",
+              error: "#ba1a1a",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              unit: "8px",
+              gutter: "24px",
+              "container-max": "1280px",
+              margin: "32px",
+              "section-padding": "120px",
+            },
+            fontFamily: {
+              "body-lg": ["Inter"],
+              "headline-md": ["Manrope"],
+              "title-lg": ["Manrope"],
+              "headline-lg": ["Manrope"],
+              "display-hero": ["Manrope"],
+              "body-md": ["Inter"],
+              "label-lg": ["Inter"],
+            },
+            fontSize: {
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+              "headline-md": [
+                "32px",
+                { lineHeight: "40px", fontWeight: "600" },
+              ],
+              "title-lg": ["22px", { lineHeight: "28px", fontWeight: "600" }],
+              "headline-lg": [
+                "48px",
+                {
+                  lineHeight: "56px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "display-hero": [
+                "72px",
+                {
+                  lineHeight: "84px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "label-lg": [
+                "14px",
+                {
+                  lineHeight: "20px",
+                  letterSpacing: "0.1em",
+                  fontWeight: "600",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .blueprint-pattern {
+        background-image:
+          linear-gradient(
+            to right,
+            rgba(11, 29, 45, 0.03) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(11, 29, 45, 0.03) 1px,
+            transparent 1px
+          );
+        background-size: 40px 40px;
+      }
+      .card-hover-effect {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .card-hover-effect:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 40px -12px rgba(11, 29, 45, 0.12);
+      }
+      .card-hover-effect:hover .material-symbols-outlined {
+        transform: scale(1.1);
+      }
+      .btn-hover-arrow .material-symbols-outlined {
+        transition: transform 0.2s ease;
+      }
+      .btn-hover-arrow:hover .material-symbols-outlined {
+        transform: translateX(4px);
+      }
+      .nav-link-active {
+        position: relative;
+      }
+      .nav-link-active::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #e03131;
+        border-radius: 99px;
+      }
+      .premium-border {
+        border-left: 4px solid #c8a86a;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  </head>
+  <body class="bg-background text-on-background font-body-md antialiased">
+    <!-- TopNavBar -->
+    <header
+      class="sticky top-0 z-50 w-full bg-surface/95 backdrop-blur-md border-b border-outline-variant/30 shadow-sm transition-all duration-300"
+    >
+      <div
+        class="flex justify-between items-center w-full px-margin py-4 max-w-container-max mx-auto"
+      >
+        <div class="flex items-center gap-2">
+          <img
+            alt="TALIA Logo"
+            class="h-10 w-auto"
+            src="https://lh3.googleusercontent.com/aida/ADBb0ugOBgjD6GTHVizeRe7kKUY9Fnm8-frLc4jjQxsvNDvAXhMs_6TYrrDGxQnlsB28iexoi4rvYHNBtlG6MWKGw7HDoh97BedCIVOYsoLx0HCdtjban_VYxeqPMFxOHsJK18drVtaP7-cAoWGmiyRUdDzDBLj0G-88Qi8kD9t_TdXYG8P2L-RJJGQ58QSGBh0glcAaGxAKp-j7-UlUfh7Qoxdulyqf9YHlIIeqZ2vpOk4RDN9TdHxK7VFAL0yokAZpj3YfdG4yz2MBAr4"
+          />
+        </div>
+        <nav class="hidden md:flex gap-gutter items-center">
+          <a
+            class="font-label-lg text-label-lg text-on-surface-variant hover:text-industrial-red transition-colors"
+            href="#"
+            >Home</a
+          >
+          <a
+            class="font-label-lg text-label-lg text-on-surface-variant hover:text-industrial-red transition-colors"
+            href="#"
+            >Services</a
+          >
+          <a
+            class="font-label-lg text-label-lg text-on-surface-variant hover:text-industrial-red transition-colors"
+            href="#"
+            >Logistics</a
+          >
+          <a
+            class="font-label-lg text-label-lg text-industrial-red font-bold nav-link-active"
+            href="#"
+            >Safety</a
+          >
+          <a
+            class="font-label-lg text-label-lg text-on-surface-variant hover:text-industrial-red transition-colors"
+            href="#"
+            >About</a
+          >
+          <a
+            class="font-label-lg text-label-lg text-on-surface-variant hover:text-industrial-red transition-colors"
+            href="#"
+            >Contact</a
+          >
+        </nav>
+        <button
+          class="bg-industrial-red text-white font-label-lg text-label-lg px-6 py-3 rounded-lg hover:brightness-110 active:scale-95 transition-all shadow-[0_4px_12px_rgba(224,49,49,0.25)] btn-hover-arrow"
+        >
+          Request a Quote
+          <span
+            class="material-symbols-outlined ml-2 text-[20px] align-middle"
+            style="font-variation-settings: &quot;wght&quot; 300"
+            >arrow_forward</span
+          >
+        </button>
+      </div>
+    </header>
+    <main>
+      <!-- Hero Section -->
+      <section
+        class="relative pt-section-padding pb-section-padding bg-surface overflow-hidden blueprint-pattern reveal-on-scroll"
+      >
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-surface/50 to-surface pointer-events-none"
+        ></div>
+        <div
+          class="max-w-container-max mx-auto px-margin relative z-10 text-center"
+        >
+          <span
+            class="inline-flex px-4 py-1.5 rounded-full bg-surface-container-low border border-warm-sand/30 text-petroleum-navy font-label-lg text-label-lg mb-8 uppercase tracking-widest items-center justify-center gap-2 max-w-max mx-auto"
+          >
+            <span
+              class="material-symbols-outlined text-industrial-red"
+              data-icon="verified_user"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >verified_user</span
+            >
+            HSE Excellence
+          </span>
+          <h1
+            class="font-display-hero text-display-hero text-petroleum-navy mb-6 max-w-4xl mx-auto leading-tight"
+          >
+            Safety-Driven Operations. <br />
+            <span class="text-warm-sand">Quality-Focused Delivery.</span>
+          </h1>
+          <p
+            class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12"
+          >
+            In the high-stakes environment of oilfield logistics, precision is
+            non-negotiable. Our dual mandate ensures every operation protects
+            our people and delivers exact specifications.
+          </p>
+        </div>
+        <div class="max-w-container-max mx-auto px-margin mt-16">
+          <div
+            class="relative h-[560px] rounded-2xl overflow-hidden shadow-2xl border border-outline-variant/20"
+          >
+            <img
+              alt="Oilfield safety operations"
+              class="w-full h-full object-cover scale-105"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4QcOY62JCOLEunbwpxqqWIJjrcHjYlN8wjNmHxRxYRJALui0VP9IO_gITqa4zM_lEq3drfNPrVsltTj87rpyDPGUmWc-NKx3lcXkayVuHOmo-eU1eJKI4CAz7ztiBfSLpSWWRicDvRteta3nondIJ6K0Vck06xV8Giu41-y1Dfwm0QWkR9V1Pk79eGIfeq0x2EN6HY9zBwazz7-XfsObqpuiJpvp7Rs8afRel5NS9-E9Ob-qVrs4RNwNmsi2zYFJD3FGu76PiLKYB"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-petroleum-navy/90 via-petroleum-navy/20 to-transparent"
+            ></div>
+            <div
+              class="absolute bottom-8 left-8 right-8 flex justify-between items-end"
+            >
+              <div
+                class="bg-surface-container-lowest/95 backdrop-blur-md p-8 rounded-xl border-l-4 border-industrial-red shadow-xl max-w-md"
+              >
+                <h3
+                  class="font-title-lg text-title-lg text-petroleum-navy mb-2 flex items-center gap-2"
+                >
+                  <span
+                    class="material-symbols-outlined text-industrial-red"
+                    data-icon="target"
+                    >target</span
+                  >
+                  Zero-Incident Goal
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Our primary operational directive across all logistics
+                  channels, ensuring every team member returns home safely.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Philosophy & Practices Bento Grid -->
+      <section
+        class="py-section-padding bg-surface-container-low reveal-on-scroll"
+      >
+        <div class="max-w-container-max mx-auto px-margin">
+          <div class="mb-16 flex items-end justify-between">
+            <div>
+              <h2
+                class="font-headline-lg text-headline-lg text-petroleum-navy mb-4"
+              >
+                Operational Rigor
+              </h2>
+              <div class="w-24 h-1.5 bg-industrial-red rounded-full"></div>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Safety Philosophy (Large Card) -->
+            <div
+              class="md:col-span-2 bg-surface-container-lowest rounded-2xl p-10 border border-outline-variant/30 shadow-sm card-hover-effect"
+            >
+              <div class="flex items-center gap-4 mb-8">
+                <div
+                  class="w-14 h-14 rounded-xl bg-petroleum-navy flex items-center justify-center text-warm-sand shadow-lg"
+                >
+                  <span
+                    class="material-symbols-outlined text-3xl"
+                    data-icon="policy"
+                    >policy</span
+                  >
+                </div>
+                <h3
+                  class="font-headline-md text-headline-md text-petroleum-navy"
+                >
+                  Safety Philosophy
+                </h3>
+              </div>
+              <p
+                class="font-body-lg text-body-lg text-on-surface-variant mb-8 leading-relaxed"
+              >
+                Safety is not an add-on; it is the foundational architecture of
+                our logistics network. We operate under a strict, proactive risk
+                management framework designed specifically for the volatility of
+                the energy sector.
+              </p>
+              <ul class="space-y-5 font-body-md text-body-md text-on-surface">
+                <li class="flex items-start gap-4 check-item">
+                  <span
+                    class="material-symbols-outlined text-industrial-red mt-0.5"
+                    data-icon="check_circle"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >check_circle</span
+                  >
+                  <span
+                    >Continuous hazard identification and mitigation before
+                    deployment.</span
+                  >
+                </li>
+                <li class="flex items-start gap-4 check-item">
+                  <span
+                    class="material-symbols-outlined text-industrial-red mt-0.5"
+                    data-icon="check_circle"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >check_circle</span
+                  >
+                  <span
+                    >Mandatory comprehensive safety briefings for all field
+                    personnel.</span
+                  >
+                </li>
+                <li class="flex items-start gap-4 check-item">
+                  <span
+                    class="material-symbols-outlined text-industrial-red mt-0.5"
+                    data-icon="check_circle"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >check_circle</span
+                  >
+                  <span
+                    >Strict adherence to international QHSE standards and
+                    protocols.</span
+                  >
+                </li>
+              </ul>
+            </div>
+            <!-- PPE Practice (Small Card) -->
+            <div
+              class="bg-surface-container-lowest rounded-2xl p-10 border border-outline-variant/30 shadow-sm flex flex-col justify-between card-hover-effect"
+            >
+              <div>
+                <div
+                  class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-industrial-red mb-6 border border-warm-sand/20 shadow-inner"
+                >
+                  <span
+                    class="material-symbols-outlined"
+                    data-icon="construction"
+                    >construction</span
+                  >
+                </div>
+                <h4
+                  class="font-title-lg text-title-lg text-petroleum-navy mb-4"
+                >
+                  Mandatory PPE
+                </h4>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+                >
+                  Uncompromising personal protective equipment standards for
+                  every individual entering an operational zone, ensuring
+                  physical safeguarding against industrial hazards.
+                </p>
+              </div>
+              <div class="mt-8 pt-6 border-t border-outline-variant/20">
+                <span
+                  class="text-industrial-red font-label-lg uppercase tracking-wider text-xs"
+                  >Standardized protocol</span
+                >
+              </div>
+            </div>
+            <!-- Controlled Handling (Small Card) -->
+            <div
+              class="bg-surface-container-lowest rounded-2xl p-10 border border-outline-variant/30 shadow-sm card-hover-effect"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-industrial-red mb-6 border border-warm-sand/20 shadow-inner"
+              >
+                <span
+                  class="material-symbols-outlined"
+                  data-icon="precision_manufacturing"
+                  >precision_manufacturing</span
+                >
+              </div>
+              <h4 class="font-title-lg text-title-lg text-petroleum-navy mb-4">
+                Controlled Handling
+              </h4>
+              <p
+                class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+              >
+                Engineered lifting and movement procedures. We utilize
+                specialized rigging and handling protocols to move volatile or
+                massive payloads with zero margin for error.
+              </p>
+            </div>
+            <!-- Quality Approach (Wide Card) -->
+            <div
+              class="md:col-span-2 bg-petroleum-navy text-white rounded-2xl p-10 border border-outline/20 relative overflow-hidden group card-hover-effect"
+            >
+              <div class="absolute inset-0 blueprint-pattern opacity-10"></div>
+              <div
+                class="absolute top-0 right-0 w-32 h-32 bg-warm-sand/10 blur-3xl rounded-full"
+              ></div>
+              <div class="relative z-10">
+                <div class="flex items-center gap-4 mb-6">
+                  <span
+                    class="material-symbols-outlined text-warm-sand text-3xl"
+                    data-icon="high_quality"
+                    >high_quality</span
+                  >
+                  <h3 class="font-headline-md text-headline-md text-white">
+                    Quality Assurance
+                  </h3>
+                </div>
+                <p
+                  class="font-body-lg text-body-lg text-surface-variant/90 mb-10 max-w-2xl"
+                >
+                  Delivery isn't just about moving items; it's about preserving
+                  integrity. Our quality assurance guarantees that materials
+                  arrive in the exact state required for immediate deployment.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div
+                    class="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:border-warm-sand/50 transition-colors"
+                  >
+                    <h5
+                      class="font-label-lg text-label-lg text-warm-sand mb-2 uppercase tracking-wide"
+                    >
+                      Spec-Based Supply
+                    </h5>
+                    <p
+                      class="font-body-md text-body-md text-surface-variant/80"
+                    >
+                      Rigorous verification against engineering specifications
+                      prior to dispatch.
+                    </p>
+                  </div>
+                  <div
+                    class="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:border-warm-sand/50 transition-colors"
+                  >
+                    <h5
+                      class="font-label-lg text-label-lg text-warm-sand mb-2 uppercase tracking-wide"
+                    >
+                      Weight Control
+                    </h5>
+                    <p
+                      class="font-body-md text-body-md text-surface-variant/80"
+                    >
+                      Precision mass tracking for load balancing and transport
+                      compliance.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Trust Badges -->
+      <section
+        class="py-24 bg-white border-t border-outline-variant/20 reveal-on-scroll"
+      >
+        <div class="max-w-container-max mx-auto px-margin">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-12">
+            <div
+              class="flex flex-col items-center text-center group trust-badge"
+            >
+              <div
+                class="w-20 h-20 rounded-2xl bg-surface-container flex items-center justify-center mb-6 border border-outline-variant/30 group-hover:border-industrial-red/50 transition-all"
+              >
+                <span
+                  class="material-symbols-outlined text-industrial-red text-4xl"
+                  data-icon="health_and_safety"
+                  >health_and_safety</span
+                >
+              </div>
+              <h4 class="font-title-lg text-title-lg text-petroleum-navy mb-2">
+                Safety First
+              </h4>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Core operational mandate
+              </p>
+            </div>
+            <div
+              class="flex flex-col items-center text-center group trust-badge"
+            >
+              <div
+                class="w-20 h-20 rounded-2xl bg-surface-container flex items-center justify-center mb-6 border border-outline-variant/30 group-hover:border-warm-sand/50 transition-all"
+              >
+                <span
+                  class="material-symbols-outlined text-petroleum-navy text-4xl"
+                  data-icon="verified"
+                  >verified</span
+                >
+              </div>
+              <h4 class="font-title-lg text-title-lg text-petroleum-navy mb-2">
+                Quality Assured
+              </h4>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Verified specifications
+              </p>
+            </div>
+            <div
+              class="flex flex-col items-center text-center group trust-badge"
+            >
+              <div
+                class="w-20 h-20 rounded-2xl bg-surface-container flex items-center justify-center mb-6 border border-outline-variant/30 group-hover:border-industrial-red/50 transition-all"
+              >
+                <span
+                  class="material-symbols-outlined text-petroleum-navy group-hover:text-industrial-red text-4xl transition-colors"
+                  data-icon="front_loader"
+                  >front_loader</span
+                >
+              </div>
+              <h4 class="font-title-lg text-title-lg text-petroleum-navy mb-2">
+                Controlled Handling
+              </h4>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Engineered protocols
+              </p>
+            </div>
+            <div
+              class="flex flex-col items-center text-center group trust-badge"
+            >
+              <div
+                class="w-20 h-20 rounded-2xl bg-surface-container flex items-center justify-center mb-6 border border-outline-variant/30 group-hover:border-warm-sand/50 transition-all"
+              >
+                <span
+                  class="material-symbols-outlined text-petroleum-navy group-hover:text-warm-sand text-4xl transition-colors"
+                  data-icon="local_shipping"
+                  >local_shipping</span
+                >
+              </div>
+              <h4 class="font-title-lg text-title-lg text-petroleum-navy mb-2">
+                Reliable Delivery
+              </h4>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                On-time, intact arrival
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- CTA Section -->
+      <section
+        class="py-section-padding bg-petroleum-navy relative overflow-hidden reveal-on-scroll"
+      >
+        <div class="absolute inset-0 blueprint-pattern opacity-5"></div>
+        <div
+          class="absolute top-0 right-0 w-[500px] h-[500px] bg-industrial-red/5 blur-[120px] rounded-full"
+        ></div>
+        <div
+          class="max-w-container-max mx-auto px-margin relative z-10 text-center"
+        >
+          <h2 class="font-headline-lg text-headline-lg text-white mb-6">
+            Partner with Precision
+          </h2>
+          <p
+            class="font-body-lg text-body-lg text-surface-variant/80 max-w-2xl mx-auto mb-12"
+          >
+            Align your logistics needs with a partner that prioritizes human
+            safety and material integrity above all else. Reach out today for a
+            technical consultation.
+          </p>
+          <button
+            class="bg-industrial-red text-white font-label-lg text-label-lg px-10 py-5 rounded-lg hover:brightness-110 active:scale-95 transition-all shadow-[0_12px_32px_rgba(224,49,49,0.35)] btn-hover-arrow"
+          >
+            Work With a Safety-Focused Partner
+            <span
+              class="material-symbols-outlined ml-2 text-[22px] align-middle"
+              style="font-variation-settings: &quot;wght&quot; 300"
+              >arrow_forward</span
+            >
+          </button>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="bg-petroleum-navy border-t border-white/5 w-full reveal-on-scroll"
+    >
+      <div
+        class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin py-20 w-full max-w-container-max mx-auto"
+      >
+        <div class="md:col-span-1">
+          <div class="mb-8">
+            <img
+              alt="TALIA Logo"
+              class="h-12 w-auto bg-white rounded-full p-1.5"
+              src="https://lh3.googleusercontent.com/aida/ADBb0ugOBgjD6GTHVizeRe7kKUY9Fnm8-frLc4jjQxsvNDvAXhMs_6TYrrDGxQnlsB28iexoi4rvYHNBtlG6MWKGw7HDoh97BedCIVOYsoLx0HCdtjban_VYxeqPMFxOHsJK18drVtaP7-cAoWGmiyRUdDzDBLj0G-88Qi8kD9t_TdXYG8P2L-RJJGQ58QSGBh0glcAaGxAKp-j7-UlUfh7Qoxdulyqf9YHlIIeqZ2vpOk4RDN9TdHxK7VFAL0yokAZpj3YfdG4yz2MBAr4"
+            />
+          </div>
+          <p
+            class="font-body-md text-body-md text-surface-variant/50 leading-relaxed"
+          >
+            © 2024 TALIA Oilfield Services. <br />
+            Engineering Excellence in Energy. <br />
+            All rights reserved.
+          </p>
+        </div>
+        <div
+          class="md:col-span-3 flex flex-wrap gap-x-12 gap-y-6 justify-end items-start pt-4"
+        >
+          <a
+            class="font-label-lg text-label-lg text-white/70 hover:text-industrial-red transition-colors"
+            href="#"
+            >Privacy Policy</a
+          >
+          <a
+            class="font-label-lg text-label-lg text-white/70 hover:text-industrial-red transition-colors"
+            href="#"
+            >Terms of Service</a
+          >
+          <a
+            class="font-label-lg text-label-lg text-white/70 hover:text-industrial-red transition-colors"
+            href="#"
+            >QHSE Policy</a
+          >
+          <a
+            class="font-label-lg text-label-lg text-white/70 hover:text-industrial-red transition-colors"
+            href="#"
+            >Compliance</a
+          >
+          <a
+            class="font-label-lg text-label-lg text-warm-sand font-bold hover:brightness-125 transition-all"
+            href="#"
+            >Contact Support</a
+          >
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Header scroll behavior
+        const header = document.querySelector("header");
+        ScrollTrigger.create({
+          start: "top -80",
+          onUpdate: (self) => {
+            if (self.isActive) {
+              header.classList.add("bg-petroleum-navy", "py-2");
+              header.classList.remove("bg-surface/95", "py-4");
+              header.querySelectorAll("nav a").forEach((a) => {
+                if (!a.classList.contains("text-industrial-red")) {
+                  a.classList.remove("text-on-surface-variant");
+                  a.classList.add("text-white/80");
+                }
+              });
+            } else {
+              header.classList.remove("bg-petroleum-navy", "py-2");
+              header.classList.add("bg-surface/95", "py-4");
+              header.querySelectorAll("nav a").forEach((a) => {
+                if (!a.classList.contains("text-industrial-red")) {
+                  a.classList.add("text-on-surface-variant");
+                  a.classList.remove("text-white/80");
+                }
+              });
+            }
+          },
+        });
+
+        // Hero sequenced animation
+        const heroTl = gsap.timeline();
+        heroTl
+          .from("section:first-of-type span", {
+            y: 20,
+            opacity: 0,
+            duration: 0.7,
+            ease: "power2.out",
+          })
+          .from(
+            "section:first-of-type h1",
+            { y: 30, opacity: 0, duration: 0.7, ease: "power2.out" },
+            "-=0.5",
+          )
+          .from(
+            "section:first-of-type p",
+            { y: 30, opacity: 0, duration: 0.7, ease: "power2.out" },
+            "-=0.5",
+          )
+          .from(
+            "section:first-of-type .relative.h-\[560px\]",
+            { y: 40, opacity: 0, duration: 0.9, ease: "power2.out" },
+            "-=0.5",
+          );
+
+        // Global Section Reveal
+        gsap.utils.toArray(".reveal-on-scroll").forEach((section) => {
+          if (section.closest("main > section:first-of-type")) return;
+          gsap.from(section, {
+            scrollTrigger: {
+              trigger: section,
+              start: "top 85%",
+              toggleActions: "play none none none",
+            },
+            y: 40,
+            opacity: 0,
+            duration: 0.8,
+            ease: "power2.out",
+          });
+        });
+
+        // Stagger for cards
+        gsap.from(".grid > div", {
+          scrollTrigger: {
+            trigger: ".grid",
+            start: "top 80%",
+          },
+          y: 30,
+          opacity: 0,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: "power3.out",
+        });
+
+        // Trust Badges stagger
+        gsap.from(".trust-badge", {
+          scrollTrigger: {
+            trigger: ".trust-badge",
+            start: "top 90%",
+          },
+          scale: 0.9,
+          opacity: 0,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: "back.out(1.7)",
+        });
+
+        // List items stagger
+        gsap.from(".check-item", {
+          scrollTrigger: {
+            trigger: ".check-item",
+            start: "top 85%",
+          },
+          x: -20,
+          opacity: 0,
+          duration: 0.5,
+          stagger: 0.1,
+          ease: "power1.out",
+        });
+      });
+    </script>
+  </body>
+</html>

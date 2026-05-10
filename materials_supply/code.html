@@ -1,0 +1,601 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Materials &amp; Supply | TALIA Oilfield Services</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Material Symbols -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#0B1D2D", // Petroleum Navy
+              secondary: "#E03131", // Industrial Red
+              tertiary: "#C8A86A", // Warm Sand Accent
+              "on-primary": "#FFFFFF",
+              "on-secondary": "#FFFFFF",
+              background: "#F7F9FF",
+              surface: "#FFFFFF",
+              "surface-variant": "#D8E4F1",
+              outline: "#74777D",
+              "outline-variant": "#C4C6CC",
+              "on-surface": "#121D26",
+              "on-surface-variant": "#43474C",
+              "primary-container": "#0B1D2D",
+              "secondary-container": "#C92A2A",
+              "surface-container-low": "#ECF4FF",
+              "surface-container-lowest": "#FFFFFF",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              unit: "8px",
+              margin: "32px",
+              "section-padding": "120px",
+              gutter: "24px",
+              "container-max": "1280px",
+            },
+            fontFamily: {
+              "headline-md": ["Manrope"],
+              "display-hero": ["Manrope"],
+              "body-lg": ["Inter"],
+              "headline-lg": ["Manrope"],
+              "label-lg": ["Inter"],
+              "title-lg": ["Manrope"],
+              "body-md": ["Inter"],
+            },
+            fontSize: {
+              "headline-md": [
+                "32px",
+                { lineHeight: "40px", fontWeight: "600" },
+              ],
+              "display-hero": [
+                "72px",
+                {
+                  lineHeight: "84px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+              "headline-lg": [
+                "48px",
+                {
+                  lineHeight: "56px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "label-lg": [
+                "14px",
+                {
+                  lineHeight: "20px",
+                  letterSpacing: "0.1em",
+                  fontWeight: "600",
+                },
+              ],
+              "title-lg": ["22px", { lineHeight: "28px", fontWeight: "600" }],
+              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .blueprint-bg {
+        background-image:
+          linear-gradient(
+            to right,
+            rgba(116, 119, 125, 0.05) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(116, 119, 125, 0.05) 1px,
+            transparent 1px
+          );
+        background-size: 40px 40px;
+      }
+      .reveal-hidden {
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 700ms cubic-bezier(0.4, 0, 0.2, 1),
+          transform 700ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .reveal-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .stagger-item {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 600ms cubic-bezier(0.4, 0, 0.2, 1),
+          transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .stagger-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .header-scrolled {
+        background-color: #0b1d2d !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+      }
+      .header-scrolled a,
+      .header-scrolled button span {
+        color: white !important;
+      }
+      .active-link-underline {
+        position: relative;
+      }
+      .active-link-underline::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #e03131;
+        transform: scaleX(1);
+        transition: transform 0.3s ease;
+      }
+      .hover-lift {
+        transition:
+          transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+          box-shadow 0.3s ease !important;
+      }
+      .hover-lift:hover {
+        transform: translateY(-4px) !important;
+        box-shadow:
+          0 10px 25px -5px rgba(0, 0, 0, 0.1),
+          0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+      }
+      .btn-hover-arrow span.material-symbols-outlined {
+        transition: transform 0.2s ease;
+      }
+      .btn-hover-arrow:hover span.material-symbols-outlined {
+        transform: translateX(4px);
+      }
+    </style>
+  </head>
+  <body class="bg-background text-on-surface font-body-lg antialiased">
+    <!-- TopNavBar -->
+    <nav
+      class="sticky top-0 z-50 w-full bg-surface/95 backdrop-blur-md border-b border-outline-variant/20 shadow-sm transition-all duration-300"
+    >
+      <div
+        class="flex justify-between items-center w-full px-margin py-unit max-w-container-max mx-auto"
+      >
+        <a class="flex items-center" href="#">
+          <img
+            alt="TALIA Oilfield Services"
+            class="h-12 w-auto object-contain"
+            src="https://lh3.googleusercontent.com/aida/ADBb0ugOBgjD6GTHVizeRe7kKUY9Fnm8-frLc4jjQxsvNDvAXhMs_6TYrrDGxQnlsB28iexoi4rvYHNBtlG6MWKGw7HDoh97BedCIVOYsoLx0HCdtjban_VYxeqPMFxOHsJK18drVtaP7-cAoWGmiyRUdDzDBLj0G-88Qi8kD9t_TdXYG8P2L-RJJGQ58QSGBh0glcAaGxAKp-j7-UlUfh7Qoxdulyqf9YHlIIeqZ2vpOk4RDN9TdHxK7VFAL0yokAZpj3YfdG4yz2MBAr4"
+          />
+        </a>
+        <div class="hidden md:flex space-x-gutter items-center">
+          <a
+            class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300"
+            href="#"
+            >Home</a
+          >
+          <a
+            class="font-label-lg text-label-lg text-secondary border-secondary font-bold pb-1 scale-95 transition-transform duration-200 active-link-underline"
+            href="#"
+            >Services</a
+          >
+          <a
+            class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300"
+            href="#"
+            >Logistics</a
+          >
+          <a
+            class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300"
+            href="#"
+            >Safety</a
+          >
+          <a
+            class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300"
+            href="#"
+            >About</a
+          >
+          <a
+            class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300"
+            href="#"
+            >Contact</a
+          >
+        </div>
+        <button
+          class="bg-secondary text-on-primary rounded-lg px-6 py-3 font-label-lg text-label-lg hover:bg-secondary-container shadow-[0_4px_12px_rgba(224,49,49,0.2)] transition-all duration-300 active:scale-95 btn-hover-arrow"
+        >
+          Request a Quote
+        </button>
+      </div>
+    </nav>
+    <!-- Hero Section -->
+    <header
+      class="relative pt-section-padding pb-section-padding px-margin overflow-hidden blueprint-bg reveal-hidden"
+    >
+      <div
+        class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter items-center"
+      >
+        <div class="col-span-1 md:col-span-8 z-10 stagger-item">
+          <div
+            class="inline-flex items-center space-x-2 bg-surface-container-high text-on-surface px-4 py-2 rounded-full mb-6 border border-tertiary/30 stagger-item"
+          >
+            <span
+              class="material-symbols-outlined text-tertiary"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >science</span
+            >
+            <span
+              class="font-label-lg text-label-lg uppercase tracking-widest text-primary"
+              >Materials &amp; Supply</span
+            >
+          </div>
+          <h1
+            class="font-display-hero text-display-hero text-primary mb-6 stagger-item"
+          >
+            Drilling, Industrial, and Chemical Materials Supplied to
+            Specification
+          </h1>
+          <p
+            class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mb-10 stagger-item"
+          >
+            Premium supply chain solutions engineered for the high-stakes
+            demands of the petroleum sector. We deliver critical materials with
+            uncompromised quality, precision scaling, and absolute reliability.
+          </p>
+        </div>
+        <div
+          class="col-span-1 md:col-span-4 relative h-[400px] rounded-xl overflow-hidden shadow-[0_8px_32px_rgba(11,29,45,0.15)] border border-outline-variant/20 stagger-item"
+        >
+          <img
+            alt="Industrial laboratory and material testing facility"
+            class="w-full h-full object-cover"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFXyZ7Z0uTKs_uulx_LOB1ILOUaNUwN_y4DH841Iq_KeEd6lClmQlq0Ka8xc348Q63u2VYrIWzX3m6fNMH0UsDugVN9v22tIxo2YpGemak2W3hve7N8ELbzQsRNQuM3PH4b7N0J-WykCo0FxNym1mLy5g8D0BTZu-XzKymA1P_WxLi8Tc4GBB3ahsqGHfhAg-_xbHb3DtSTmP0kY9U1ANNZgp_Y7TCrcA0Ym1TE1l9yAfEi2wdPAjoHZzJCcKPnl0Sao5c4gXWceHq"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent flex flex-col justify-end p-margin"
+          >
+            <span class="font-label-lg text-label-lg text-tertiary font-bold"
+              >Certified Quality Control</span
+            >
+            <span class="font-title-lg text-title-lg text-surface"
+              >ISO 9001 Compliant</span
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Categories Bento Grid -->
+    <section
+      class="py-section-padding px-margin bg-surface-container-low border-t border-outline-variant/30 reveal-hidden"
+    >
+      <div class="max-w-container-max mx-auto">
+        <div class="mb-16">
+          <h2 class="font-headline-lg text-headline-lg text-primary mb-4">
+            Material Categories
+          </h2>
+          <div class="w-24 h-1.5 bg-secondary rounded-full"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+          <!-- Drilling Materials (Span 8) -->
+          <div
+            class="col-span-1 md:col-span-8 bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-10 relative overflow-hidden group stagger-item hover-lift"
+          >
+            <div
+              class="absolute right-0 top-0 opacity-[0.03] w-64 h-64 -mt-10 -mr-10 text-primary"
+            >
+              <span class="material-symbols-outlined text-[240px]"
+                >oil_barrel</span
+              >
+            </div>
+            <div class="relative z-10 flex flex-col h-full">
+              <div
+                class="w-14 h-14 bg-surface rounded-lg border border-tertiary/20 flex items-center justify-center mb-6 text-primary group-hover:text-secondary transition-colors duration-300"
+              >
+                <span class="material-symbols-outlined text-3xl"
+                  >precision_manufacturing</span
+                >
+              </div>
+              <h3 class="font-headline-md text-headline-md text-primary mb-4">
+                Drilling Materials
+              </h3>
+              <p
+                class="font-body-md text-body-md text-on-surface-variant mb-8 max-w-xl"
+              >
+                High-grade materials engineered for optimal rheology, wellbore
+                stability, and pressure control in demanding drilling
+                environments.
+              </p>
+              <div class="mt-auto grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div
+                  class="bg-background border-l-4 border-tertiary rounded p-4 shadow-sm"
+                >
+                  <span class="font-title-lg text-title-lg text-primary block"
+                    >Barite</span
+                  >
+                  <span
+                    class="font-label-lg text-label-lg text-on-surface-variant"
+                    >API Grade</span
+                  >
+                </div>
+                <div
+                  class="bg-background border-l-4 border-tertiary rounded p-4 shadow-sm"
+                >
+                  <span class="font-title-lg text-title-lg text-primary block"
+                    >Bentonite</span
+                  >
+                  <span
+                    class="font-label-lg text-label-lg text-on-surface-variant"
+                    >Yield Agent</span
+                  >
+                </div>
+                <div
+                  class="bg-background border-l-4 border-tertiary rounded p-4 shadow-sm"
+                >
+                  <span class="font-title-lg text-title-lg text-primary block"
+                    >CMC</span
+                  >
+                  <span
+                    class="font-label-lg text-label-lg text-on-surface-variant"
+                    >Fluid Loss</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Chemical Materials (Span 4) -->
+          <div
+            class="col-span-1 md:col-span-4 bg-primary text-surface border border-primary rounded-xl p-10 flex flex-col relative overflow-hidden stagger-item hover-lift shadow-xl"
+          >
+            <div
+              class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1532187875605-1818825227d8?auto=format&amp;fit=crop&amp;q=80&amp;w=800')] opacity-10 bg-cover bg-center"
+            ></div>
+            <div class="relative z-10 h-full flex flex-col">
+              <div
+                class="w-14 h-14 bg-white/10 rounded-lg flex items-center justify-center mb-6 text-tertiary border border-tertiary/30"
+              >
+                <span class="material-symbols-outlined text-3xl"
+                  >experiment</span
+                >
+              </div>
+              <h3 class="font-headline-md text-headline-md text-white mb-4">
+                Chemical Materials
+              </h3>
+              <p class="font-body-md text-body-md text-surface-variant/80 mb-8">
+                Essential chemical compounds formulated to exacting standards
+                for processing, refinement, and operational maintenance.
+              </p>
+              <ul class="space-y-4 mt-auto border-t border-white/10 pt-6">
+                <li class="flex items-center space-x-3">
+                  <span class="material-symbols-outlined text-tertiary text-sm"
+                    >check_circle</span
+                  >
+                  <span class="font-title-lg text-title-lg text-surface text-lg"
+                    >Calcium Chloride</span
+                  >
+                </li>
+                <li class="flex items-center space-x-3">
+                  <span class="material-symbols-outlined text-tertiary text-sm"
+                    >check_circle</span
+                  >
+                  <span class="font-title-lg text-title-lg text-surface text-lg"
+                    >Caustic Soda</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Industrial Support (Span 12) -->
+          <div
+            class="col-span-1 md:col-span-12 bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-10 flex flex-col md:flex-row items-center justify-between stagger-item hover-lift"
+          >
+            <div class="flex-1 md:pr-10 mb-8 md:mb-0">
+              <div class="flex items-center space-x-4 mb-4">
+                <div
+                  class="w-12 h-12 bg-background rounded border border-tertiary/20 flex items-center justify-center text-primary"
+                >
+                  <span class="material-symbols-outlined text-2xl"
+                    >local_shipping</span
+                  >
+                </div>
+                <h3 class="font-headline-md text-headline-md text-primary">
+                  Industrial Support
+                </h3>
+              </div>
+              <p
+                class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl"
+              >
+                Heavy-duty logistical support materials designed for the safe
+                transport, storage, and handling of critical resources. We
+                provide robust solutions including specialized Packaging and
+                reinforced Jumbo Bags rated for extreme weights.
+              </p>
+            </div>
+            <div class="flex-shrink-0 grid grid-cols-2 gap-4">
+              <div
+                class="w-32 h-32 bg-background flex flex-col items-center justify-center rounded-lg border-2 border-outline-variant/20 hover:border-tertiary/50 transition-colors text-center p-2 group"
+              >
+                <span
+                  class="material-symbols-outlined text-primary mb-2 group-hover:text-tertiary transition-colors"
+                  style="font-size: 32px"
+                  >inventory_2</span
+                >
+                <span class="font-label-lg text-label-lg text-primary"
+                  >Heavy<br />Packaging</span
+                >
+              </div>
+              <div
+                class="w-32 h-32 bg-background flex flex-col items-center justify-center rounded-lg border-2 border-outline-variant/20 hover:border-tertiary/50 transition-colors text-center p-2 group"
+              >
+                <span
+                  class="material-symbols-outlined text-primary mb-2 group-hover:text-tertiary transition-colors"
+                  style="font-size: 32px"
+                  >shopping_bag</span
+                >
+                <span class="font-label-lg text-label-lg text-primary"
+                  >Jumbo<br />Bags</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- High Impact Note -->
+    <section
+      class="py-section-padding px-margin relative overflow-hidden bg-primary text-surface reveal-hidden"
+    >
+      <div class="absolute inset-0 blueprint-bg opacity-[0.07]"></div>
+      <div class="max-w-container-max mx-auto relative z-10 text-center">
+        <span
+          class="material-symbols-outlined text-tertiary mb-6 text-5xl"
+          style="font-variation-settings: &quot;FILL&quot; 1"
+          >fact_check</span
+        >
+        <h2 class="font-headline-lg text-headline-lg mb-6 max-w-4xl mx-auto">
+          Custom Specifications &amp; Rapid Availability
+        </h2>
+        <p
+          class="font-body-lg text-body-lg text-surface-variant/90 max-w-3xl mx-auto mb-10"
+        >
+          Operating in the energy sector requires zero compromise. All materials
+          can be synthesized, processed, and packaged to meet your precise
+          technical specifications. Through our expansive supply network, we
+          guarantee rapid deployment availability to prevent operational
+          downtime.
+        </p>
+        <div class="flex justify-center">
+          <div class="h-1 w-20 bg-tertiary rounded-full"></div>
+        </div>
+      </div>
+    </section>
+    <!-- CTA Section -->
+    <section
+      class="py-section-padding px-margin bg-background text-center border-b border-outline-variant/30 reveal-hidden"
+    >
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-headline-lg text-headline-lg text-primary mb-6">
+          Need a material supply quote?
+        </h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant mb-10">
+          Connect with our procurement engineers today to receive a
+          comprehensive, tailored quote based on your logistical and chemical
+          requirements.
+        </p>
+        <button
+          class="bg-secondary text-on-primary rounded-lg px-10 py-5 font-label-lg text-label-lg uppercase tracking-widest hover:bg-secondary-container shadow-[0_10px_25px_rgba(224,49,49,0.25)] transition-all duration-300 inline-flex items-center space-x-3 active:scale-95 btn-hover-arrow"
+        >
+          <span class="font-bold">Request Quotation</span>
+          <span class="material-symbols-outlined text-lg">arrow_forward</span>
+        </button>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-primary border-t border-white/5 reveal-hidden">
+      <div
+        class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin py-section-padding w-full max-w-container-max mx-auto"
+      >
+        <div class="col-span-1 md:col-span-4 mb-10 stagger-item">
+          <a class="inline-block mb-6" href="#">
+            <img
+              alt="TALIA Oilfield Services"
+              class="h-16 w-auto object-contain brightness-0 invert"
+              src="https://lh3.googleusercontent.com/aida/ADBb0ugOBgjD6GTHVizeRe7kKUY9Fnm8-frLc4jjQxsvNDvAXhMs_6TYrrDGxQnlsB28iexoi4rvYHNBtlG6MWKGw7HDoh97BedCIVOYsoLx0HCdtjban_VYxeqPMFxOHsJK18drVtaP7-cAoWGmiyRUdDzDBLj0G-88Qi8kD9t_TdXYG8P2L-RJJGQ58QSGBh0glcAaGxAKp-j7-UlUfh7Qoxdulyqf9YHlIIeqZ2vpOk4RDN9TdHxK7VFAL0yokAZpj3YfdG4yz2MBAr4"
+            />
+          </a>
+          <p class="font-body-md text-body-md text-surface-variant/50 max-w-md">
+            © 2024 TALIA Oilfield Services. All rights reserved. Engineering
+            Excellence in Energy.
+          </p>
+        </div>
+        <div
+          class="col-span-1 md:col-span-4 flex flex-wrap gap-8 pt-10 border-t border-white/10 stagger-item"
+        >
+          <a
+            class="font-label-lg text-label-lg text-surface-variant/70 hover:text-tertiary transition-colors duration-300"
+            href="#"
+            >Privacy Policy</a
+          >
+          <a
+            class="font-label-lg text-label-lg text-surface-variant/70 hover:text-tertiary transition-colors duration-300"
+            href="#"
+            >Terms of Service</a
+          >
+          <a
+            class="font-label-lg text-label-lg text-surface-variant/70 hover:text-tertiary transition-colors duration-300"
+            href="#"
+            >QHSE Policy</a
+          >
+          <a
+            class="font-label-lg text-label-lg text-surface-variant/70 hover:text-tertiary transition-colors duration-300"
+            href="#"
+            >Compliance</a
+          >
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const header = document.querySelector("nav");
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 50) {
+            header.classList.add("header-scrolled");
+          } else {
+            header.classList.remove("header-scrolled");
+          }
+        });
+
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("reveal-visible");
+
+              const staggers = entry.target.querySelectorAll(".stagger-item");
+              staggers.forEach((item, index) => {
+                setTimeout(() => {
+                  item.classList.add("stagger-visible");
+                }, index * 100);
+              });
+
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        document
+          .querySelectorAll(".reveal-hidden")
+          .forEach((el) => observer.observe(el));
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,679 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+      Repacking &amp; Damaged Materials Handling - TALIA Oilfield Services
+    </title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-fixed": "#0b1d2d",
+              "surface-container-lowest": "#ffffff",
+              "inverse-primary": "#b7c8de",
+              "surface-container-high": "#dee9f6",
+              "surface-bright": "#f7f9ff",
+              "on-primary": "#ffffff",
+              "secondary-container": "#c92a2a",
+              "on-surface-variant": "#43474c",
+              "on-primary-container": "#d3e4fa",
+              "tertiary-fixed": "#ffdea2",
+              "on-primary-fixed-variant": "#38485a",
+              "tertiary-fixed-dim": "#e4c282",
+              "surface-dim": "#d0dbe8",
+              "surface-container-highest": "#d8e4f1",
+              "secondary-fixed": "#ffdad6",
+              background: "#f7f9ff",
+              "primary-fixed-dim": "#b7c8de",
+              "on-tertiary-container": "#9d8046",
+              "on-surface": "#121d26",
+              error: "#ba1a1a",
+              "on-tertiary-fixed": "#261900",
+              "on-background": "#121d26",
+              outline: "#74777d",
+              "on-error-container": "#93000a",
+              "on-secondary": "#ffffff",
+              "primary-container": "#0b1d2d",
+              tertiary: "#C8A86A",
+              "on-tertiary": "#ffffff",
+              "error-container": "#ffdad6",
+              surface: "#f7f9ff",
+              "on-tertiary-fixed-variant": "#5a430e",
+              "on-error": "#ffffff",
+              "tertiary-container": "#271a00",
+              "on-secondary-fixed-variant": "#93000f",
+              "on-secondary-container": "#fffbff",
+              "secondary-fixed-dim": "#ffb3ac",
+              primary: "#0B1D2D",
+              "surface-variant": "#d8e4f1",
+              "outline-variant": "#c4c6cc",
+              secondary: "#E03131",
+              "inverse-on-surface": "#e6f2ff",
+              "surface-tint": "#4f6073",
+              "surface-container": "#e4effc",
+              "surface-container-low": "#ecf4ff",
+              "on-secondary-fixed": "#410003",
+              "primary-fixed": "#d3e4fa",
+              "inverse-surface": "#27323b",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              unit: "8px",
+              "container-max": "1280px",
+              margin: "32px",
+              gutter: "24px",
+              "section-padding": "120px",
+            },
+            fontFamily: {
+              "headline-lg": ["Manrope"],
+              "display-hero": ["Manrope"],
+              "headline-md": ["Manrope"],
+              "title-lg": ["Manrope"],
+              "label-lg": ["Inter"],
+              "body-md": ["Inter"],
+              "body-lg": ["Inter"],
+            },
+            fontSize: {
+              "headline-lg": [
+                "48px",
+                {
+                  lineHeight: "56px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "display-hero": [
+                "72px",
+                {
+                  lineHeight: "84px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "headline-md": [
+                "32px",
+                { lineHeight: "40px", fontWeight: "600" },
+              ],
+              "title-lg": ["22px", { lineHeight: "28px", fontWeight: "600" }],
+              "label-lg": [
+                "14px",
+                {
+                  lineHeight: "20px",
+                  letterSpacing: "0.1em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .tech-grid {
+        background-image:
+          linear-gradient(
+            to right,
+            rgba(11, 29, 45, 0.03) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(11, 29, 45, 0.03) 1px,
+            transparent 1px
+          );
+        background-size: 40px 40px;
+      }
+      .reveal-up {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal-up.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .hover-lift {
+        transition:
+          transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+          box-shadow 0.3s ease;
+      }
+      .hover-lift:hover {
+        transform: translateY(-4px);
+        box-shadow:
+          0 20px 25px -5px rgb(0 0 0 / 0.1),
+          0 8px 10px -6px rgb(0 0 0 / 0.1);
+      }
+
+      .hover-arrow span {
+        transition: transform 0.3s ease;
+      }
+      .hover-arrow:hover span {
+        transform: translateX(4px);
+      }
+
+      .nav-link-active {
+        position: relative;
+        color: #e03131 !important;
+      }
+      .nav-link-active::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #e03131;
+        transform: scaleX(1);
+        transition: transform 0.3s ease;
+      }
+
+      header.scrolled {
+        background-color: #0b1d2d !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+      header.scrolled .nav-link:not(.nav-link-active) {
+        color: rgba(255, 255, 255, 0.8) !important;
+      }
+      header.scrolled .nav-link:hover {
+        color: #ffffff !important;
+      }
+      header.scrolled .logo-text {
+        color: #ffffff !important;
+      }
+      header.scrolled .logo-img {
+        filter: brightness(0) invert(1);
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  </head>
+  <body
+    class="bg-background text-on-background font-body-md min-h-screen flex flex-col antialiased"
+  >
+    <!-- TopNavBar -->
+    <nav
+      class="sticky top-0 z-50 transition-all duration-500 bg-surface/95 backdrop-blur-md border-b border-outline-variant/20"
+    >
+      <div
+        class="flex justify-between items-center w-full px-margin py-unit max-w-container-max mx-auto"
+      >
+        <div
+          class="text-title-lg font-headline-lg tracking-tight text-primary flex items-center gap-2 logo-text"
+        >
+          <img
+            alt="TALIA Logo"
+            class="w-8 h-8 object-contain logo-img transition-all duration-500"
+            src="https://lh3.googleusercontent.com/aida/ADBb0ugOBgjD6GTHVizeRe7kKUY9Fnm8-frLc4jjQxsvNDvAXhMs_6TYrrDGxQnlsB28iexoi4rvYHNBtlG6MWKGw7HDoh97BedCIVOYsoLx0HCdtjban_VYxeqPMFxOHsJK18drVtaP7-cAoWGmiyRUdDzDBLj0G-88Qi8kD9t_TdXYG8P2L-RJJGQ58QSGBh0glcAaGxAKp-j7-UlUfh7Qoxdulyqf9YHlIIeqZ2vpOk4RDN9TdHxK7VFAL0yokAZpj3YfdG4yz2MBAr4"
+          />
+          TALIA
+        </div>
+        <div class="hidden md:flex gap-8 items-center">
+          <a
+            class="text-on-surface-variant hover:text-secondary transition-all duration-300 font-label-lg text-label-lg nav-link"
+            href="#"
+            >Home</a
+          >
+          <a
+            class="text-secondary font-bold font-label-lg text-label-lg transition-all duration-300 nav-link nav-link-active"
+            href="#"
+            >Services</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-secondary transition-all duration-300 font-label-lg text-label-lg nav-link"
+            href="#"
+            >Logistics</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-secondary transition-all duration-300 font-label-lg text-label-lg nav-link"
+            href="#"
+            >Safety</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-secondary transition-all duration-300 font-label-lg text-label-lg nav-link"
+            href="#"
+            >About</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-secondary transition-all duration-300 font-label-lg text-label-lg nav-link"
+            href="#"
+            >Contact</a
+          >
+        </div>
+        <button
+          class="hidden md:block bg-secondary text-on-primary font-label-lg text-label-lg px-6 py-3 rounded-lg hover:bg-secondary-container hover:-translate-y-0.5 shadow-[0_4px_12px_rgba(224,49,49,0.25)] transition-all duration-300"
+        >
+          Request a Quote
+        </button>
+        <button class="md:hidden text-on-surface">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </nav>
+    <main class="flex-grow">
+      <!-- Hero Section -->
+      <section
+        class="relative pt-32 pb-section-padding px-margin overflow-hidden bg-white border-b border-outline-variant/20 tech-grid reveal-up"
+      >
+        <div
+          class="max-w-container-max mx-auto relative z-10 grid md:grid-cols-2 gap-gutter items-center"
+        >
+          <div class="max-w-2xl">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-tertiary/30 bg-tertiary/10 mb-6 hero-stagger"
+              style="opacity: 0; transform: translateY(20px)"
+            >
+              <span
+                class="material-symbols-outlined text-tertiary text-sm"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >verified</span
+              >
+              <span
+                class="font-label-lg text-label-lg text-tertiary uppercase tracking-widest font-bold"
+                >Specialized Handling</span
+              >
+            </div>
+            <h1
+              class="font-display-hero text-display-hero text-primary mb-6 hero-stagger leading-tight"
+              style="opacity: 0; transform: translateY(20px)"
+            >
+              Professional Repacking
+              <span class="text-tertiary font-light">&amp;</span> Damaged
+              Materials Handling
+            </h1>
+            <p
+              class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl hero-stagger"
+              style="opacity: 0; transform: translateY(20px)"
+            >
+              Secure, compliant, and efficient recovery of compromised
+              industrial materials. We restore integrity to your supply chain
+              with precision engineering protocols and uncompromising safety
+              standards.
+            </p>
+            <div
+              class="flex flex-wrap gap-4 hero-stagger"
+              style="opacity: 0; transform: translateY(20px)"
+            >
+              <button
+                class="bg-secondary text-on-primary font-label-lg text-label-lg px-8 py-4 rounded-lg hover:bg-secondary-container hover:-translate-y-0.5 shadow-[0_8px_20px_rgba(224,49,49,0.2)] transition-all duration-300 flex items-center gap-2 hover-lift hover-arrow"
+              >
+                Request Repacking Service
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+          <div
+            class="relative h-[600px] w-full rounded-xl overflow-hidden border border-outline/10 shadow-[0_20px_40px_rgba(11,29,45,0.12)]"
+          >
+            <img
+              alt="Industrial warehouse showing professional materials handling and repacking operations."
+              class="w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpXFkRWS2ExRwvQl_4cStTmVjBC7dobBkHMI6nHH8OrpkoJPinLi0bQalLzOjeFx8LLs4S3_8aEqPdsis4b7OJsnP711_5CQxw8buevF-lVSzGzdyZuDgSNi2ai56kJ41YqWOunrCioHq-mKaAP7ielMp4vIEywCnOUrfMlPIb7fdfhMw1fGO5nIf9Y31-VLM5ZFp0ItS6NVzU3r6TWn7Om2mqGnwlTRJ0Q7Dzd6rgzvABNwEUqScfMs379NtcHd0IFZ0RGi0WjMYu"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent"
+            ></div>
+            <div class="absolute bottom-8 left-8 right-8">
+              <div
+                class="bg-white/95 backdrop-blur border-l-4 border-tertiary p-6 rounded-lg inline-block hover-lift shadow-xl"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center"
+                  >
+                    <span
+                      class="material-symbols-outlined text-primary"
+                      style="font-variation-settings: &quot;FILL&quot; 1"
+                      >security</span
+                    >
+                  </div>
+                  <div>
+                    <div class="font-title-lg text-title-lg text-primary">
+                      Zero-Incident Protocol
+                    </div>
+                    <div
+                      class="font-body-md text-body-md text-on-surface-variant"
+                    >
+                      QHSE Compliant Operations
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Material Specialization & Process -->
+      <section
+        class="py-section-padding px-margin bg-surface-bright reveal-up"
+        id="process-section"
+      >
+        <div class="max-w-container-max mx-auto">
+          <div class="mb-20">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="h-px w-12 bg-tertiary"></div>
+              <span
+                class="text-tertiary font-label-lg tracking-widest uppercase"
+                >Expertise</span
+              >
+            </div>
+            <h2 class="font-headline-md text-headline-md text-primary mb-8">
+              Material Specialization
+            </h2>
+            <div class="flex flex-wrap gap-3" id="material-tags">
+              <span
+                class="material-tag px-4 py-2 bg-white border border-outline-variant/30 rounded-full text-label-lg font-label-lg text-primary shadow-sm opacity-0"
+                >Petrochemicals</span
+              >
+              <span
+                class="material-tag px-4 py-2 bg-white border border-outline-variant/30 rounded-full text-label-lg font-label-lg text-primary shadow-sm opacity-0"
+                >Corrosive Liquids</span
+              >
+              <span
+                class="material-tag px-4 py-2 bg-white border border-outline-variant/30 rounded-full text-label-lg font-label-lg text-primary shadow-sm opacity-0"
+                >Contaminated Solids</span
+              >
+              <span
+                class="material-tag px-4 py-2 bg-white border border-outline-variant/30 rounded-full text-label-lg font-label-lg text-primary shadow-sm opacity-0"
+                >Flammable Materials</span
+              >
+              <span
+                class="material-tag px-4 py-2 bg-white border border-outline-variant/30 rounded-full text-label-lg font-label-lg text-primary shadow-sm opacity-0"
+                >Oxidizing Agents</span
+              >
+            </div>
+          </div>
+          <h2 class="font-headline-md text-headline-md text-primary mb-12">
+            6-Step Repacking Protocol
+          </h2>
+          <div class="grid md:grid-cols-3 gap-8" id="timeline-grid">
+            <div
+              class="timeline-step opacity-0 p-8 rounded-xl border border-outline-variant/30 bg-white hover-lift border-t-4 border-t-transparent hover:border-t-tertiary transition-all duration-300"
+            >
+              <div class="text-display-hero text-tertiary/10 font-black mb-2">
+                01
+              </div>
+              <h4 class="font-title-lg text-title-lg text-primary mb-3">
+                Initial Assessment
+              </h4>
+              <p class="text-body-md text-on-surface-variant">
+                On-site evaluation of container integrity and chemical
+                stability.
+              </p>
+            </div>
+            <div
+              class="timeline-step opacity-0 p-8 rounded-xl border border-outline-variant/30 bg-white hover-lift border-t-4 border-t-transparent hover:border-t-tertiary transition-all duration-300"
+            >
+              <div class="text-display-hero text-tertiary/10 font-black mb-2">
+                02
+              </div>
+              <h4 class="font-title-lg text-title-lg text-primary mb-3">
+                Containment Setup
+              </h4>
+              <p class="text-body-md text-on-surface-variant">
+                Establishment of primary and secondary isolation zones.
+              </p>
+            </div>
+            <div
+              class="timeline-step opacity-0 p-8 rounded-xl border border-outline-variant/30 bg-white hover-lift border-t-4 border-t-transparent hover:border-t-tertiary transition-all duration-300"
+            >
+              <div class="text-display-hero text-tertiary/10 font-black mb-2">
+                03
+              </div>
+              <h4 class="font-title-lg text-title-lg text-primary mb-3">
+                Safe Transfer
+              </h4>
+              <p class="text-body-md text-on-surface-variant">
+                Precision vacuum or mechanical transfer to certified packaging.
+              </p>
+            </div>
+            <div
+              class="timeline-step opacity-0 p-8 rounded-xl border border-outline-variant/30 bg-white hover-lift border-t-4 border-t-transparent hover:border-t-tertiary transition-all duration-300"
+            >
+              <div class="text-display-hero text-tertiary/10 font-black mb-2">
+                04
+              </div>
+              <h4 class="font-title-lg text-title-lg text-primary mb-3">
+                Neutralization
+              </h4>
+              <p class="text-body-md text-on-surface-variant">
+                Treatment of contaminated surfaces and residue handling.
+              </p>
+            </div>
+            <div
+              class="timeline-step opacity-0 p-8 rounded-xl border border-outline-variant/30 bg-white hover-lift border-t-4 border-t-transparent hover:border-t-tertiary transition-all duration-300"
+            >
+              <div class="text-display-hero text-tertiary/10 font-black mb-2">
+                05
+              </div>
+              <h4 class="font-title-lg text-title-lg text-primary mb-3">
+                Certification
+              </h4>
+              <p class="text-body-md text-on-surface-variant">
+                Compliance verification and UN-rated sealing protocols.
+              </p>
+            </div>
+            <div
+              class="timeline-step opacity-0 p-8 rounded-xl border border-outline-variant/30 bg-white hover-lift border-t-4 border-t-transparent hover:border-t-tertiary transition-all duration-300"
+            >
+              <div class="text-display-hero text-tertiary/10 font-black mb-2">
+                06
+              </div>
+              <h4 class="font-title-lg text-title-lg text-primary mb-3">
+                Logistics Release
+              </h4>
+              <p class="text-body-md text-on-surface-variant">
+                Safe integration back into the global supply chain network.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Safety Banner -->
+      <section
+        class="bg-primary text-on-primary border-y border-outline/20 reveal-up overflow-hidden relative"
+      >
+        <div
+          class="absolute top-0 right-0 w-64 h-64 bg-tertiary/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"
+        ></div>
+        <div
+          class="max-w-container-max mx-auto px-margin py-10 flex flex-col md:flex-row items-center justify-between gap-8 relative z-10"
+        >
+          <div class="flex items-center gap-6">
+            <div
+              class="w-16 h-16 rounded-full bg-secondary/15 flex items-center justify-center flex-shrink-0 border border-secondary/30 shadow-[0_0_20px_rgba(224,49,49,0.2)]"
+            >
+              <span
+                class="material-symbols-outlined text-secondary text-3xl"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >warning</span
+              >
+            </div>
+            <div class="max-w-2xl">
+              <h3 class="font-title-lg text-title-lg text-white mb-2">
+                Critical Chemical Handling Safety
+              </h3>
+              <p
+                class="font-body-md text-body-md text-on-primary-container leading-relaxed"
+              >
+                All repacking of hazardous or reactive materials strictly
+                adheres to international HazMat protocols, requiring specialized
+                PPE and isolated containment zones.
+              </p>
+            </div>
+          </div>
+          <button
+            class="whitespace-nowrap border-2 border-tertiary text-tertiary font-label-lg text-label-lg px-8 py-3 rounded-lg hover:bg-tertiary hover:text-primary transition-all duration-300 font-bold uppercase tracking-widest"
+          >
+            View Safety Specs
+          </button>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="bg-primary text-white border-t border-white/5 px-margin py-section-padding"
+    >
+      <div
+        class="grid grid-cols-1 md:grid-cols-4 gap-gutter w-full max-w-container-max mx-auto"
+      >
+        <div class="col-span-1 md:col-span-1">
+          <div
+            class="text-title-lg font-headline-lg text-white mb-6 flex items-center gap-2"
+          >
+            <img
+              alt="TALIA Logo"
+              class="w-8 h-8 object-contain filter brightness-0 invert"
+              src="https://lh3.googleusercontent.com/aida/ADBb0ugOBgjD6GTHVizeRe7kKUY9Fnm8-frLc4jjQxsvNDvAXhMs_6TYrrDGxQnlsB28iexoi4rvYHNBtlG6MWKGw7HDoh97BedCIVOYsoLx0HCdtjban_VYxeqPMFxOHsJK18drVtaP7-cAoWGmiyRUdDzDBLj0G-88Qi8kD9t_TdXYG8P2L-RJJGQ58QSGBh0glcAaGxAKp-j7-UlUfh7Qoxdulyqf9YHlIIeqZ2vpOk4RDN9TdHxK7VFAL0yokAZpj3YfdG4yz2MBAr4"
+            />
+            TALIA
+          </div>
+          <p
+            class="font-body-md text-body-md text-on-primary-container mb-8 leading-relaxed"
+          >
+            Engineering Excellence in Energy. Providing precision logistics and
+            materials handling for the global petroleum sector.
+          </p>
+          <div
+            class="font-label-lg text-xs text-on-primary-container uppercase tracking-wider"
+          >
+            © 2024 TALIA Oilfield Services.
+          </div>
+        </div>
+        <div
+          class="col-span-1 md:col-span-3 flex flex-col md:flex-row justify-end gap-12 items-start md:items-end"
+        >
+          <div class="flex flex-col gap-4">
+            <h5
+              class="text-tertiary font-label-lg text-xs uppercase tracking-widest mb-2 font-bold"
+            >
+              Legal
+            </h5>
+            <a
+              class="font-label-lg text-label-lg text-on-primary-container hover:text-secondary transition-colors"
+              href="#"
+              >Privacy Policy</a
+            >
+            <a
+              class="font-label-lg text-label-lg text-on-primary-container hover:text-secondary transition-colors"
+              href="#"
+              >Terms of Service</a
+            >
+          </div>
+          <div class="flex flex-col gap-4">
+            <h5
+              class="text-tertiary font-label-lg text-xs uppercase tracking-widest mb-2 font-bold"
+            >
+              Standards
+            </h5>
+            <a
+              class="font-label-lg text-label-lg text-on-primary-container hover:text-secondary transition-colors"
+              href="#"
+              >QHSE Policy</a
+            >
+            <a
+              class="font-label-lg text-label-lg text-on-primary-container hover:text-secondary transition-colors"
+              href="#"
+              >Compliance</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Header scroll interaction
+        const header = document.querySelector("nav");
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 50) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
+        });
+
+        // Hero stagger entrance
+        gsap.to(".hero-stagger", {
+          opacity: 1,
+          y: 0,
+          stagger: 0.15,
+          duration: 0.8,
+          ease: "power3.out",
+          delay: 0.2,
+        });
+
+        // Reveal sections on scroll
+        document.querySelectorAll(".reveal-up").forEach((el) => {
+          ScrollTrigger.create({
+            trigger: el,
+            start: "top 85%",
+            onEnter: () => el.classList.add("active"),
+          });
+        });
+
+        // Material tags stagger
+        gsap.to(".material-tag", {
+          scrollTrigger: {
+            trigger: "#material-tags",
+            start: "top 90%",
+          },
+          opacity: 1,
+          y: 0,
+          stagger: 0.1,
+          duration: 0.6,
+          ease: "power2.out",
+        });
+
+        // Timeline steps progressive reveal and scale
+        const steps = document.querySelectorAll(".timeline-step");
+        steps.forEach((step, index) => {
+          const number = step.querySelector(".text-display-hero");
+          gsap.set(number, { scale: 0.5, opacity: 0 });
+
+          gsap.to(step, {
+            scrollTrigger: {
+              trigger: step,
+              start: "top 85%",
+            },
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power3.out",
+            onStart: () => {
+              gsap.to(number, {
+                scale: 1,
+                opacity: 1,
+                duration: 0.6,
+                ease: "back.out(1.7)",
+                delay: 0.2,
+              });
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

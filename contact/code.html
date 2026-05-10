@@ -1,0 +1,693 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>TALIA Oilfield Services - Contact &amp; Request a Quote</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Material Symbols -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Theme Configuration -->
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-primary": "#b7c8de",
+              "surface-dim": "#d0dbe8",
+              "inverse-on-surface": "#e6f2ff",
+              "on-tertiary-fixed-variant": "#5a430e",
+              "surface-container-lowest": "#ffffff",
+              "on-primary": "#ffffff",
+              "on-tertiary-fixed": "#261900",
+              "on-tertiary-container": "#9d8046",
+              "primary-fixed-dim": "#b7c8de",
+              "on-secondary-container": "#fffbff",
+              "secondary-fixed": "#ffdad6",
+              background: "#f7f9ff",
+              "on-secondary-fixed": "#410003",
+              "on-surface": "#121d26",
+              outline: "#74777d",
+              "on-error": "#ffffff",
+              "primary-container": "#0B1D2D",
+              "error-container": "#ffdad6",
+              "tertiary-fixed": "#ffdea2",
+              tertiary: "#C8A86A",
+              "on-primary-fixed": "#0b1d2d",
+              secondary: "#E03131",
+              "secondary-fixed-dim": "#ffb3ac",
+              "secondary-container": "#C02626",
+              "inverse-surface": "#27323b",
+              "on-background": "#121d26",
+              "tertiary-container": "#271a00",
+              primary: "#0B1D2D",
+              "outline-variant": "#c4c6cc",
+              "surface-bright": "#f7f9ff",
+              "surface-container-high": "#dee9f6",
+              "on-surface-variant": "#43474c",
+              "on-secondary-fixed-variant": "#93000f",
+              "on-primary-fixed-variant": "#38485a",
+              "surface-container-low": "#ecf4ff",
+              "surface-tint": "#4f6073",
+              "on-primary-container": "#758699",
+              "on-error-container": "#93000a",
+              "surface-container": "#e4effc",
+              surface: "#f7f9ff",
+              "surface-variant": "#d8e4f1",
+              "on-secondary": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "tertiary-fixed-dim": "#e4c282",
+              "primary-fixed": "#d3e4fa",
+              "surface-container-highest": "#d8e4f1",
+              error: "#ba1a1a",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              unit: "8px",
+              gutter: "24px",
+              "container-max": "1280px",
+              margin: "32px",
+              "section-padding": "120px",
+            },
+            fontFamily: {
+              "body-lg": ["Inter"],
+              "headline-md": ["Manrope"],
+              "title-lg": ["Manrope"],
+              "headline-lg": ["Manrope"],
+              "display-hero": ["Manrope"],
+              "body-md": ["Inter"],
+              "label-lg": ["Inter"],
+            },
+            fontSize: {
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+              "headline-md": [
+                "32px",
+                { lineHeight: "40px", fontWeight: "600" },
+              ],
+              "title-lg": ["22px", { lineHeight: "28px", fontWeight: "600" }],
+              "headline-lg": [
+                "48px",
+                {
+                  lineHeight: "56px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "display-hero": [
+                "72px",
+                {
+                  lineHeight: "84px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "label-lg": [
+                "14px",
+                {
+                  lineHeight: "20px",
+                  letterSpacing: "0.1em",
+                  fontWeight: "600",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Technical overlay pattern */
+      .bg-technical-grid {
+        background-image:
+          linear-gradient(
+            to right,
+            rgba(116, 119, 125, 0.05) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(116, 119, 125, 0.05) 1px,
+            transparent 1px
+          );
+        background-size: 40px 40px;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  </head>
+  <body
+    class="bg-surface text-on-surface font-body-md antialiased selection:bg-secondary selection:text-white"
+  >
+    <!-- TopNavBar -->
+    <header
+      class="sticky w-full top-0 z-50 bg-surface/95 backdrop-blur-md border-b border-outline-variant/20 shadow-sm transition-all"
+      id="main-header"
+    >
+      <div
+        class="flex justify-between items-center w-full px-margin py-unit max-w-container-max mx-auto"
+      >
+        <!-- Brand Logo -->
+        <a
+          class="text-title-lg font-headline-lg tracking-tight text-primary flex items-center gap-2"
+          href="#"
+        >
+          <img
+            alt="TALIA Logo"
+            class="h-8 w-auto"
+            src="https://lh3.googleusercontent.com/aida/ADBb0ugOBgjD6GTHVizeRe7kKUY9Fnm8-frLc4jjQxsvNDvAXhMs_6TYrrDGxQnlsB28iexoi4rvYHNBtlG6MWKGw7HDoh97BedCIVOYsoLx0HCdtjban_VYxeqPMFxOHsJK18drVtaP7-cAoWGmiyRUdDzDBLj0G-88Qi8kD9t_TdXYG8P2L-RJJGQ58QSGBh0glcAaGxAKp-j7-UlUfh7Qoxdulyqf9YHlIIeqZ2vpOk4RDN9TdHxK7VFAL0yokAZpj3YfdG4yz2MBAr4"
+          />
+          TALIA
+        </a>
+        <!-- Navigation Links -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a
+            class="text-on-surface-variant hover:text-secondary transition-colors font-label-lg text-label-lg duration-300"
+            href="#"
+            >Home</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-secondary transition-colors font-label-lg text-label-lg duration-300"
+            href="#"
+            >Services</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-secondary transition-colors font-label-lg text-label-lg duration-300"
+            href="#"
+            >Logistics</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-secondary transition-colors font-label-lg text-label-lg duration-300"
+            href="#"
+            >Safety</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-secondary transition-colors font-label-lg text-label-lg duration-300"
+            href="#"
+            >About</a
+          >
+          <a
+            class="text-secondary font-bold pb-1 font-label-lg text-label-lg relative"
+            href="#"
+          >
+            Contact
+            <span
+              class="absolute bottom-0 left-0 w-full h-0.5 bg-secondary transform scale-x-100 transition-transform duration-300"
+            ></span>
+          </a>
+        </nav>
+        <!-- Trailing Action -->
+        <div class="flex items-center">
+          <a
+            class="bg-secondary text-white font-label-lg text-label-lg px-6 py-3 rounded-lg hover:bg-secondary-container transition-all hover:-translate-y-0.5 shadow-[0_4px_12px_rgba(224,49,49,0.25)]"
+            href="#"
+          >
+            Request a Quote
+          </a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <!-- Hero Section -->
+      <section
+        class="relative w-full pt-section-padding pb-margin bg-surface-bright overflow-hidden reveal-section"
+        style="opacity: 0"
+      >
+        <div class="absolute inset-0 bg-technical-grid z-0"></div>
+        <!-- Decorative pipeline geometry -->
+        <div
+          class="absolute top-0 right-0 w-1/3 h-full opacity-10 pointer-events-none z-0 border-l border-outline"
+          style="
+            background: linear-gradient(
+              135deg,
+              transparent 49%,
+              var(--tw-colors-outline) 50%,
+              transparent 51%
+            );
+            background-size: 100px 100px;
+          "
+        ></div>
+        <div class="max-w-container-max mx-auto px-margin relative z-10">
+          <div class="max-w-3xl">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="h-px w-12 bg-secondary"></div>
+              <span
+                class="font-label-lg text-label-lg text-secondary uppercase tracking-widest"
+                >Global Operations Center</span
+              >
+            </div>
+            <h1
+              class="font-display-hero text-display-hero text-primary mb-6 hero-animate"
+            >
+              Request a Quote
+            </h1>
+            <p
+              class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl hero-animate"
+            >
+              Engage our engineering and logistics specialists for
+              precision-driven energy solutions. Submit your requirements below
+              to initiate a comprehensive proposal.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Two Column Layout Area -->
+      <section
+        class="w-full bg-surface-bright pb-section-padding relative z-10"
+      >
+        <div
+          class="max-w-container-max mx-auto px-margin grid grid-cols-1 lg:grid-cols-12 gap-gutter"
+        >
+          <!-- Left Column: Contact Info -->
+          <div
+            class="lg:col-span-4 flex flex-col gap-8 reveal-section"
+            style="opacity: 0"
+          >
+            <!-- Image Card -->
+            <div
+              class="w-full h-64 rounded-xl overflow-hidden relative border border-outline-variant/50 shadow-sm"
+              style="
+                background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuA2R7wAe8lzqhb2kUFxXbhYbu_JQzqXkKVUYXfTga-PlL9WLIo1iora3bwJzqmTE9DxN_Mm0ytRouQS_yKfbGynxJfYIasLg1s9JnI_xewllsEvCBlcduxm168tPisWWe9WhfbZ4mZ6k9BsgmgBvUF84tj9eBB5z57werO5yqcdrhnljcW2hSHClzVePngrohx0nnG4tzvOsFnrzvtWNkV6ZLNhx5ggpR_SQVNPFn3NWIvahXjE6Qdf2_wrRgTZu8HuJcKQoaKTvCu7&quot;);
+                background-size: cover;
+                background-position: center;
+              "
+            >
+              <div
+                class="absolute inset-0 bg-primary-container/20 mix-blend-multiply"
+              ></div>
+            </div>
+            <!-- Contact Details block -->
+            <div
+              class="bg-primary-container border border-outline/20 rounded-xl p-8 flex flex-col gap-6 relative overflow-hidden group hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(11,29,45,0.15)] transition-all duration-300"
+            >
+              <div
+                class="absolute top-0 right-0 w-24 h-24 bg-technical-grid opacity-30"
+              ></div>
+              <!-- Location -->
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center border border-tertiary/20 shrink-0"
+                >
+                  <span class="material-symbols-outlined text-tertiary"
+                    >location_on</span
+                  >
+                </div>
+                <div>
+                  <h3 class="font-title-lg text-title-lg text-white mb-1">
+                    Location
+                  </h3>
+                  <p class="font-body-md text-body-md text-surface-variant/80">
+                    Sana'a, Yemen<br />Energy District, Block 4
+                  </p>
+                </div>
+              </div>
+              <!-- Email -->
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center border border-tertiary/20 shrink-0"
+                >
+                  <span class="material-symbols-outlined text-tertiary"
+                    >mail</span
+                  >
+                </div>
+                <div>
+                  <h3 class="font-title-lg text-title-lg text-white mb-1">
+                    Email
+                  </h3>
+                  <a
+                    class="font-body-md text-body-md text-secondary hover:text-white transition-colors"
+                    href="mailto:info@taliaserv.com"
+                    >info@taliaserv.com</a
+                  >
+                </div>
+              </div>
+              <!-- Phone -->
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center border border-tertiary/20 shrink-0"
+                >
+                  <span class="material-symbols-outlined text-tertiary"
+                    >phone_in_talk</span
+                  >
+                </div>
+                <div>
+                  <h3 class="font-title-lg text-title-lg text-white mb-1">
+                    Phone / WhatsApp
+                  </h3>
+                  <p class="font-body-md text-body-md text-surface-variant/80">
+                    +967 70 123 4567
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Right Column: Form -->
+          <div class="lg:col-span-8 reveal-section" style="opacity: 0">
+            <div
+              class="bg-surface-container-lowest border border-outline-variant/60 rounded-xl p-margin shadow-sm hover:shadow-[0_8px_32px_rgba(11,29,45,0.06)] hover:-translate-y-1 transition-all duration-300"
+            >
+              <h2
+                class="font-headline-md text-headline-md text-primary mb-8 pb-4 border-b border-outline-variant/30 flex items-center gap-3"
+              >
+                <span class="material-symbols-outlined text-secondary"
+                  >description</span
+                >
+                Project Specifications
+              </h2>
+              <form
+                action="#"
+                class="grid grid-cols-1 md:grid-cols-2 gap-6"
+                method="POST"
+              >
+                <!-- Name -->
+                <div class="flex flex-col gap-2">
+                  <label
+                    class="font-label-lg text-label-lg text-primary"
+                    for="name"
+                    >Full Name</label
+                  >
+                  <input
+                    class="w-full bg-transparent border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary/20 outline-none transition-all duration-300"
+                    id="name"
+                    name="name"
+                    placeholder="John Doe"
+                    required=""
+                    type="text"
+                  />
+                </div>
+                <!-- Company -->
+                <div class="flex flex-col gap-2">
+                  <label
+                    class="font-label-lg text-label-lg text-primary"
+                    for="company"
+                    >Company</label
+                  >
+                  <input
+                    class="w-full bg-transparent border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary/20 outline-none transition-all duration-300"
+                    id="company"
+                    name="company"
+                    placeholder="Enter company name"
+                    required=""
+                    type="text"
+                  />
+                </div>
+                <!-- Service Required -->
+                <div class="flex flex-col gap-2 md:col-span-2">
+                  <label
+                    class="font-label-lg text-label-lg text-primary"
+                    for="service"
+                    >Service Required</label
+                  >
+                  <div class="relative">
+                    <select
+                      class="w-full bg-transparent border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary/20 outline-none appearance-none transition-all duration-300"
+                      id="service"
+                      name="service"
+                    >
+                      <option disabled="" selected="" value="">
+                        Select a primary service line
+                      </option>
+                      <option value="drilling">
+                        Drilling Fluids &amp; Chemicals
+                      </option>
+                      <option value="logistics">
+                        Rig Moving &amp; Heavy Logistics
+                      </option>
+                      <option value="equipment">
+                        Equipment Rental &amp; Maintenance
+                      </option>
+                      <option value="safety">
+                        HSE &amp; Safety Consulting
+                      </option>
+                    </select>
+                    <span
+                      class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline pointer-events-none"
+                      >expand_more</span
+                    >
+                  </div>
+                </div>
+                <!-- Material Type -->
+                <div class="flex flex-col gap-2">
+                  <label
+                    class="font-label-lg text-label-lg text-primary"
+                    for="material"
+                    >Material Type (If applicable)</label
+                  >
+                  <input
+                    class="w-full bg-transparent border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary/20 outline-none transition-all duration-300"
+                    id="material"
+                    name="material"
+                    placeholder="e.g., Barite, Bentonite"
+                    type="text"
+                  />
+                </div>
+                <!-- Quantity -->
+                <div class="flex flex-col gap-2">
+                  <label
+                    class="font-label-lg text-label-lg text-primary"
+                    for="quantity"
+                    >Estimated Quantity</label
+                  >
+                  <input
+                    class="w-full bg-transparent border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary/20 outline-none transition-all duration-300"
+                    id="quantity"
+                    name="quantity"
+                    placeholder="e.g., 500 MT"
+                    type="text"
+                  />
+                </div>
+                <!-- Packaging Type -->
+                <div class="flex flex-col gap-2">
+                  <label
+                    class="font-label-lg text-label-lg text-primary"
+                    for="packaging"
+                    >Packaging Requirement</label
+                  >
+                  <div class="relative">
+                    <select
+                      class="w-full bg-transparent border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary/20 outline-none appearance-none transition-all duration-300"
+                      id="packaging"
+                      name="packaging"
+                    >
+                      <option disabled="" selected="" value="">
+                        Select packaging type
+                      </option>
+                      <option value="bulk">Bulk</option>
+                      <option value="jumbo">Jumbo Bags (1 MT)</option>
+                      <option value="drums">Steel Drums</option>
+                      <option value="palletized">Palletized Sacks</option>
+                    </select>
+                    <span
+                      class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline pointer-events-none"
+                      >expand_more</span
+                    >
+                  </div>
+                </div>
+                <!-- Locations -->
+                <div class="flex flex-col gap-2">
+                  <label
+                    class="font-label-lg text-label-lg text-primary"
+                    for="locations"
+                    >Origin / Destination</label
+                  >
+                  <input
+                    class="w-full bg-transparent border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary/20 outline-none transition-all duration-300"
+                    id="locations"
+                    name="locations"
+                    placeholder="e.g., Sana'a to Block 18"
+                    type="text"
+                  />
+                </div>
+                <!-- Additional Details -->
+                <div class="flex flex-col gap-2 md:col-span-2">
+                  <label
+                    class="font-label-lg text-label-lg text-primary"
+                    for="details"
+                    >Operational Details &amp; Scope</label
+                  >
+                  <textarea
+                    class="w-full bg-transparent border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary/20 outline-none transition-all resize-y duration-300"
+                    id="details"
+                    name="details"
+                    placeholder="Provide any specific technical requirements, timelines, or constraints..."
+                    rows="5"
+                  ></textarea>
+                </div>
+                <!-- Submit Action -->
+                <div class="md:col-span-2 mt-4">
+                  <button
+                    class="w-full md:w-auto bg-secondary text-white font-label-lg text-label-lg px-10 py-4 rounded-lg hover:bg-secondary-container transition-all hover:-translate-y-1 shadow-[0_8px_20px_rgba(224,49,49,0.2)] flex items-center justify-center gap-2 group"
+                    type="submit"
+                  >
+                    <span>Submit Request</span>
+                    <span
+                      class="material-symbols-outlined text-white transition-transform duration-300 group-hover:translate-x-1"
+                      style="font-size: 18px"
+                      >arrow_forward</span
+                    >
+                  </button>
+                  <p
+                    class="font-body-md text-sm text-on-surface-variant mt-4 opacity-80"
+                  >
+                    Our technical team will review your specifications and
+                    contact you within 24 operational hours.
+                  </p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-primary-container text-white border-t border-white/5">
+      <div
+        class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin py-section-padding w-full max-w-container-max mx-auto"
+      >
+        <!-- Brand Column -->
+        <div class="flex flex-col gap-4 col-span-1 md:col-span-2">
+          <a
+            class="text-title-lg font-headline-lg text-white flex items-center gap-2"
+            href="#"
+          >
+            <img
+              alt="TALIA Logo"
+              class="h-8 w-auto brightness-0 invert"
+              src="https://lh3.googleusercontent.com/aida/ADBb0ugOBgjD6GTHVizeRe7kKUY9Fnm8-frLc4jjQxsvNDvAXhMs_6TYrrDGxQnlsB28iexoi4rvYHNBtlG6MWKGw7HDoh97BedCIVOYsoLx0HCdtjban_VYxeqPMFxOHsJK18drVtaP7-cAoWGmiyRUdDzDBLj0G-88Qi8kD9t_TdXYG8P2L-RJJGQ58QSGBh0glcAaGxAKp-j7-UlUfh7Qoxdulyqf9YHlIIeqZ2vpOk4RDN9TdHxK7VFAL0yokAZpj3YfdG4yz2MBAr4"
+            />
+            TALIA
+          </a>
+          <p
+            class="text-surface-variant/70 font-body-md text-body-md max-w-sm mt-4"
+          >
+            © 2024 TALIA Oilfield Services. All rights reserved. Engineering
+            Excellence in Energy.
+          </p>
+        </div>
+        <!-- Links Column -->
+        <div
+          class="flex flex-col gap-3 col-span-1 md:col-span-2 md:items-end justify-center"
+        >
+          <nav class="flex flex-wrap gap-6 md:justify-end">
+            <a
+              class="font-label-lg text-label-lg text-surface-variant/80 hover:text-tertiary transition-colors duration-300"
+              href="#"
+              >Privacy Policy</a
+            >
+            <a
+              class="font-label-lg text-label-lg text-surface-variant/80 hover:text-tertiary transition-colors duration-300"
+              href="#"
+              >Terms of Service</a
+            >
+            <a
+              class="font-label-lg text-label-lg text-surface-variant/80 hover:text-tertiary transition-colors duration-300"
+              href="#"
+              >QHSE Policy</a
+            >
+            <a
+              class="font-label-lg text-label-lg text-surface-variant/80 hover:text-tertiary transition-colors duration-300"
+              href="#"
+              >Compliance</a
+            >
+          </nav>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Header Scroll Interaction
+        const header = document.getElementById("main-header");
+        ScrollTrigger.create({
+          start: "top -50",
+          onUpdate: (self) => {
+            if (self.direction === 1) {
+              header.classList.add("bg-[#0B1D2D]", "shadow-lg");
+              header.classList.remove("bg-surface/95", "backdrop-blur-md");
+              header.querySelectorAll("nav a, .text-primary").forEach((el) => {
+                el.classList.add("text-white");
+                el.classList.remove("text-on-surface-variant", "text-primary");
+              });
+            } else if (self.scroll() < 50) {
+              header.classList.remove("bg-[#0B1D2D]", "shadow-lg");
+              header.classList.add("bg-surface/95", "backdrop-blur-md");
+              header.querySelectorAll("nav a, .text-primary").forEach((el) => {
+                el.classList.remove("text-white");
+                if (!el.classList.contains("text-secondary"))
+                  el.classList.add("text-on-surface-variant");
+              });
+            }
+          },
+        });
+
+        // Hero Staggered Entrance
+        gsap.from(".hero-animate", {
+          opacity: 0,
+          y: 30,
+          duration: 0.8,
+          stagger: 0.2,
+          ease: "power3.out",
+          delay: 0.3,
+        });
+
+        // Section Reveal
+        const revealSections = document.querySelectorAll(".reveal-section");
+        revealSections.forEach((section) => {
+          gsap.fromTo(
+            section,
+            { opacity: 0, y: 40 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.7,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: section,
+                start: "top 85%",
+                toggleActions: "play none none none",
+              },
+            },
+          );
+        });
+
+        // Form Focus States
+        const inputs = document.querySelectorAll("input, select, textarea");
+        inputs.forEach((input) => {
+          input.addEventListener("focus", () => {
+            gsap.to(input, {
+              borderColor: "#E03131",
+              boxShadow: "0 0 0 4px rgba(224, 49, 49, 0.1)",
+              duration: 0.3,
+            });
+          });
+
+          input.addEventListener("blur", () => {
+            gsap.to(input, {
+              borderColor: "",
+              boxShadow: "0 0 0 0px rgba(224, 49, 49, 0)",
+              duration: 0.3,
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

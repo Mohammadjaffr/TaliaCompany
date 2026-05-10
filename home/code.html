@@ -1,0 +1,729 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>TALIA Oilfield Services - Home</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-fixed": "#0b1d2d",
+              "surface-container-lowest": "#ffffff",
+              "inverse-primary": "#b7c8de",
+              "surface-container-high": "#dee9f6",
+              "surface-bright": "#f7f9ff",
+              "on-primary": "#ffffff",
+              "secondary-container": "#c92a2a",
+              "on-surface-variant": "#43474c",
+              "on-primary-container": "#758699",
+              "tertiary-fixed": "#ffdea2",
+              "on-primary-fixed-variant": "#38485a",
+              "tertiary-fixed-dim": "#e4c282",
+              "surface-dim": "#d0dbe8",
+              "surface-container-highest": "#d8e4f1",
+              "secondary-fixed": "#ffdad6",
+              background: "#f7f9ff",
+              "primary-fixed-dim": "#b7c8de",
+              "on-tertiary-container": "#9d8046",
+              "on-surface": "#121d26",
+              error: "#ba1a1a",
+              "on-tertiary-fixed": "#261900",
+              "on-background": "#121d26",
+              outline: "#74777d",
+              "on-error-container": "#93000a",
+              "on-secondary": "#ffffff",
+              "primary-container": "#0b1d2d",
+              tertiary: "#010100",
+              "on-tertiary": "#ffffff",
+              "error-container": "#ffdad6",
+              surface: "#f7f9ff",
+              "on-tertiary-fixed-variant": "#5a430e",
+              "on-error": "#ffffff",
+              "tertiary-container": "#271a00",
+              "on-secondary-fixed-variant": "#93000f",
+              "on-secondary-container": "#fffbff",
+              "secondary-fixed-dim": "#ffb3ac",
+              primary: "#000001",
+              "surface-variant": "#d8e4f1",
+              "outline-variant": "#c4c6cc",
+              secondary: "#E03131",
+              "inverse-on-surface": "#e6f2ff",
+              "surface-tint": "#4f6073",
+              "surface-container": "#e4effc",
+              "surface-container-low": "#ecf4ff",
+              "on-secondary-fixed": "#410003",
+              "primary-fixed": "#d3e4fa",
+              "inverse-surface": "#27323b",
+              "petroleum-navy": "#0B1D2D",
+              "industrial-red": "#E03131",
+              "warm-sand": "#C8A86A",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              unit: "8px",
+              "container-max": "1280px",
+              margin: "32px",
+              gutter: "24px",
+              "section-padding": "120px",
+            },
+            fontFamily: {
+              "headline-lg": ["Manrope"],
+              "display-hero": ["Manrope"],
+              "headline-md": ["Manrope"],
+              "title-lg": ["Manrope"],
+              "label-lg": ["Inter"],
+              "body-md": ["Inter"],
+              "body-lg": ["Inter"],
+            },
+            fontSize: {
+              "headline-lg": [
+                "48px",
+                {
+                  lineHeight: "56px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "display-hero": [
+                "72px",
+                {
+                  lineHeight: "84px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "headline-md": [
+                "32px",
+                { lineHeight: "40px", fontWeight: "600" },
+              ],
+              "title-lg": ["22px", { lineHeight: "28px", fontWeight: "600" }],
+              "label-lg": [
+                "14px",
+                {
+                  lineHeight: "20px",
+                  letterSpacing: "0.1em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .blueprint-overlay {
+        background-image:
+          linear-gradient(
+            to right,
+            rgba(116, 119, 125, 0.05) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(116, 119, 125, 0.05) 1px,
+            transparent 1px
+          );
+        background-size: 40px 40px;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .reveal {
+        opacity: 0;
+        transition:
+          opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+          transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+        animation: fadeUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      }
+
+      .stagger-1 {
+        animation-delay: 100ms;
+      }
+      .stagger-2 {
+        animation-delay: 200ms;
+      }
+      .stagger-3 {
+        animation-delay: 300ms;
+      }
+      .stagger-4 {
+        animation-delay: 400ms;
+      }
+
+      .nav-link {
+        position: relative;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background-color: #e03131;
+        transition: width 0.3s ease;
+      }
+      .nav-link:hover::after,
+      .nav-link.active::after {
+        width: 100%;
+      }
+
+      header.scrolled {
+        background-color: #0b1d2d !important;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+      }
+      header.scrolled .nav-link:not(.active) {
+        color: rgba(255, 255, 255, 0.8) !important;
+      }
+      header.scrolled .nav-link:hover {
+        color: #e03131 !important;
+      }
+      header.scrolled span.text-title-lg {
+        color: white !important;
+      }
+
+      .service-card {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .service-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08);
+      }
+
+      input:focus,
+      textarea:focus {
+        outline: none !important;
+        border-color: #e03131 !important;
+        box-shadow: 0 0 0 3px rgba(224, 49, 49, 0.1) !important;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background text-on-background font-body-md antialiased selection:bg-industrial-red selection:text-white"
+  >
+    <!-- TopNavBar -->
+    <header
+      class="sticky top-0 z-50 bg-white/95 backdrop-blur-md w-full border-b border-outline-variant/30 shadow-sm transition-all duration-300"
+    >
+      <div
+        class="flex justify-between items-center w-full px-margin py-4 max-w-container-max mx-auto"
+      >
+        <div class="flex items-center gap-2">
+          <img
+            alt="TALIA Logo"
+            class="h-10 w-auto"
+            src="https://lh3.googleusercontent.com/aida/ADBb0ugOBgjD6GTHVizeRe7kKUY9Fnm8-frLc4jjQxsvNDvAXhMs_6TYrrDGxQnlsB28iexoi4rvYHNBtlG6MWKGw7HDoh97BedCIVOYsoLx0HCdtjban_VYxeqPMFxOHsJK18drVtaP7-cAoWGmiyRUdDzDBLj0G-88Qi8kD9t_TdXYG8P2L-RJJGQ58QSGBh0glcAaGxAKp-j7-UlUfh7Qoxdulyqf9YHlIIeqZ2vpOk4RDN9TdHxK7VFAL0yokAZpj3YfdG4yz2MBAr4"
+          />
+          <span
+            class="text-title-lg font-headline-lg tracking-tight text-petroleum-navy"
+            >TALIA OILFIELD SERVICES</span
+          >
+        </div>
+        <nav class="hidden md:flex items-center gap-8">
+          <a
+            class="text-industrial-red font-bold pb-1 font-label-lg text-label-lg nav-link active"
+            href="#"
+            >Home</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-industrial-red transition-all duration-300 font-label-lg text-label-lg nav-link"
+            href="#"
+            >Services</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-industrial-red transition-all duration-300 font-label-lg text-label-lg nav-link"
+            href="#"
+            >Logistics</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-industrial-red transition-all duration-300 font-label-lg text-label-lg nav-link"
+            href="#"
+            >Safety</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-industrial-red transition-all duration-300 font-label-lg text-label-lg nav-link"
+            href="#"
+            >About</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-industrial-red transition-all duration-300 font-label-lg text-label-lg nav-link"
+            href="#"
+            >Contact</a
+          >
+        </nav>
+        <button
+          class="bg-industrial-red text-white px-6 py-3 rounded-lg font-label-lg text-label-lg hover:bg-secondary-container hover:-translate-y-[2px] transition-all shadow-[0_4px_14px_0_rgba(224,49,49,0.45)] hidden md:block"
+        >
+          Request a Quote
+        </button>
+        <button class="md:hidden text-petroleum-navy">
+          <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+      </div>
+    </header>
+    <!-- Hero Section -->
+    <section
+      class="relative w-full min-h-[85vh] flex items-center bg-white overflow-hidden blueprint-overlay pt-20 pb-section-padding"
+    >
+      <div
+        class="max-w-container-max mx-auto px-margin grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center relative z-10"
+      >
+        <div class="flex flex-col gap-8 max-w-2xl reveal stagger-1">
+          <h1 class="font-display-hero text-display-hero text-petroleum-navy">
+            Integrated Oilfield Services, Logistics, and Material Supply
+            Solutions in <span class="text-industrial-red">Yemen</span>
+          </h1>
+          <p
+            class="font-body-lg text-body-lg text-on-surface-variant/90 border-l-4 border-warm-sand pl-6"
+          >
+            Delivering precision engineering, heavy-duty logistics, and
+            high-grade materials to the energy sector. We operate with
+            unwavering reliability in demanding environments.
+          </p>
+          <div class="flex flex-wrap gap-4 mt-4 reveal stagger-2">
+            <button
+              class="bg-industrial-red text-white px-8 py-4 rounded-lg font-label-lg text-label-lg hover:bg-secondary-container hover:-translate-y-[2px] transition-all shadow-[0_6px_20px_0_rgba(224,49,49,0.4)]"
+            >
+              Request a Quote
+            </button>
+            <button
+              class="border-2 border-petroleum-navy text-petroleum-navy px-8 py-4 rounded-lg font-label-lg text-label-lg hover:bg-petroleum-navy hover:text-white transition-all"
+            >
+              Explore Services
+            </button>
+          </div>
+        </div>
+        <div
+          class="relative h-[600px] w-full rounded-xl overflow-hidden shadow-2xl border border-outline-variant/30 reveal stagger-3"
+        >
+          <img
+            alt="Industrial logistics yard"
+            class="w-full h-full object-cover"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSLpk3NPB9lx_pVvKbQPNmbZ54eGlOaxQgaAkjJVeGGV0Eq85CY07qm7i9OhVmR32nMifm7txonxL5qFpaibb2ir5O12cBStZM0ka_vJNp4QXfy0jfxn63d5gx45cg48aiQHSKfcFR5u-Di7nwEBLdKOpe7e8ZYLZ5dHN-dMYksLBwGUZp8rDB9739cHuK4fwHXIuOjIGZh__8AkrEDw6v_nJCTI46PbHQZpqJAfBbLKltd2lT3lzgmNOMRizNKfQ-Zp-suE3Qhh8i"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-petroleum-navy/60 to-transparent"
+          ></div>
+        </div>
+      </div>
+    </section>
+    <!-- Stats Section -->
+    <section class="bg-petroleum-navy py-20 w-full relative overflow-hidden">
+      <div
+        class="absolute top-0 right-0 w-64 h-64 bg-warm-sand/5 rounded-full -mr-32 -mt-32"
+      ></div>
+      <div
+        class="max-w-container-max mx-auto px-margin grid grid-cols-2 md:grid-cols-4 gap-gutter"
+      >
+        <div
+          class="flex flex-col items-center text-center px-4 reveal stagger-1"
+        >
+          <span class="font-headline-lg text-headline-lg text-industrial-red"
+            >12+</span
+          >
+          <span
+            class="font-label-lg text-label-lg text-white/70 mt-2 uppercase tracking-widest"
+            >Years Experience</span
+          >
+        </div>
+        <div
+          class="flex flex-col items-center text-center px-4 reveal stagger-2"
+        >
+          <span class="font-headline-lg text-headline-lg text-white">25k+</span>
+          <span
+            class="font-label-lg text-label-lg text-white/70 mt-2 uppercase tracking-widest"
+            >Tons Supplied</span
+          >
+        </div>
+        <div
+          class="flex flex-col items-center text-center px-4 reveal stagger-3"
+        >
+          <span class="font-headline-lg text-headline-lg text-white">850+</span>
+          <span
+            class="font-label-lg text-label-lg text-white/70 mt-2 uppercase tracking-widest"
+            >Operations</span
+          >
+        </div>
+        <div
+          class="flex flex-col items-center text-center px-4 reveal stagger-4"
+        >
+          <span class="font-headline-lg text-headline-lg text-warm-sand"
+            >24h</span
+          >
+          <span
+            class="font-label-lg text-label-lg text-white/70 mt-2 uppercase tracking-widest"
+            >Response Time</span
+          >
+        </div>
+      </div>
+    </section>
+    <!-- About Preview -->
+    <section class="py-section-padding bg-surface-bright">
+      <div
+        class="max-w-container-max mx-auto px-margin grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+      >
+        <div
+          class="relative h-[550px] w-full rounded-xl overflow-hidden border-4 border-white shadow-xl group reveal"
+        >
+          <img
+            alt="Industrial storage yard"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6H0is68YByTYO_7rFkWfMMPPHFo1j7zQxduBBMxDbl4--JUe9wsEgebePcnly0_5lNsTOzmoGpQe8SRbGoRwhjJrUFvSvOJgNzJ2V-rAwKcqA65O4u_j6hsDA8aZZ79-NFZVMgyuh0F-mErQ1Lfm27zLkhGRebaVg5rj9-XQoplVsY-ZL95N31GWvSXlFMYSWachf4N3GEDzWq6Yn45RY0QoXMxQ4iOBwaq1eqtaAnAV9XtS7omLFVYoaDjSYfyaDKg5MvT0dknr2"
+          />
+          <div
+            class="absolute inset-0 bg-petroleum-navy/10 group-hover:bg-transparent transition-colors duration-500"
+          ></div>
+        </div>
+        <div class="flex flex-col gap-6 reveal stagger-2">
+          <h2 class="font-headline-lg text-headline-lg text-petroleum-navy">
+            Your Trusted Oilfield Partner in Yemen
+          </h2>
+          <div class="w-20 h-1.5 bg-industrial-red rounded-full"></div>
+          <p
+            class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed"
+          >
+            At TALIA Oilfield Services, we understand the critical nature of the
+            energy sector. Our comprehensive suite of services is designed to
+            keep your operations running smoothly, safely, and efficiently. From
+            raw material supply to complex logistics contracting, we are the
+            backbone of your success in the region.
+          </p>
+          <a
+            class="flex items-center gap-3 text-petroleum-navy font-label-lg text-label-lg hover:text-industrial-red transition-all mt-4 w-fit group"
+            href="#"
+          >
+            <span
+              class="border-b-2 border-warm-sand pb-1 group-hover:border-industrial-red transition-colors"
+              >Discover Our History</span
+            >
+            <span
+              class="material-symbols-outlined group-hover:translate-x-1 transition-transform bg-warm-sand/10 p-2 rounded-full text-warm-sand group-hover:bg-industrial-red group-hover:text-white"
+              >arrow_forward</span
+            >
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Core Services Grid -->
+    <section
+      class="py-section-padding bg-white blueprint-overlay border-t border-outline-variant/30"
+    >
+      <div class="max-w-container-max mx-auto px-margin">
+        <div class="text-center mb-20 max-w-3xl mx-auto reveal">
+          <h2
+            class="font-headline-lg text-headline-lg text-petroleum-navy mb-4"
+          >
+            Core Services
+          </h2>
+          <p class="font-body-lg text-body-lg text-on-surface-variant">
+            Comprehensive solutions engineered for the demands of the modern
+            oilfield.
+          </p>
+          <div class="w-24 h-1 bg-warm-sand mx-auto mt-6 rounded-full"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Service Cards -->
+          <div
+            class="bg-white border-b-4 border-transparent hover:border-industrial-red border-x border-t border-outline-variant/40 p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 group service-card reveal stagger-1"
+          >
+            <span
+              class="material-symbols-outlined text-4xl text-petroleum-navy mb-6 group-hover:text-industrial-red transition-colors block"
+              style="font-variation-settings: &quot;wght&quot; 300"
+              >local_shipping</span
+            >
+            <h3 class="font-title-lg text-title-lg text-petroleum-navy mb-3">
+              Transportation
+            </h3>
+            <p class="font-body-md text-body-md text-on-surface-variant/80">
+              Heavy-haul and specialized logistics for oil rig mobilization.
+            </p>
+          </div>
+          <div
+            class="bg-white border-b-4 border-transparent hover:border-industrial-red border-x border-t border-outline-variant/40 p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 group service-card reveal stagger-2"
+          >
+            <span
+              class="material-symbols-outlined text-4xl text-petroleum-navy mb-6 group-hover:text-industrial-red transition-colors block"
+              style="font-variation-settings: &quot;wght&quot; 300"
+              >construction</span
+            >
+            <h3 class="font-title-lg text-title-lg text-petroleum-navy mb-3">
+              Drilling Materials
+            </h3>
+            <p class="font-body-md text-body-md text-on-surface-variant/80">
+              Supply of high-grade fluids, cements, and additives.
+            </p>
+          </div>
+          <div
+            class="bg-white border-b-4 border-transparent hover:border-industrial-red border-x border-t border-outline-variant/40 p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 group service-card reveal stagger-3"
+          >
+            <span
+              class="material-symbols-outlined text-4xl text-petroleum-navy mb-6 group-hover:text-industrial-red transition-colors block"
+              style="font-variation-settings: &quot;wght&quot; 300"
+              >science</span
+            >
+            <h3 class="font-title-lg text-title-lg text-petroleum-navy mb-3">
+              Industrial Chemicals
+            </h3>
+            <p class="font-body-md text-body-md text-on-surface-variant/80">
+              Specialized chemical solutions for enhanced recovery.
+            </p>
+          </div>
+          <div
+            class="bg-white border-b-4 border-transparent hover:border-industrial-red border-x border-t border-outline-variant/40 p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 group service-card reveal stagger-4"
+          >
+            <span
+              class="material-symbols-outlined text-4xl text-petroleum-navy mb-6 group-hover:text-industrial-red transition-colors block"
+              style="font-variation-settings: &quot;wght&quot; 300"
+              >package_2</span
+            >
+            <h3 class="font-title-lg text-title-lg text-petroleum-navy mb-3">
+              Repacking
+            </h3>
+            <p class="font-body-md text-body-md text-on-surface-variant/80">
+              Professional repacking services for bulk materials.
+            </p>
+          </div>
+          <div
+            class="bg-white border-b-4 border-transparent hover:border-industrial-red border-x border-t border-outline-variant/40 p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 group service-card reveal"
+          >
+            <span
+              class="material-symbols-outlined text-4xl text-petroleum-navy mb-6 group-hover:text-industrial-red transition-colors block"
+              style="font-variation-settings: &quot;wght&quot; 300"
+              >inventory_2</span
+            >
+            <h3 class="font-title-lg text-title-lg text-petroleum-navy mb-3">
+              Jumbo Bags
+            </h3>
+            <p class="font-body-md text-body-md text-on-surface-variant/80">
+              High-capacity storage and transport solutions.
+            </p>
+          </div>
+          <div
+            class="bg-white border-b-4 border-transparent hover:border-industrial-red border-x border-t border-outline-variant/40 p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 group service-card reveal"
+          >
+            <span
+              class="material-symbols-outlined text-4xl text-petroleum-navy mb-6 group-hover:text-industrial-red transition-colors block"
+              style="font-variation-settings: &quot;wght&quot; 300"
+              >warning</span
+            >
+            <h3 class="font-title-lg text-title-lg text-petroleum-navy mb-3">
+              Damaged Chemicals
+            </h3>
+            <p class="font-body-md text-body-md text-on-surface-variant/80">
+              Safe handling and remediation of compromised materials.
+            </p>
+          </div>
+          <div
+            class="bg-white border-b-4 border-transparent hover:border-industrial-red border-x border-t border-outline-variant/40 p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 group service-card reveal"
+          >
+            <span
+              class="material-symbols-outlined text-4xl text-petroleum-navy mb-6 group-hover:text-industrial-red transition-colors block"
+              style="font-variation-settings: &quot;wght&quot; 300"
+              >engineering</span
+            >
+            <h3 class="font-title-lg text-title-lg text-petroleum-navy mb-3">
+              Logistics Contracting
+            </h3>
+            <p class="font-body-md text-body-md text-on-surface-variant/80">
+              End-to-end management of complex supply chains.
+            </p>
+          </div>
+          <div
+            class="bg-white border-b-4 border-transparent hover:border-industrial-red border-x border-t border-outline-variant/40 p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 group service-card reveal"
+          >
+            <span
+              class="material-symbols-outlined text-4xl text-petroleum-navy mb-6 group-hover:text-industrial-red transition-colors block"
+              style="font-variation-settings: &quot;wght&quot; 300"
+              >support_agent</span
+            >
+            <h3 class="font-title-lg text-title-lg text-petroleum-navy mb-3">
+              General Support
+            </h3>
+            <p class="font-body-md text-body-md text-on-surface-variant/80">
+              On-site operational assistance and facility management.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-petroleum-navy text-white border-t border-white/5 w-full">
+      <div
+        class="max-w-container-max mx-auto px-margin py-section-padding grid grid-cols-1 md:grid-cols-4 gap-gutter"
+      >
+        <div class="col-span-1 reveal">
+          <div class="flex items-center gap-2 mb-6">
+            <img
+              alt="TALIA Logo"
+              class="h-10 w-auto brightness-0 invert"
+              src="https://lh3.googleusercontent.com/aida/ADBb0ugOBgjD6GTHVizeRe7kKUY9Fnm8-frLc4jjQxsvNDvAXhMs_6TYrrDGxQnlsB28iexoi4rvYHNBtlG6MWKGw7HDoh97BedCIVOYsoLx0HCdtjban_VYxeqPMFxOHsJK18drVtaP7-cAoWGmiyRUdDzDBLj0G-88Qi8kD9t_TdXYG8P2L-RJJGQ58QSGBh0glcAaGxAKp-j7-UlUfh7Qoxdulyqf9YHlIIeqZ2vpOk4RDN9TdHxK7VFAL0yokAZpj3YfdG4yz2MBAr4"
+            />
+            <h2 class="text-title-lg font-headline-lg text-white">TALIA</h2>
+          </div>
+          <p class="text-white/60 mb-6 font-body-md text-body-md max-w-xs">
+            Engineering excellence and operational reliability for the energy
+            sector since 2012.
+          </p>
+          <p class="text-white/40 font-body-md text-body-md">
+            © 2024 TALIA Oilfield Services.<br />All rights reserved.
+          </p>
+        </div>
+        <div class="reveal">
+          <h3
+            class="font-label-lg text-label-lg text-warm-sand mb-6 uppercase tracking-wider"
+          >
+            Company
+          </h3>
+          <ul class="space-y-3">
+            <li>
+              <a
+                class="text-white/60 hover:text-industrial-red transition-colors font-body-md"
+                href="#"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-white/60 hover:text-industrial-red transition-colors font-body-md"
+                href="#"
+                >Careers</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-white/60 hover:text-industrial-red transition-colors font-body-md"
+                href="#"
+                >News &amp; Media</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <h3
+            class="font-label-lg text-label-lg text-warm-sand mb-6 uppercase tracking-wider"
+          >
+            Legal
+          </h3>
+          <ul class="space-y-3">
+            <li>
+              <a
+                class="text-white/60 hover:text-industrial-red transition-colors font-body-md"
+                href="#"
+                >Privacy Policy</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-white/60 hover:text-industrial-red transition-colors font-body-md"
+                href="#"
+                >Terms of Service</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-white/60 hover:text-industrial-red transition-colors font-body-md"
+                href="#"
+                >QHSE Policy</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-white/60 hover:text-industrial-red transition-colors font-body-md"
+                href="#"
+                >Compliance</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <h3
+            class="font-label-lg text-label-lg text-warm-sand mb-6 uppercase tracking-wider"
+          >
+            Contact
+          </h3>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-3 text-white/60 font-body-md">
+              <span class="material-symbols-outlined text-warm-sand text-sm"
+                >location_on</span
+              >
+              Sana'a, Yemen
+            </li>
+            <li class="flex items-center gap-3 text-white/60 font-body-md">
+              <span class="material-symbols-outlined text-warm-sand text-sm"
+                >mail</span
+              >
+              info@taliaoilfield.com
+            </li>
+            <li class="flex items-center gap-3 text-white/60 font-body-md">
+              <span class="material-symbols-outlined text-warm-sand text-sm"
+                >phone</span
+              >
+              +967 1 234 567
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const observerOptions = {
+          threshold: 0.1,
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            }
+          });
+        }, observerOptions);
+
+        document
+          .querySelectorAll(".reveal")
+          .forEach((el) => observer.observe(el));
+
+        window.addEventListener("scroll", () => {
+          const header = document.querySelector("header");
+          if (window.scrollY > 20) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
