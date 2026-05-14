@@ -1,0 +1,787 @@
+
+/* ==========================================================
+   TALIA Oilfield Services — Unified Design System
+   Colors: Petroleum Navy, Industrial Red, Warm Sand
+   ========================================================== */
+:root {
+  --petroleum-navy: #0B1D2D;
+  --industrial-red: #E03131;
+  --industrial-red-dark: #C92A2A;
+  --warm-sand: #C8A86A;
+  --surface: #FFFFFF;
+  --background: #F7F9FF;
+  --surface-soft: #ECF4FF;
+  --text-main: #121D26;
+  --text-muted: #43474C;
+  --border-soft: #C4C6CC;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-height: 100vh; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+img { max-width: 100%; }
+a { text-decoration: none; }
+::selection { background: rgba(224, 49, 49, .18); color: var(--petroleum-navy); }
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+}
+.icon-fill { font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 24; }
+.nav-link, .nav-link-active, .active-link, .active-link-underline { position: relative; }
+.nav-link::after,
+.nav-link.active::after,
+.nav-link-active::after,
+.active-link::after,
+.active-link-underline::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--industrial-red);
+  border-radius: 999px;
+  transition: width .28s ease, transform .28s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after,
+.nav-link-active::after,
+.active-link::after,
+.active-link-underline::after { width: 100%; }
+header.scrolled, .header-scrolled, nav.scrolled {
+  background-color: var(--petroleum-navy) !important;
+  box-shadow: 0 14px 36px rgba(11, 29, 45, .20) !important;
+}
+header.scrolled a, header.scrolled nav a, header.scrolled .nav-logo-text, header.scrolled .logo-text, header.scrolled div.text-title-lg,
+nav.scrolled a, nav.scrolled .nav-logo-text, nav.scrolled div.text-title-lg { color: rgba(255,255,255,.86) !important; }
+header.scrolled a:hover, nav.scrolled a:hover { color: #fff !important; }
+.logo-img, img[alt*="TALIA"] { object-fit: contain; }
+.card-hover, .card-lift, .hover-lift, .service-card, .service-card-container, .industry-card, .card-hover-effect, .trust-badge {
+  transition: transform .35s cubic-bezier(.2,0,0,1), box-shadow .35s cubic-bezier(.2,0,0,1), border-color .35s ease, color .35s ease, background-color .35s ease;
+}
+.card-hover:hover, .card-lift:hover, .hover-lift:hover, .service-card:hover, .service-card-container:hover, .industry-card:hover, .card-hover-effect:hover, .trust-badge:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 42px rgba(11, 29, 45, .12);
+}
+.btn-hover-arrow:hover .material-symbols-outlined,
+.btn-with-arrow:hover .material-symbols-outlined,
+.service-link:hover .service-link-arrow,
+.hover-arrow:hover span { transform: translateX(4px); }
+.blueprint-overlay, .blueprint-bg, .blueprint-pattern, .tech-overlay, .tech-grid, .bg-technical-grid {
+  background-image:
+    linear-gradient(to right, rgba(11,29,45,.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(11,29,45,.045) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.reveal, .reveal-hidden, .reveal-up, .reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1);
+  will-change: opacity, transform;
+}
+.reveal.active, .reveal-visible, .reveal-up.active, .reveal-on-scroll.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.stagger-item { transition: opacity .65s cubic-bezier(.16,1,.3,1), transform .65s cubic-bezier(.16,1,.3,1); }
+.stagger-1 { animation-delay: .1s; transition-delay: .1s; }
+.stagger-2 { animation-delay: .2s; transition-delay: .2s; }
+.stagger-3 { animation-delay: .3s; transition-delay: .3s; }
+.stagger-4 { animation-delay: .4s; transition-delay: .4s; }
+.stagger-5 { animation-delay: .5s; transition-delay: .5s; }
+.stagger-6 { animation-delay: .6s; transition-delay: .6s; }
+input:focus, textarea:focus, select:focus {
+  outline: none !important;
+  border-color: var(--industrial-red) !important;
+  box-shadow: 0 0 0 3px rgba(224, 49, 49, .12) !important;
+}
+@media (max-width: 768px) {
+  .text-display-hero { font-size: clamp(2.6rem, 11vw, 4.5rem) !important; line-height: 1.08 !important; }
+  .text-headline-lg { font-size: clamp(2rem, 8vw, 3rem) !important; line-height: 1.15 !important; }
+  .px-margin { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+  .py-section-padding { padding-top: 5rem !important; padding-bottom: 5rem !important; }
+}
+
+
+/* ===== Extracted from index.html ===== */
+.blueprint-overlay {
+        background-image:
+          linear-gradient(
+            to right,
+            rgba(116, 119, 125, 0.05) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(116, 119, 125, 0.05) 1px,
+            transparent 1px
+          );
+        background-size: 40px 40px;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .reveal {
+        opacity: 0;
+        transition:
+          opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+          transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+        animation: fadeUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      }
+
+      .stagger-1 {
+        animation-delay: 100ms;
+      }
+      .stagger-2 {
+        animation-delay: 200ms;
+      }
+      .stagger-3 {
+        animation-delay: 300ms;
+      }
+      .stagger-4 {
+        animation-delay: 400ms;
+      }
+
+      .nav-link {
+        position: relative;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background-color: #e03131;
+        transition: width 0.3s ease;
+      }
+      .nav-link:hover::after,
+      .nav-link.active::after {
+        width: 100%;
+      }
+
+      header.scrolled {
+        background-color: #0b1d2d !important;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+      }
+      header.scrolled .nav-link:not(.active) {
+        color: rgba(255, 255, 255, 0.8) !important;
+      }
+      header.scrolled .nav-link:hover {
+        color: #e03131 !important;
+      }
+      header.scrolled span.text-title-lg {
+        color: white !important;
+      }
+
+      .service-card {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .service-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08);
+      }
+
+      input:focus,
+      textarea:focus {
+        outline: none !important;
+        border-color: #e03131 !important;
+        box-shadow: 0 0 0 3px rgba(224, 49, 49, 0.1) !important;
+      }
+
+
+/* ===== Extracted from about_us.html ===== */
+.tech-overlay {
+        background-image:
+          linear-gradient(
+            to right,
+            rgba(116, 119, 125, 0.05) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(116, 119, 125, 0.05) 1px,
+            transparent 1px
+          );
+        background-size: 40px 40px;
+      }
+
+      .reveal {
+        opacity: 0;
+        transition:
+          opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: transform, opacity;
+        transform: translateY(30px);
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .stagger-item {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .reveal.active .stagger-item {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .reveal.active .stagger-item:nth-child(1) {
+        transition-delay: 100ms;
+      }
+      .reveal.active .stagger-item:nth-child(2) {
+        transition-delay: 200ms;
+      }
+      .reveal.active .stagger-item:nth-child(3) {
+        transition-delay: 300ms;
+      }
+
+      .header-scrolled {
+        background-color: #0b1d2d !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+      }
+
+      .nav-link-active {
+        position: relative;
+      }
+
+      .nav-link-active::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: #e03131;
+        transform: scaleX(1);
+        transition: transform 0.3s ease;
+      }
+
+      .card-lift {
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease,
+          border-color 0.3s ease;
+      }
+
+      .card-lift:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 24px rgba(11, 29, 45, 0.12);
+        border-color: #c8a86a;
+      }
+
+      .btn-hover-arrow:hover .material-symbols-outlined {
+        transform: translateX(4px);
+        transition: transform 0.3s ease;
+      }
+
+
+/* ===== Extracted from contact.html ===== */
+/* Technical overlay pattern */
+      .bg-technical-grid {
+        background-image:
+          linear-gradient(
+            to right,
+            rgba(116, 119, 125, 0.05) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(116, 119, 125, 0.05) 1px,
+            transparent 1px
+          );
+        background-size: 40px 40px;
+      }
+
+
+/* ===== Extracted from industries.html ===== */
+@keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .reveal-section {
+        animation: fadeInUp 0.8s ease-out forwards;
+      }
+      .stagger-1 {
+        animation-delay: 0.1s;
+      }
+      .stagger-2 {
+        animation-delay: 0.2s;
+      }
+      .stagger-3 {
+        animation-delay: 0.3s;
+      }
+      .stagger-4 {
+        animation-delay: 0.4s;
+      }
+      .stagger-5 {
+        animation-delay: 0.5s;
+      }
+      .stagger-6 {
+        animation-delay: 0.6s;
+      }
+      .industry-card {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .industry-card:hover .material-symbols-outlined {
+        transform: translateY(-8px);
+        transition: transform 0.4s ease;
+      }
+
+      .reveal-hidden {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .reveal-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .stagger-item {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      .reveal-visible .stagger-item {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .active-link {
+        position: relative;
+        color: #e03131 !important;
+      }
+      .active-link::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #e03131;
+        transform: scaleX(1);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+      }
+
+      .industry-card {
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .industry-card:hover {
+        transform: translateY(-4px);
+        box-shadow:
+          0 10px 25px -5px rgba(0, 0, 0, 0.2),
+          0 8px 10px -6px rgba(0, 0, 0, 0.1);
+      }
+      .industry-card:hover .material-symbols-outlined[class*="arrow"] {
+        transform: translateX(4px);
+        transition: transform 0.3s ease;
+      }
+
+      .btn-primary:hover .material-symbols-outlined {
+        transform: translateX(4px);
+        transition: transform 0.3s ease;
+      }
+
+      header.scrolled {
+        background-color: #0b1d2d !important;
+        box-shadow: 0 4px 15px -1px rgba(0, 0, 0, 0.3);
+      }
+      header.scrolled nav a {
+        color: #d8e4f1 !important;
+      }
+      header.scrolled nav a.active-link {
+        color: #ffffff !important;
+      }
+      header.scrolled nav a.active-link::after {
+        background-color: #e03131 !important;
+      }
+      header.scrolled nav a:hover {
+        color: #c8a86a !important;
+      }
+
+
+/* ===== Extracted from logistics.html ===== */
+.blueprint-bg {
+        background-image:
+          linear-gradient(
+            to right,
+            rgba(200, 168, 106, 0.05) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(200, 168, 106, 0.05) 1px,
+            transparent 1px
+          );
+        background-size: 40px 40px;
+      }
+
+
+/* ===== Extracted from logistics.html ===== */
+.reveal-hidden {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .reveal-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .stagger-item {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      .nav-link-active {
+        position: relative;
+      }
+      .nav-link-active::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #e03131;
+        transform-origin: left;
+        transition: transform 0.3s ease;
+      }
+      header.scrolled {
+        background-color: #0b1d2d !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+      header.scrolled nav a,
+      header.scrolled div.text-title-lg {
+        color: white !important;
+      }
+      .card-hover:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(11, 29, 45, 0.12);
+        border-color: #c8a86a;
+      }
+      .card-hover:hover .material-symbols-outlined {
+        transform: scale(1.1);
+        transition: transform 0.3s ease;
+      }
+
+
+/* ===== Extracted from materials_supply.html ===== */
+.blueprint-bg {
+        background-image:
+          linear-gradient(
+            to right,
+            rgba(116, 119, 125, 0.05) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(116, 119, 125, 0.05) 1px,
+            transparent 1px
+          );
+        background-size: 40px 40px;
+      }
+      .reveal-hidden {
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 700ms cubic-bezier(0.4, 0, 0.2, 1),
+          transform 700ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .reveal-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .stagger-item {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 600ms cubic-bezier(0.4, 0, 0.2, 1),
+          transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .stagger-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .header-scrolled {
+        background-color: #0b1d2d !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+      }
+      .header-scrolled a,
+      .header-scrolled button span {
+        color: white !important;
+      }
+      .active-link-underline {
+        position: relative;
+      }
+      .active-link-underline::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #e03131;
+        transform: scaleX(1);
+        transition: transform 0.3s ease;
+      }
+      .hover-lift {
+        transition:
+          transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+          box-shadow 0.3s ease !important;
+      }
+      .hover-lift:hover {
+        transform: translateY(-4px) !important;
+        box-shadow:
+          0 10px 25px -5px rgba(0, 0, 0, 0.1),
+          0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+      }
+      .btn-hover-arrow span.material-symbols-outlined {
+        transition: transform 0.2s ease;
+      }
+      .btn-hover-arrow:hover span.material-symbols-outlined {
+        transform: translateX(4px);
+      }
+
+
+/* ===== Extracted from repacking_handling.html ===== */
+.tech-grid {
+        background-image:
+          linear-gradient(
+            to right,
+            rgba(11, 29, 45, 0.03) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(11, 29, 45, 0.03) 1px,
+            transparent 1px
+          );
+        background-size: 40px 40px;
+      }
+      .reveal-up {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal-up.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .hover-lift {
+        transition:
+          transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+          box-shadow 0.3s ease;
+      }
+      .hover-lift:hover {
+        transform: translateY(-4px);
+        box-shadow:
+          0 20px 25px -5px rgb(0 0 0 / 0.1),
+          0 8px 10px -6px rgb(0 0 0 / 0.1);
+      }
+
+      .hover-arrow span {
+        transition: transform 0.3s ease;
+      }
+      .hover-arrow:hover span {
+        transform: translateX(4px);
+      }
+
+      .nav-link-active {
+        position: relative;
+        color: #e03131 !important;
+      }
+      .nav-link-active::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #e03131;
+        transform: scaleX(1);
+        transition: transform 0.3s ease;
+      }
+
+      header.scrolled {
+        background-color: #0b1d2d !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+      header.scrolled .nav-link:not(.nav-link-active) {
+        color: rgba(255, 255, 255, 0.8) !important;
+      }
+      header.scrolled .nav-link:hover {
+        color: #ffffff !important;
+      }
+      header.scrolled .logo-text {
+        color: #ffffff !important;
+      }
+      header.scrolled .logo-img {
+        filter: brightness(0) invert(1);
+      }
+
+
+/* ===== Extracted from safety_quality.html ===== */
+.blueprint-pattern {
+        background-image:
+          linear-gradient(
+            to right,
+            rgba(11, 29, 45, 0.03) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(11, 29, 45, 0.03) 1px,
+            transparent 1px
+          );
+        background-size: 40px 40px;
+      }
+      .card-hover-effect {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .card-hover-effect:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 40px -12px rgba(11, 29, 45, 0.12);
+      }
+      .card-hover-effect:hover .material-symbols-outlined {
+        transform: scale(1.1);
+      }
+      .btn-hover-arrow .material-symbols-outlined {
+        transition: transform 0.2s ease;
+      }
+      .btn-hover-arrow:hover .material-symbols-outlined {
+        transform: translateX(4px);
+      }
+      .nav-link-active {
+        position: relative;
+      }
+      .nav-link-active::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #e03131;
+        border-radius: 99px;
+      }
+      .premium-border {
+        border-left: 4px solid #c8a86a;
+      }
+
+
+/* ===== Extracted from services.html ===== */
+.material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 300,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .icon-fill {
+        font-variation-settings:
+          "FILL" 1,
+          "wght" 300,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .tech-grid {
+        background-image:
+          linear-gradient(
+            to right,
+            rgba(116, 119, 125, 0.05) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(116, 119, 125, 0.05) 1px,
+            transparent 1px
+          );
+        background-size: 24px 24px;
+      }
+
+      /* Header transition */
+      header.scrolled {
+        background-color: #0b1d2d !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      }
+      header.scrolled .nav-link {
+        color: rgba(255, 255, 255, 0.75) !important;
+      }
+      header.scrolled .nav-link:hover {
+        color: #ffffff !important;
+      }
+      header.scrolled .nav-link.active::after {
+        background-color: #e03131;
+      }
+      header.scrolled .nav-logo-text {
+        color: #ffffff !important;
+      }
+
+      /* Active Link Underline */
+      .nav-link {
+        position: relative;
+      }
+      .nav-link.active::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #e03131; /* Industrial Red active state */
+        border-radius: 2px;
+      }
+
+      /* Interaction: Card Lift & Arrow */
+      .service-card-container {
+        transition:
+          transform 0.4s cubic-bezier(0.2, 0, 0, 1),
+          box-shadow 0.4s cubic-bezier(0.2, 0, 0, 1);
+      }
+      .service-card-container:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px -10px rgba(11, 29, 45, 0.15);
+      }
+
+      .service-link-arrow {
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+      .service-link:hover .service-link-arrow {
+        transform: translateX(4px);
+      }
+
+      /* Button Arrow Interaction */
+      .btn-with-arrow:hover .material-symbols-outlined {
+        transform: translateX(4px);
+        transition: transform 0.3s ease;
+      }
