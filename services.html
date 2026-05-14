@@ -3,17 +3,22 @@
 <html class="light" lang="en">
   <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3NDQSXC8DM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-3NDQSXC8DM"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-  gtag('config', 'G-3NDQSXC8DM');
-</script>
+      gtag("config", "G-3NDQSXC8DM");
+    </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <title>Our Services | TALIA Oilfield Services</title>
     <meta
       name="description"
@@ -252,65 +257,67 @@
         "areaServed": "Yemen"
       }
     </script>
-    <meta name="google-site-verification" content="JT80R7dpbNFWDC5S9XqESS7jfluB1EpFZEQAuphD0uU" />
+    <meta
+      name="google-site-verification"
+      content="JT80R7dpbNFWDC5S9XqESS7jfluB1EpFZEQAuphD0uU"
+    />
   </head>
   <body
     class="bg-background text-on-surface antialiased min-h-screen flex flex-col"
   >
     <!-- TopNavBar -->
-    <header
-      class="sticky top-0 z-50 w-full bg-surface/95 backdrop-blur-md shadow-sm border-b border-outline-variant/20 transition-colors duration-300"
+   <header
+      class="sticky top-0 z-50 bg-white/95 backdrop-blur-md w-full border-b border-outline-variant/30 shadow-sm transition-all duration-300"
     >
       <div
-        class="flex justify-between items-center w-full px-margin py-unit max-w-container-max mx-auto"
+        class="flex justify-between items-center w-full px-margin py-4 max-w-container-max mx-auto"
       >
         <div class="flex items-center gap-2">
           <img
             alt="TALIA Logo"
-            class="h-12 w-auto bg-white rounded-full p-1.5"
+            class="h-16 w-16 bg-white rounded-full"
             src="/assets/images/logo.png"
           />
-          <span
-            class="text-title-lg font-headline-lg tracking-tight text-primary transition-colors duration-300 nav-logo-text"
-            >TALIA</span
-          >
         </div>
-        <nav class="hidden md:flex items-center gap-6">
+        <nav class="hidden md:flex items-center gap-8">
           <a
-            class="nav-link text-on-surface-variant hover:text-secondary transition-colors font-label-lg text-label-lg"
+            class="text-industrial-red font-bold pb-1 font-label-lg text-label-lg nav-link "
             href="index.html"
             >Home</a
           >
           <a
-            class="nav-link text-on-surface-variant hover:text-secondary transition-colors font-label-lg text-label-lg active"
+            class="text-on-surface-variant hover:text-industrial-red transition-all duration-300 font-label-lg text-label-lg nav-link active"
             href="services.html"
             >Services</a
           >
           <a
-            class="nav-link text-on-surface-variant hover:text-secondary transition-colors font-label-lg text-label-lg"
+            class="text-on-surface-variant hover:text-industrial-red transition-all duration-300 font-label-lg text-label-lg nav-link"
             href="logistics.html"
             >Logistics</a
           >
           <a
-            class="nav-link text-on-surface-variant hover:text-secondary transition-colors font-label-lg text-label-lg"
+            class="text-on-surface-variant hover:text-industrial-red transition-all duration-300 font-label-lg text-label-lg nav-link"
             href="safety_quality.html"
             >Safety</a
           >
           <a
-            class="nav-link text-on-surface-variant hover:text-secondary transition-colors font-label-lg text-label-lg"
+            class="text-on-surface-variant hover:text-industrial-red transition-all duration-300 font-label-lg text-label-lg nav-link"
             href="about_us.html"
             >About</a
           >
           <a
-            class="nav-link text-on-surface-variant hover:text-secondary transition-colors font-label-lg text-label-lg"
+            class="text-on-surface-variant hover:text-industrial-red transition-all duration-300 font-label-lg text-label-lg nav-link"
             href="contact.html"
             >Contact</a
           >
         </nav>
         <button
-          class="bg-secondary text-white font-label-lg text-label-lg px-5 py-2.5 rounded-lg hover:bg-secondary-container hover:-translate-y-0.5 transition-all shadow-md"
+          class="bg-industrial-red text-white px-6 py-3 rounded-lg font-label-lg text-label-lg hover:bg-secondary-container hover:-translate-y-[2px] transition-all shadow-[0_4px_14px_0_rgba(224,49,49,0.45)] hidden md:block"
         >
           Request a Quote
+        </button>
+        <button class="md:hidden text-petroleum-navy">
+          <span class="material-symbols-outlined text-3xl">menu</span>
         </button>
       </div>
     </header>
@@ -561,65 +568,118 @@
       </section>
     </main>
     <!-- Footer -->
-    <footer
-      class="bg-primary text-on-primary w-full border-t border-white/5 reveal-section"
-    >
+ <footer class="bg-petroleum-navy text-white border-t border-white/5 w-full">
       <div
-        class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin py-section-padding w-full max-w-container-max mx-auto"
+        class="max-w-container-max mx-auto px-margin py-section-padding grid grid-cols-1 md:grid-cols-4 gap-gutter"
       >
-        <div class="col-span-1 md:col-span-2">
-          <div class="flex items-center gap-3 mb-6">
+        <div class="col-span-1 reveal">
+          <div class="flex items-center gap-2 mb-6">
             <img
               alt="TALIA Logo"
-              class="h-12 w-auto bg-white rounded-full p-1.5"
+              class="h-16 w-16 bg-white rounded-full"
               src="/assets/images/logo.png"
             />
-            <span class="text-title-lg font-headline-lg text-white block"
-              >TALIA</span
-            >
+            <h2 class="text-title-lg font-headline-lg text-white">TALIA</h2>
           </div>
-          <p class="font-body-md text-body-md text-surface-variant/60 max-w-md">
-            © 2026 TALIA Oilfield Services. All rights reserved. <br />
-            Engineering Excellence in Energy.
+          <p class="text-white/60 mb-6 font-body-md text-body-md max-w-xs">
+            Engineering excellence and operational reliability for the energy
+            sector since 2012.
+          </p>
+          <p class="text-white/40 font-body-md text-body-md">
+            © 2026 TALIA Oilfield Services.<br />All rights reserved.
           </p>
         </div>
-        <div class="col-span-1">
-          <h4 class="font-label-lg text-label-lg text-tertiary mb-4">Legal</h4>
-          <ul class="flex flex-col gap-2">
+        <div class="reveal">
+          <h3
+            class="font-label-lg text-label-lg text-warm-sand mb-6 uppercase tracking-wider"
+          >
+            Company
+          </h3>
+          <ul class="space-y-3">
             <li>
               <a
-                class="font-body-md text-body-md text-white/70 hover:text-white transition-colors"
+                class="text-white/60 hover:text-industrial-red transition-colors font-body-md"
+                href="#"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-white/60 hover:text-industrial-red transition-colors font-body-md"
+                href="#"
+                >Careers</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-white/60 hover:text-industrial-red transition-colors font-body-md"
+                href="#"
+                >News &amp; Media</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <h3
+            class="font-label-lg text-label-lg text-warm-sand mb-6 uppercase tracking-wider"
+          >
+            Legal
+          </h3>
+          <ul class="space-y-3">
+            <li>
+              <a
+                class="text-white/60 hover:text-industrial-red transition-colors font-body-md"
                 href="#"
                 >Privacy Policy</a
               >
             </li>
             <li>
               <a
-                class="font-body-md text-body-md text-white/70 hover:text-white transition-colors"
+                class="text-white/60 hover:text-industrial-red transition-colors font-body-md"
                 href="#"
                 >Terms of Service</a
               >
             </li>
-          </ul>
-        </div>
-        <div class="col-span-1">
-          <h4 class="font-label-lg text-label-lg text-tertiary mb-4">
-            Compliance
-          </h4>
-          <ul class="flex flex-col gap-2">
             <li>
               <a
-                class="font-body-md text-body-md text-white/70 hover:text-white transition-colors"
+                class="text-white/60 hover:text-industrial-red transition-colors font-body-md"
                 href="#"
                 >QHSE Policy</a
               >
             </li>
             <li>
               <a
-                class="font-body-md text-body-md text-white/70 hover:text-white transition-colors"
+                class="text-white/60 hover:text-industrial-red transition-colors font-body-md"
                 href="#"
                 >Compliance</a
               >
+            </li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <h3
+            class="font-label-lg text-label-lg text-warm-sand mb-6 uppercase tracking-wider"
+          >
+            Contact
+          </h3>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-3 text-white/60 font-body-md">
+              <span class="material-symbols-outlined text-warm-sand text-sm"
+                >location_on</span
+              >
+              Seiyun,Hadhramaut, Yemen
+            </li>
+            <li class="flex items-center gap-3 text-white/60 font-body-md">
+              <span class="material-symbols-outlined text-warm-sand text-sm"
+                >mail</span
+              >
+              info@taliaoilfield.com
+            </li>
+            <li class="flex items-center gap-3 text-white/60 font-body-md">
+              <span class="material-symbols-outlined text-warm-sand text-sm"
+                >phone</span
+              >
+              +967 779 228 989
             </li>
           </ul>
         </div>

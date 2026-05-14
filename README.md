@@ -3,18 +3,10 @@
 تم توليد هذه النسخة لتوحيد الـ head والـ SEO والـ favicon والـ CSS/JS المشترك لكل صفحات الموقع.
 
 ## الملفات المعدلة
-- index.html
-- about_us.html
-- services.html
-- industries.html
-- logistics.html
-- materials_supply.html
-- repacking_handling.html
-- safety_quality.html
-- contact.html
+ 
+ # No-op touch to ensure workspace index updated
+ 
 
-## الملفات المشتركة الجديدة
-- assets/css/style.css
 - assets/js/main.js
 
 ## ملفات يجب نسخها من مشروعك الأصلي
