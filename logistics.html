@@ -265,7 +265,7 @@
     class="bg-surface text-on-surface font-body-md selection:bg-secondary/20 selection:text-primary"
   >
     <!-- TopNavBar -->
- <header
+    <header
       class="sticky top-0 z-50 bg-white/95 backdrop-blur-md w-full border-b border-outline-variant/30 shadow-sm transition-all duration-300"
     >
       <div
@@ -280,7 +280,7 @@
         </div>
         <nav class="hidden md:flex items-center gap-8">
           <a
-            class="text-industrial-red font-bold pb-1 font-label-lg text-label-lg nav-link "
+            class="text-industrial-red font-bold pb-1 font-label-lg text-label-lg nav-link"
             href="index.html"
             >Home</a
           >
@@ -321,63 +321,375 @@
       </div>
     </header>
     <!-- Hero Section -->
+    <!-- Hero Section -->
     <section
       class="relative pt-32 pb-section-padding px-margin overflow-hidden bg-primary-container blueprint-bg reveal-hidden"
     >
       <div
-        class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter relative z-10"
+        class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter relative z-10 items-center"
       >
-        <div class="lg:col-span-8 flex flex-col justify-center">
+        <div class="lg:col-span-7 flex flex-col justify-center">
           <div class="inline-flex items-center gap-2 mb-6 stagger-item">
             <span class="w-8 h-[2px] bg-tertiary"></span>
             <span
               class="font-label-lg text-label-lg text-tertiary uppercase tracking-widest"
-              >Core Capabilities</span
             >
+              Logistics & Transportation
+            </span>
           </div>
+
           <h1
             class="font-display-hero text-display-hero text-on-primary mb-8 max-w-4xl stagger-item"
           >
-            Internal and External Transportation for Oilfield and Industrial
-            Operations
+            Reliable Internal & External Transport Across Yemen
           </h1>
+
           <p
             class="font-body-lg text-body-lg text-inverse-primary max-w-2xl mb-10 stagger-item leading-relaxed"
           >
-            Precision logistics engineered for the heavy-duty demands of the
-            energy sector. From secure site-to-site transfers to complex
-            material coordination.
+            TALIA provides practical transportation and logistics support for
+            oilfield, industrial, commercial, and project operations across
+            Hadramout and Yemen. From material movement and vehicle support to
+            site-to-site delivery, we help companies move safely, reliably, and
+            on time.
           </p>
+
           <div class="flex flex-wrap gap-4 stagger-item">
-            <button
-              class="bg-secondary text-on-primary font-label-lg text-label-lg px-8 py-4 rounded-lg hover:bg-secondary-container transition-all hover:-translate-y-1 shadow-[0_8px_20px_rgba(224,49,49,0.3)] group flex items-center"
+            <a
+              href="contact.html"
+              class="bg-secondary text-on-primary font-label-lg text-label-lg px-8 py-4 rounded-lg hover:bg-secondary-container transition-all hover:-translate-y-1 shadow-[0_8px_20px_rgba(224,49,49,0.3)] group inline-flex items-center"
             >
               Plan Your Transport Request
               <span
                 class="material-symbols-outlined ml-2 text-[20px] transition-transform duration-300 group-hover:translate-x-1"
-                >arrow_forward</span
               >
-            </button>
-            <button
-              class="bg-transparent border border-outline/50 text-on-primary font-label-lg text-label-lg px-8 py-4 rounded-lg hover:bg-white/5 transition-colors"
+                arrow_forward
+              </span>
+            </a>
+
+            <a
+              href="services.html"
+              class="bg-transparent border border-white/25 text-on-primary font-label-lg text-label-lg px-8 py-4 rounded-lg hover:bg-white/10 transition-colors"
             >
-              View Fleet Specs
-            </button>
+              Explore Services
+            </a>
           </div>
         </div>
-        <div class="lg:col-span-4 hidden lg:block relative">
+
+        <div class="lg:col-span-5 relative h-[520px] mt-10 lg:mt-0">
           <div
-            class="absolute inset-0 bg-primary-container rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-tertiary/20"
+            class="absolute inset-0 bg-primary-container rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.35)] border border-tertiary/20"
           >
             <img
-              alt="Heavy industrial transport truck in an oilfield"
-              class="w-full h-full object-cover opacity-80 mix-blend-luminosity grayscale hover:grayscale-0 transition-all duration-700"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuC85bytdrk6jQjE-T5affcWXpuHsWTsv8430AtUUMcPrK8KClybe8fPQL5nxZZjrqryn2VsE6I2y5cJDznJ3QaZQpZKYCZmEU0QBq7KvEuer07p_FIrSsEuMB3T1rQ1iyvdNiAMizKzr9lxUHVfUWGOmwHnowjIUpyNTvrgyqQ0zLc7eCa7xASMvxta8RN49eRsznXyEIWUpodQ2H9O_rvzs14KaMGwfFClTU4mRCMLrXJJCaUOIt1G7FAnFaL5HWh1I-Zr_z7hirKn"
+              alt="Heavy-duty truck and logistics yard for industrial transport"
+              class="w-full h-full object-cover opacity-90 hover:scale-105 transition-all duration-700"
+              src="/assets/images/services/transport-logistics.jpg"
             />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/10 to-transparent"
+            ></div>
+
+            <div class="absolute bottom-6 left-6 right-6">
+              <div
+                class="bg-white/95 backdrop-blur rounded-xl p-5 border-l-4 border-tertiary shadow-xl"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center"
+                  >
+                    <span class="material-symbols-outlined text-primary">
+                      local_shipping
+                    </span>
+                  </div>
+                  <div>
+                    <p class="font-title-lg text-title-lg text-primary">
+                      Field-Ready Logistics
+                    </p>
+                    <p
+                      class="font-body-md text-body-md text-on-surface-variant"
+                    >
+                      Transport, coordination, and site support.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
       <div class="absolute bottom-0 left-0 w-full h-px bg-tertiary/10"></div>
+    </section>
+
+    <!-- Capabilities Bento Grid -->
+    <section
+      class="py-section-padding px-margin bg-surface-container-low reveal-hidden"
+    >
+      <div class="max-w-container-max mx-auto">
+        <div class="mb-16">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="w-12 h-[2px] bg-secondary"></span>
+            <h2 class="font-headline-lg text-headline-lg text-primary">
+              Transport Capabilities
+            </h2>
+          </div>
+
+          <p
+            class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl ml-14"
+          >
+            Practical logistics solutions designed for companies operating in
+            demanding field, industrial, warehouse, and project environments.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+          <!-- Card 1 -->
+          <div
+            class="stagger-item bg-surface-container-lowest border border-outline-variant/30 p-8 rounded-xl transition-all group duration-500 card-hover"
+          >
+            <div
+              class="w-14 h-14 rounded-lg bg-secondary/5 flex items-center justify-center mb-6 text-secondary border border-secondary/10 group-hover:bg-secondary group-hover:text-on-primary transition-all duration-300"
+            >
+              <span class="material-symbols-outlined text-[32px]">
+                local_shipping
+              </span>
+            </div>
+
+            <h3 class="font-title-lg text-title-lg text-primary mb-3">
+              Internal Transportation
+            </h3>
+
+            <p
+              class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+            >
+              Daily and scheduled transport between warehouses, yards, company
+              sites, camps, offices, and operational locations.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="stagger-item bg-surface-container-lowest border border-outline-variant/30 p-8 rounded-xl transition-all group duration-500 card-hover"
+          >
+            <div
+              class="w-14 h-14 rounded-lg bg-tertiary/10 flex items-center justify-center mb-6 text-tertiary border border-tertiary/20 group-hover:bg-tertiary group-hover:text-primary-container transition-all duration-300"
+            >
+              <span class="material-symbols-outlined text-[32px]"> route </span>
+            </div>
+
+            <h3 class="font-title-lg text-title-lg text-primary mb-3">
+              External Transportation
+            </h3>
+
+            <p
+              class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+            >
+              Long-distance movement of materials, equipment, and operational
+              cargo across Hadramout and other regions of Yemen.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="stagger-item bg-surface-container-lowest border border-outline-variant/30 p-8 rounded-xl transition-all group duration-500 card-hover"
+          >
+            <div
+              class="w-14 h-14 rounded-lg bg-primary-container/5 flex items-center justify-center mb-6 text-primary-container border border-primary-container/10 group-hover:bg-primary-container group-hover:text-on-primary transition-all duration-300"
+            >
+              <span class="material-symbols-outlined text-[32px]">
+                inventory_2
+              </span>
+            </div>
+
+            <h3 class="font-title-lg text-title-lg text-primary mb-3">
+              Material Movement
+            </h3>
+
+            <p
+              class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+            >
+              Transport support for oilfield materials, industrial chemicals,
+              packaging items, spare parts, and bulk supplies.
+            </p>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="stagger-item bg-surface-container-lowest border border-outline-variant/30 p-8 rounded-xl transition-all group duration-500 card-hover"
+          >
+            <div
+              class="w-14 h-14 rounded-lg bg-secondary/5 flex items-center justify-center mb-6 text-secondary border border-secondary/10 group-hover:bg-secondary group-hover:text-on-primary transition-all duration-300"
+            >
+              <span class="material-symbols-outlined text-[32px]">
+                directions_car
+              </span>
+            </div>
+
+            <h3 class="font-title-lg text-title-lg text-primary mb-3">
+              Vehicle Support
+            </h3>
+
+            <p
+              class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+            >
+              Support with pickup vehicles, service cars, and transport vehicles
+              for companies, field teams, and project requirements.
+            </p>
+          </div>
+
+          <!-- Card 5 -->
+          <div
+            class="stagger-item bg-surface-container-lowest border border-outline-variant/30 p-8 rounded-xl transition-all group duration-500 card-hover"
+          >
+            <div
+              class="w-14 h-14 rounded-lg bg-tertiary/10 flex items-center justify-center mb-6 text-tertiary border border-tertiary/20 group-hover:bg-tertiary group-hover:text-primary-container transition-all duration-300"
+            >
+              <span class="material-symbols-outlined text-[32px]">
+                warehouse
+              </span>
+            </div>
+
+            <h3 class="font-title-lg text-title-lg text-primary mb-3">
+              Warehouse-to-Site Delivery
+            </h3>
+
+            <p
+              class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+            >
+              Coordinated delivery from storage facilities and suppliers to
+              company sites, warehouses, camps, and operating locations.
+            </p>
+          </div>
+
+          <!-- Card 6 -->
+          <div
+            class="stagger-item bg-surface-container-lowest border border-outline-variant/30 p-8 rounded-xl transition-all group duration-500 card-hover"
+          >
+            <div
+              class="w-14 h-14 rounded-lg bg-primary-container/5 flex items-center justify-center mb-6 text-primary-container border border-primary-container/10 group-hover:bg-primary-container group-hover:text-on-primary transition-all duration-300"
+            >
+              <span class="material-symbols-outlined text-[32px]">
+                support_agent
+              </span>
+            </div>
+
+            <h3 class="font-title-lg text-title-lg text-primary mb-3">
+              Project Logistics Coordination
+            </h3>
+
+            <p
+              class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+            >
+              Practical coordination for transport schedules, loading plans,
+              site access, delivery timing, and operational requirements.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Logistics Process -->
+    <section class="py-section-padding px-margin bg-white reveal-hidden">
+      <div class="max-w-container-max mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+          <div class="lg:col-span-5">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="w-12 h-[2px] bg-tertiary"></span>
+              <span
+                class="font-label-lg text-label-lg text-tertiary uppercase tracking-widest"
+              >
+                How We Work
+              </span>
+            </div>
+
+            <h2 class="font-headline-lg text-headline-lg text-primary mb-6">
+              Organized Transport from Request to Delivery
+            </h2>
+
+            <p
+              class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-8"
+            >
+              We handle transport requests with clear coordination, suitable
+              vehicle selection, safe loading, route planning, and delivery
+              follow-up to keep operations moving without unnecessary delays.
+            </p>
+
+            <a
+              href="contact.html"
+              class="inline-flex items-center gap-2 bg-secondary text-white px-8 py-4 rounded-lg font-label-lg text-label-lg hover:bg-secondary-container hover:-translate-y-1 transition-all shadow-[0_8px_20px_rgba(224,49,49,0.25)]"
+            >
+              Request Logistics Support
+              <span class="material-symbols-outlined text-[20px]"
+                >arrow_forward</span
+              >
+            </a>
+          </div>
+
+          <div class="lg:col-span-7">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div
+                class="p-7 rounded-xl border border-outline-variant/30 bg-surface-container-low"
+              >
+                <span class="block text-5xl font-black text-tertiary/30 mb-3"
+                  >01</span
+                >
+                <h3 class="font-title-lg text-title-lg text-primary mb-2">
+                  Request Review
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  We review cargo type, destination, timing, vehicle needs, and
+                  site requirements.
+                </p>
+              </div>
+
+              <div
+                class="p-7 rounded-xl border border-outline-variant/30 bg-surface-container-low"
+              >
+                <span class="block text-5xl font-black text-tertiary/30 mb-3"
+                  >02</span
+                >
+                <h3 class="font-title-lg text-title-lg text-primary mb-2">
+                  Vehicle Assignment
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  The suitable vehicle and support resources are selected based
+                  on material and route.
+                </p>
+              </div>
+
+              <div
+                class="p-7 rounded-xl border border-outline-variant/30 bg-surface-container-low"
+              >
+                <span class="block text-5xl font-black text-tertiary/30 mb-3"
+                  >03</span
+                >
+                <h3 class="font-title-lg text-title-lg text-primary mb-2">
+                  Loading & Dispatch
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Materials are arranged, loaded, checked, and dispatched
+                  according to the agreed plan.
+                </p>
+              </div>
+
+              <div
+                class="p-7 rounded-xl border border-outline-variant/30 bg-surface-container-low"
+              >
+                <span class="block text-5xl font-black text-tertiary/30 mb-3"
+                  >04</span
+                >
+                <h3 class="font-title-lg text-title-lg text-primary mb-2">
+                  Delivery Follow-Up
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  We coordinate delivery confirmation and support any required
+                  unloading or site handover.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <!-- Capabilities Bento Grid -->
     <section
@@ -476,116 +788,240 @@
       <div
         class="max-w-container-max mx-auto px-margin py-section-padding grid grid-cols-1 md:grid-cols-4 gap-gutter"
       >
+        <!-- Brand -->
         <div class="col-span-1 reveal">
-          <div class="flex items-center gap-2 mb-6">
+          <div class="flex items-center gap-3 mb-6">
             <img
               alt="TALIA Logo"
-              class="h-16 w-16 bg-white rounded-full"
+              class="h-16 w-16 bg-white rounded-full p-1"
               src="/assets/images/logo.png"
             />
-            <h2 class="text-title-lg font-headline-lg text-white">TALIA</h2>
+
+            <div>
+              <h2
+                class="text-title-lg font-headline-lg text-white leading-tight"
+              >
+                TALIA
+              </h2>
+              <p class="text-white/45 text-sm">General & Oilfield Services</p>
+            </div>
           </div>
-          <p class="text-white/60 mb-6 font-body-md text-body-md max-w-xs">
-            Engineering excellence and operational reliability for the energy
-            sector since 2012.
+
+          <p
+            class="text-white/60 mb-6 font-body-md text-body-md max-w-xs leading-relaxed"
+          >
+            Reliable oilfield, logistics, transportation, material handling,
+            vehicle rental, workforce, repacking, and general support services
+            for companies operating across Hadramout and Yemen.
           </p>
+
           <p class="text-white/40 font-body-md text-body-md">
-            © 2026 TALIA Oilfield Services.<br />All rights reserved.
+            © 2026 TALIA General & Oilfield Services.<br />
+            All rights reserved.
           </p>
         </div>
+
+        <!-- Company -->
         <div class="reveal">
           <h3
             class="font-label-lg text-label-lg text-warm-sand mb-6 uppercase tracking-wider"
           >
             Company
           </h3>
+
           <ul class="space-y-3">
             <li>
               <a
                 class="text-white/60 hover:text-industrial-red transition-colors font-body-md"
-                href="#"
-                >About Us</a
+                href="index.html"
               >
+                Home
+              </a>
             </li>
+
             <li>
               <a
                 class="text-white/60 hover:text-industrial-red transition-colors font-body-md"
-                href="#"
-                >Careers</a
+                href="about_us.html"
               >
+                About Us
+              </a>
             </li>
+
             <li>
               <a
                 class="text-white/60 hover:text-industrial-red transition-colors font-body-md"
-                href="#"
-                >News &amp; Media</a
+                href="services.html"
               >
+                Services
+              </a>
+            </li>
+
+            <li>
+              <a
+                class="text-white/60 hover:text-industrial-red transition-colors font-body-md"
+                href="contact.html"
+              >
+                Contact
+              </a>
             </li>
           </ul>
         </div>
+
+        <!-- Services -->
         <div class="reveal">
           <h3
             class="font-label-lg text-label-lg text-warm-sand mb-6 uppercase tracking-wider"
           >
-            Legal
+            Services
           </h3>
+
           <ul class="space-y-3">
             <li>
               <a
                 class="text-white/60 hover:text-industrial-red transition-colors font-body-md"
-                href="#"
-                >Privacy Policy</a
+                href="logistics.html"
               >
+                Transportation & Logistics
+              </a>
             </li>
+
             <li>
               <a
                 class="text-white/60 hover:text-industrial-red transition-colors font-body-md"
-                href="#"
-                >Terms of Service</a
+                href="materials_supply.html"
               >
+                Material Supply
+              </a>
             </li>
+
             <li>
               <a
                 class="text-white/60 hover:text-industrial-red transition-colors font-body-md"
-                href="#"
-                >QHSE Policy</a
+                href="services.html"
               >
+                Vehicle Rental
+              </a>
             </li>
+
             <li>
               <a
                 class="text-white/60 hover:text-industrial-red transition-colors font-body-md"
-                href="#"
-                >Compliance</a
+                href="services.html"
               >
+                Workforce Supply
+              </a>
+            </li>
+
+            <li>
+              <a
+                class="text-white/60 hover:text-industrial-red transition-colors font-body-md"
+                href="repacking_handling.html"
+              >
+                Repacking Services
+              </a>
+            </li>
+
+            <li>
+              <a
+                class="text-white/60 hover:text-industrial-red transition-colors font-body-md"
+                href="safety_quality.html"
+              >
+                Safety & Quality
+              </a>
             </li>
           </ul>
         </div>
+
+        <!-- Contact -->
         <div class="reveal">
           <h3
             class="font-label-lg text-label-lg text-warm-sand mb-6 uppercase tracking-wider"
           >
             Contact
           </h3>
-          <ul class="space-y-3">
-            <li class="flex items-center gap-3 text-white/60 font-body-md">
-              <span class="material-symbols-outlined text-warm-sand text-sm"
-                >location_on</span
+
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3 text-white/60 font-body-md">
+              <span
+                class="material-symbols-outlined text-warm-sand text-[20px] mt-0.5"
               >
-              Seiyun,Hadhramaut, Yemen
+                location_on
+              </span>
+              <span> Seiyun, Hadramout, Yemen </span>
             </li>
-            <li class="flex items-center gap-3 text-white/60 font-body-md">
-              <span class="material-symbols-outlined text-warm-sand text-sm"
-                >mail</span
+
+            <li class="flex items-start gap-3 text-white/60 font-body-md">
+              <span
+                class="material-symbols-outlined text-warm-sand text-[20px] mt-0.5"
               >
-              info@taliaoilfield.com
+                mail
+              </span>
+              <a
+                href="mailto:info@taliaserv.com"
+                class="hover:text-industrial-red transition-colors"
+              >
+                info@taliaserv.com
+              </a>
             </li>
-            <li class="flex items-center gap-3 text-white/60 font-body-md">
-              <span class="material-symbols-outlined text-warm-sand text-sm"
-                >phone</span
+
+            <li class="flex items-start gap-3 text-white/60 font-body-md">
+              <span
+                class="material-symbols-outlined text-warm-sand text-[20px] mt-0.5"
               >
-              +967 779 228 989
+                phone
+              </span>
+              <a
+                href="tel:+967779522898"
+                class="hover:text-industrial-red transition-colors"
+              >
+                +967 779 522 898
+              </a>
+            </li>
+
+            <li class="pt-2">
+              <a
+                href="https://wa.me/967779522898"
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center gap-2 bg-industrial-red text-white px-5 py-3 rounded-lg font-label-lg text-label-lg hover:bg-secondary-container hover:-translate-y-[2px] transition-all shadow-[0_8px_20px_rgba(224,49,49,0.25)]"
+              >
+                Contact on WhatsApp
+                <span class="material-symbols-outlined text-[18px]">
+                  arrow_forward
+                </span>
+              </a>
             </li>
           </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="border-t border-white/10">
+        <div
+          class="max-w-container-max mx-auto px-margin py-5 flex flex-col md:flex-row items-center justify-between gap-3"
+        >
+          <p class="text-white/40 text-sm">
+            Built for reliable field, logistics, and oilfield support in Yemen.
+          </p>
+
+          <div class="flex items-center gap-4 text-sm">
+            <a
+              href="services.html"
+              class="text-white/45 hover:text-warm-sand transition-colors"
+            >
+              Services
+            </a>
+
+            <span class="text-white/20">|</span>
+
+            <a
+              href="contact.html"
+              class="text-white/45 hover:text-warm-sand transition-colors"
+            >
+              Request a Quote
+            </a>
+          </div>
         </div>
       </div>
     </footer>
