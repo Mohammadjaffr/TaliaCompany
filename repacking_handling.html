@@ -271,7 +271,7 @@
     class="bg-background text-on-background font-body-md min-h-screen flex flex-col antialiased"
   >
     <!-- TopNavBar -->
-   <header
+    <header
       class="sticky top-0 z-50 bg-white/95 backdrop-blur-md w-full border-b border-outline-variant/30 shadow-sm transition-all duration-300"
     >
       <div
@@ -321,329 +321,374 @@
         >
           Request a Quote
         </button>
-        <button class="md:hidden text-petroleum-navy">
+        <button id="open-menu" class="md:hidden text-white">
           <span class="material-symbols-outlined text-3xl">menu</span>
         </button>
       </div>
     </header>
-  <main class="flex-grow">
-  <!-- Hero Section -->
-  <section
-    class="relative pt-32 pb-section-padding px-margin overflow-hidden bg-white border-b border-outline-variant/20 tech-grid reveal-up"
-  >
     <div
-      class="max-w-container-max mx-auto relative z-10 grid md:grid-cols-2 gap-gutter items-center"
+      id="mobile-menu"
+      class="fixed inset-0 bg-primary/95 backdrop-blur-lg z-[100] transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col md:hidden"
     >
-      <div class="max-w-2xl">
-        <div
-          class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-tertiary/30 bg-tertiary/10 mb-6 hero-stagger"
-          style="opacity: 0; transform: translateY(20px)"
-        >
-          <span
-            class="material-symbols-outlined text-tertiary text-sm"
-            style="font-variation-settings: 'FILL' 1"
-          >
-            verified
-          </span>
-          <span
-            class="font-label-lg text-label-lg text-tertiary uppercase tracking-widest font-bold"
-          >
-            Repacking & Handling
-          </span>
-        </div>
-
-        <h1
-          class="font-display-hero text-display-hero text-primary mb-6 hero-stagger leading-tight"
-          style="opacity: 0; transform: translateY(20px)"
-        >
-          Professional Repacking,
-          <span class="text-tertiary font-light">Re-Bagging</span>
-          & Material Handling
-        </h1>
-
-        <p
-          class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl hero-stagger leading-relaxed"
-          style="opacity: 0; transform: translateY(20px)"
-        >
-          TALIA supports companies with practical repacking, re-bagging,
-          loading, unloading, jumbo bag handling, labeling, and preparation of
-          industrial and oilfield materials for storage, transport, or delivery.
-        </p>
-
-        <div
-          class="flex flex-wrap gap-4 hero-stagger"
-          style="opacity: 0; transform: translateY(20px)"
-        >
-          <a
-            href="contact.html"
-            class="bg-secondary text-on-primary font-label-lg text-label-lg px-8 py-4 rounded-lg hover:bg-secondary-container hover:-translate-y-0.5 shadow-[0_8px_20px_rgba(224,49,49,0.2)] transition-all duration-300 inline-flex items-center gap-2 hover-lift hover-arrow"
-          >
-            Request Repacking Service
-            <span class="material-symbols-outlined">arrow_forward</span>
-          </a>
-
-          <a
-            href="services.html"
-            class="bg-transparent border border-primary/25 text-primary font-label-lg text-label-lg px-8 py-4 rounded-lg hover:bg-primary hover:text-white transition-all duration-300 inline-flex items-center gap-2"
-          >
-            View All Services
-          </a>
-        </div>
-      </div>
-
       <div
-        class="relative h-[600px] w-full rounded-xl overflow-hidden border border-outline/10 shadow-[0_20px_40px_rgba(11,29,45,0.12)]"
+        class="flex justify-between items-center w-full px-margin py-4 border-b border-white/10"
       >
         <img
-          alt="Industrial repacking and jumbo bag handling operations"
-          class="w-full h-full object-cover"
-          src="/assets/images/services/repacking.jpg"
+          alt="TALIA Logo"
+          class="h-16 w-16 bg-white rounded-full p-1"
+          src="/assets/images/logo.png"
         />
-
+        <button
+          id="close-menu"
+          class="text-white hover:text-secondary transition-colors"
+        >
+          <span class="material-symbols-outlined text-4xl">close</span>
+        </button>
+      </div>
+      <nav class="flex flex-col gap-6 px-margin mt-10 overflow-y-auto pb-10">
+        <a class="font-headline-md text-2xl" href="index.html">Home</a>
+        <a class="font-headline-md text-2xl" href="services.html">Services</a>
+        <a class="font-headline-md text-2xl" href="logistics.html">Logistics</a>
+        <a class="font-headline-md text-2xl" href="safety_quality.html"
+          >Safety</a
+        >
+        <a class="font-headline-md text-2xl" href="about_us.html">About</a>
+        <a class="font-headline-md text-2xl" href="contact.html">Contact</a>
+        <button
+          class="mt-8 bg-secondary text-white px-6 py-4 rounded-xl font-label-lg text-label-lg shadow-lg w-full"
+        >
+          Request a Quote
+        </button>
+      </nav>
+    </div>
+    <main class="flex-grow">
+      <!-- Hero Section -->
+      <section
+        class="relative pt-32 pb-section-padding px-margin overflow-hidden bg-white border-b border-outline-variant/20 tech-grid reveal-up"
+      >
         <div
-          class="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent"
-        ></div>
-
-        <div class="absolute bottom-8 left-8 right-8">
-          <div
-            class="bg-white/95 backdrop-blur border-l-4 border-tertiary p-6 rounded-lg inline-block hover-lift shadow-xl"
-          >
-            <div class="flex items-center gap-4">
-              <div
-                class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center"
+          class="max-w-container-max mx-auto relative z-10 grid md:grid-cols-2 gap-gutter items-center"
+        >
+          <div class="max-w-2xl">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-tertiary/30 bg-tertiary/10 mb-6 hero-stagger"
+              style="opacity: 0; transform: translateY(20px)"
+            >
+              <span
+                class="material-symbols-outlined text-tertiary text-sm"
+                style="font-variation-settings: &quot;FILL&quot; 1"
               >
-                <span
-                  class="material-symbols-outlined text-primary"
-                  style="font-variation-settings: 'FILL' 1"
-                >
-                  package_2
-                </span>
-              </div>
+                verified
+              </span>
+              <span
+                class="font-label-lg text-label-lg text-tertiary uppercase tracking-widest font-bold"
+              >
+                Repacking & Handling
+              </span>
+            </div>
 
-              <div>
-                <div class="font-title-lg text-title-lg text-primary">
-                  Safe Material Preparation
-                </div>
-                <div class="font-body-md text-body-md text-on-surface-variant">
-                  Repacking, labeling, handling, and loading support.
+            <h1
+              class="font-display-hero text-display-hero text-primary mb-6 hero-stagger leading-tight"
+              style="opacity: 0; transform: translateY(20px)"
+            >
+              Professional Repacking,
+              <span class="text-tertiary font-light">Re-Bagging</span>
+              & Material Handling
+            </h1>
+
+            <p
+              class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl hero-stagger leading-relaxed"
+              style="opacity: 0; transform: translateY(20px)"
+            >
+              TALIA supports companies with practical repacking, re-bagging,
+              loading, unloading, jumbo bag handling, labeling, and preparation
+              of industrial and oilfield materials for storage, transport, or
+              delivery.
+            </p>
+
+            <div
+              class="flex flex-wrap gap-4 hero-stagger"
+              style="opacity: 0; transform: translateY(20px)"
+            >
+              <a
+                href="contact.html"
+                class="bg-secondary text-on-primary font-label-lg text-label-lg px-8 py-4 rounded-lg hover:bg-secondary-container hover:-translate-y-0.5 shadow-[0_8px_20px_rgba(224,49,49,0.2)] transition-all duration-300 inline-flex items-center gap-2 hover-lift hover-arrow"
+              >
+                Request Repacking Service
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </a>
+
+              <a
+                href="services.html"
+                class="bg-transparent border border-primary/25 text-primary font-label-lg text-label-lg px-8 py-4 rounded-lg hover:bg-primary hover:text-white transition-all duration-300 inline-flex items-center gap-2"
+              >
+                View All Services
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="relative h-[600px] w-full rounded-xl overflow-hidden border border-outline/10 shadow-[0_20px_40px_rgba(11,29,45,0.12)]"
+          >
+            <img
+              alt="Industrial repacking and jumbo bag handling operations"
+              class="w-full h-full object-cover"
+              src="/assets/images/services/repacking.jpg"
+            />
+
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent"
+            ></div>
+
+            <div class="absolute bottom-8 left-8 right-8">
+              <div
+                class="bg-white/95 backdrop-blur border-l-4 border-tertiary p-6 rounded-lg inline-block hover-lift shadow-xl"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center"
+                  >
+                    <span
+                      class="material-symbols-outlined text-primary"
+                      style="font-variation-settings: &quot;FILL&quot; 1"
+                    >
+                      package_2
+                    </span>
+                  </div>
+
+                  <div>
+                    <div class="font-title-lg text-title-lg text-primary">
+                      Safe Material Preparation
+                    </div>
+                    <div
+                      class="font-body-md text-body-md text-on-surface-variant"
+                    >
+                      Repacking, labeling, handling, and loading support.
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- Service Scope -->
-  <section
-    class="py-section-padding px-margin bg-surface-bright reveal-up"
-    id="process-section"
-  >
-    <div class="max-w-container-max mx-auto">
-      <div class="mb-20">
-        <div class="flex items-center gap-3 mb-6">
-          <div class="h-px w-12 bg-tertiary"></div>
-          <span class="text-tertiary font-label-lg tracking-widest uppercase">
-            Service Scope
-          </span>
-        </div>
-
-        <h2 class="font-headline-md text-headline-md text-primary mb-8">
-          What We Handle
-        </h2>
-
-        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed mb-8">
-          We provide hands-on support for bulk materials, packaged goods,
-          industrial supplies, oilfield materials, and warehouse items that need
-          repacking, re-bagging, organizing, loading, or preparation before
-          transport or storage.
-        </p>
-
-        <div class="flex flex-wrap gap-3" id="material-tags">
-          <span
-            class="material-tag px-4 py-2 bg-white border border-outline-variant/30 rounded-full text-label-lg font-label-lg text-primary shadow-sm opacity-0"
-          >
-            Jumbo Bags
-          </span>
-
-          <span
-            class="material-tag px-4 py-2 bg-white border border-outline-variant/30 rounded-full text-label-lg font-label-lg text-primary shadow-sm opacity-0"
-          >
-            Industrial Sacks
-          </span>
-
-          <span
-            class="material-tag px-4 py-2 bg-white border border-outline-variant/30 rounded-full text-label-lg font-label-lg text-primary shadow-sm opacity-0"
-          >
-            Drums & Barrels
-          </span>
-
-          <span
-            class="material-tag px-4 py-2 bg-white border border-outline-variant/30 rounded-full text-label-lg font-label-lg text-primary shadow-sm opacity-0"
-          >
-            Palletized Materials
-          </span>
-
-          <span
-            class="material-tag px-4 py-2 bg-white border border-outline-variant/30 rounded-full text-label-lg font-label-lg text-primary shadow-sm opacity-0"
-          >
-            Bulk Materials
-          </span>
-
-          <span
-            class="material-tag px-4 py-2 bg-white border border-outline-variant/30 rounded-full text-label-lg font-label-lg text-primary shadow-sm opacity-0"
-          >
-            Warehouse Items
-          </span>
-        </div>
-      </div>
-
-      <h2 class="font-headline-md text-headline-md text-primary mb-12">
-        Repacking & Handling Workflow
-      </h2>
-
-      <div class="grid md:grid-cols-3 gap-8" id="timeline-grid">
-        <div
-          class="timeline-step opacity-0 p-8 rounded-xl border border-outline-variant/30 bg-white hover-lift border-t-4 border-t-transparent hover:border-t-tertiary transition-all duration-300"
-        >
-          <div class="text-display-hero text-tertiary/10 font-black mb-2">
-            01
-          </div>
-          <h4 class="font-title-lg text-title-lg text-primary mb-3">
-            Material Review
-          </h4>
-          <p class="text-body-md text-on-surface-variant">
-            We review material type, packaging condition, quantity, handling
-            needs, and client requirements before starting the work.
-          </p>
-        </div>
-
-        <div
-          class="timeline-step opacity-0 p-8 rounded-xl border border-outline-variant/30 bg-white hover-lift border-t-4 border-t-transparent hover:border-t-tertiary transition-all duration-300"
-        >
-          <div class="text-display-hero text-tertiary/10 font-black mb-2">
-            02
-          </div>
-          <h4 class="font-title-lg text-title-lg text-primary mb-3">
-            Work Area Preparation
-          </h4>
-          <p class="text-body-md text-on-surface-variant">
-            The work area is arranged for safe movement, stacking, bagging,
-            labeling, loading, and material flow.
-          </p>
-        </div>
-
-        <div
-          class="timeline-step opacity-0 p-8 rounded-xl border border-outline-variant/30 bg-white hover-lift border-t-4 border-t-transparent hover:border-t-tertiary transition-all duration-300"
-        >
-          <div class="text-display-hero text-tertiary/10 font-black mb-2">
-            03
-          </div>
-          <h4 class="font-title-lg text-title-lg text-primary mb-3">
-            Repacking & Re-Bagging
-          </h4>
-          <p class="text-body-md text-on-surface-variant">
-            Materials are repacked or re-bagged into suitable sacks, jumbo bags,
-            drums, or packaging based on the requested handling method.
-          </p>
-        </div>
-
-        <div
-          class="timeline-step opacity-0 p-8 rounded-xl border border-outline-variant/30 bg-white hover-lift border-t-4 border-t-transparent hover:border-t-tertiary transition-all duration-300"
-        >
-          <div class="text-display-hero text-tertiary/10 font-black mb-2">
-            04
-          </div>
-          <h4 class="font-title-lg text-title-lg text-primary mb-3">
-            Labeling & Arrangement
-          </h4>
-          <p class="text-body-md text-on-surface-variant">
-            Items are labeled, grouped, arranged, and prepared for warehouse
-            storage, loading, or direct delivery.
-          </p>
-        </div>
-
-        <div
-          class="timeline-step opacity-0 p-8 rounded-xl border border-outline-variant/30 bg-white hover-lift border-t-4 border-t-transparent hover:border-t-tertiary transition-all duration-300"
-        >
-          <div class="text-display-hero text-tertiary/10 font-black mb-2">
-            05
-          </div>
-          <h4 class="font-title-lg text-title-lg text-primary mb-3">
-            Loading Support
-          </h4>
-          <p class="text-body-md text-on-surface-variant">
-            Our team supports loading, unloading, stacking, and movement of
-            materials using suitable manpower and equipment coordination.
-          </p>
-        </div>
-
-        <div
-          class="timeline-step opacity-0 p-8 rounded-xl border border-outline-variant/30 bg-white hover-lift border-t-4 border-t-transparent hover:border-t-tertiary transition-all duration-300"
-        >
-          <div class="text-display-hero text-tertiary/10 font-black mb-2">
-            06
-          </div>
-          <h4 class="font-title-lg text-title-lg text-primary mb-3">
-            Ready for Storage or Transport
-          </h4>
-          <p class="text-body-md text-on-surface-variant">
-            Materials are prepared for the next step, whether storage,
-            warehouse handover, site delivery, or transportation.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Safety Banner -->
-  <section
-    class="bg-primary text-on-primary border-y border-outline/20 reveal-up overflow-hidden relative"
-  >
-    <div
-      class="absolute top-0 right-0 w-64 h-64 bg-tertiary/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"
-    ></div>
-
-    <div
-      class="max-w-container-max mx-auto px-margin py-10 flex flex-col md:flex-row items-center justify-between gap-8 relative z-10"
-    >
-      <div class="flex items-center gap-6">
-        <div
-          class="w-16 h-16 rounded-full bg-secondary/15 flex items-center justify-center flex-shrink-0 border border-secondary/30 shadow-[0_0_20px_rgba(224,49,49,0.2)]"
-        >
-          <span
-            class="material-symbols-outlined text-secondary text-3xl"
-            style="font-variation-settings: 'FILL' 1"
-          >
-            health_and_safety
-          </span>
-        </div>
-
-        <div class="max-w-2xl">
-          <h3 class="font-title-lg text-title-lg text-white mb-2">
-            Safe Handling and Organized Execution
-          </h3>
-
-          <p class="font-body-md text-body-md text-on-primary-container leading-relaxed">
-            Repacking and handling activities are planned with attention to
-            material condition, worker safety, proper lifting, clean arrangement,
-            and client site requirements.
-          </p>
-        </div>
-      </div>
-
-      <a
-        href="safety_quality.html"
-        class="whitespace-nowrap border-2 border-tertiary text-tertiary font-label-lg text-label-lg px-8 py-3 rounded-lg hover:bg-tertiary hover:text-primary transition-all duration-300 font-bold uppercase tracking-widest"
+      <!-- Service Scope -->
+      <section
+        class="py-section-padding px-margin bg-surface-bright reveal-up"
+        id="process-section"
       >
-        View Safety Approach
-      </a>
-    </div>
-  </section>
-</main>
+        <div class="max-w-container-max mx-auto">
+          <div class="mb-20">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="h-px w-12 bg-tertiary"></div>
+              <span
+                class="text-tertiary font-label-lg tracking-widest uppercase"
+              >
+                Service Scope
+              </span>
+            </div>
+
+            <h2 class="font-headline-md text-headline-md text-primary mb-8">
+              What We Handle
+            </h2>
+
+            <p
+              class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed mb-8"
+            >
+              We provide hands-on support for bulk materials, packaged goods,
+              industrial supplies, oilfield materials, and warehouse items that
+              need repacking, re-bagging, organizing, loading, or preparation
+              before transport or storage.
+            </p>
+
+            <div class="flex flex-wrap gap-3" id="material-tags">
+              <span
+                class="material-tag px-4 py-2 bg-white border border-outline-variant/30 rounded-full text-label-lg font-label-lg text-primary shadow-sm opacity-0"
+              >
+                Jumbo Bags
+              </span>
+
+              <span
+                class="material-tag px-4 py-2 bg-white border border-outline-variant/30 rounded-full text-label-lg font-label-lg text-primary shadow-sm opacity-0"
+              >
+                Industrial Sacks
+              </span>
+
+              <span
+                class="material-tag px-4 py-2 bg-white border border-outline-variant/30 rounded-full text-label-lg font-label-lg text-primary shadow-sm opacity-0"
+              >
+                Drums & Barrels
+              </span>
+
+              <span
+                class="material-tag px-4 py-2 bg-white border border-outline-variant/30 rounded-full text-label-lg font-label-lg text-primary shadow-sm opacity-0"
+              >
+                Palletized Materials
+              </span>
+
+              <span
+                class="material-tag px-4 py-2 bg-white border border-outline-variant/30 rounded-full text-label-lg font-label-lg text-primary shadow-sm opacity-0"
+              >
+                Bulk Materials
+              </span>
+
+              <span
+                class="material-tag px-4 py-2 bg-white border border-outline-variant/30 rounded-full text-label-lg font-label-lg text-primary shadow-sm opacity-0"
+              >
+                Warehouse Items
+              </span>
+            </div>
+          </div>
+
+          <h2 class="font-headline-md text-headline-md text-primary mb-12">
+            Repacking & Handling Workflow
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-8" id="timeline-grid">
+            <div
+              class="timeline-step opacity-0 p-8 rounded-xl border border-outline-variant/30 bg-white hover-lift border-t-4 border-t-transparent hover:border-t-tertiary transition-all duration-300"
+            >
+              <div class="text-display-hero text-tertiary/10 font-black mb-2">
+                01
+              </div>
+              <h4 class="font-title-lg text-title-lg text-primary mb-3">
+                Material Review
+              </h4>
+              <p class="text-body-md text-on-surface-variant">
+                We review material type, packaging condition, quantity, handling
+                needs, and client requirements before starting the work.
+              </p>
+            </div>
+
+            <div
+              class="timeline-step opacity-0 p-8 rounded-xl border border-outline-variant/30 bg-white hover-lift border-t-4 border-t-transparent hover:border-t-tertiary transition-all duration-300"
+            >
+              <div class="text-display-hero text-tertiary/10 font-black mb-2">
+                02
+              </div>
+              <h4 class="font-title-lg text-title-lg text-primary mb-3">
+                Work Area Preparation
+              </h4>
+              <p class="text-body-md text-on-surface-variant">
+                The work area is arranged for safe movement, stacking, bagging,
+                labeling, loading, and material flow.
+              </p>
+            </div>
+
+            <div
+              class="timeline-step opacity-0 p-8 rounded-xl border border-outline-variant/30 bg-white hover-lift border-t-4 border-t-transparent hover:border-t-tertiary transition-all duration-300"
+            >
+              <div class="text-display-hero text-tertiary/10 font-black mb-2">
+                03
+              </div>
+              <h4 class="font-title-lg text-title-lg text-primary mb-3">
+                Repacking & Re-Bagging
+              </h4>
+              <p class="text-body-md text-on-surface-variant">
+                Materials are repacked or re-bagged into suitable sacks, jumbo
+                bags, drums, or packaging based on the requested handling
+                method.
+              </p>
+            </div>
+
+            <div
+              class="timeline-step opacity-0 p-8 rounded-xl border border-outline-variant/30 bg-white hover-lift border-t-4 border-t-transparent hover:border-t-tertiary transition-all duration-300"
+            >
+              <div class="text-display-hero text-tertiary/10 font-black mb-2">
+                04
+              </div>
+              <h4 class="font-title-lg text-title-lg text-primary mb-3">
+                Labeling & Arrangement
+              </h4>
+              <p class="text-body-md text-on-surface-variant">
+                Items are labeled, grouped, arranged, and prepared for warehouse
+                storage, loading, or direct delivery.
+              </p>
+            </div>
+
+            <div
+              class="timeline-step opacity-0 p-8 rounded-xl border border-outline-variant/30 bg-white hover-lift border-t-4 border-t-transparent hover:border-t-tertiary transition-all duration-300"
+            >
+              <div class="text-display-hero text-tertiary/10 font-black mb-2">
+                05
+              </div>
+              <h4 class="font-title-lg text-title-lg text-primary mb-3">
+                Loading Support
+              </h4>
+              <p class="text-body-md text-on-surface-variant">
+                Our team supports loading, unloading, stacking, and movement of
+                materials using suitable manpower and equipment coordination.
+              </p>
+            </div>
+
+            <div
+              class="timeline-step opacity-0 p-8 rounded-xl border border-outline-variant/30 bg-white hover-lift border-t-4 border-t-transparent hover:border-t-tertiary transition-all duration-300"
+            >
+              <div class="text-display-hero text-tertiary/10 font-black mb-2">
+                06
+              </div>
+              <h4 class="font-title-lg text-title-lg text-primary mb-3">
+                Ready for Storage or Transport
+              </h4>
+              <p class="text-body-md text-on-surface-variant">
+                Materials are prepared for the next step, whether storage,
+                warehouse handover, site delivery, or transportation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Safety Banner -->
+      <section
+        class="bg-primary text-on-primary border-y border-outline/20 reveal-up overflow-hidden relative"
+      >
+        <div
+          class="absolute top-0 right-0 w-64 h-64 bg-tertiary/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"
+        ></div>
+
+        <div
+          class="max-w-container-max mx-auto px-margin py-10 flex flex-col md:flex-row items-center justify-between gap-8 relative z-10"
+        >
+          <div class="flex items-center gap-6">
+            <div
+              class="w-16 h-16 rounded-full bg-secondary/15 flex items-center justify-center flex-shrink-0 border border-secondary/30 shadow-[0_0_20px_rgba(224,49,49,0.2)]"
+            >
+              <span
+                class="material-symbols-outlined text-secondary text-3xl"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+              >
+                health_and_safety
+              </span>
+            </div>
+
+            <div class="max-w-2xl">
+              <h3 class="font-title-lg text-title-lg text-white mb-2">
+                Safe Handling and Organized Execution
+              </h3>
+
+              <p
+                class="font-body-md text-body-md text-on-primary-container leading-relaxed"
+              >
+                Repacking and handling activities are planned with attention to
+                material condition, worker safety, proper lifting, clean
+                arrangement, and client site requirements.
+              </p>
+            </div>
+          </div>
+
+          <a
+            href="safety_quality.html"
+            class="whitespace-nowrap border-2 border-tertiary text-tertiary font-label-lg text-label-lg px-8 py-3 rounded-lg hover:bg-tertiary hover:text-primary transition-all duration-300 font-bold uppercase tracking-widest"
+          >
+            View Safety Approach
+          </a>
+        </div>
+      </section>
+    </main>
     <!-- Footer -->
-     <footer class="bg-petroleum-navy text-white border-t border-white/5 w-full">
+    <footer class="bg-petroleum-navy text-white border-t border-white/5 w-full">
       <div
         class="max-w-container-max mx-auto px-margin py-section-padding grid grid-cols-1 md:grid-cols-4 gap-gutter"
       >
@@ -956,6 +1001,37 @@
             },
           });
         });
+        // Mobile Menu Logic
+        const mobileMenu = document.getElementById("mobile-menu");
+        const openMenuBtn = document.getElementById("open-menu");
+        const closeMenuBtn = document.getElementById("close-menu");
+
+        if (mobileMenu) {
+          const current =
+            window.location.pathname.split("/").pop() || "index.html";
+          const links = mobileMenu.querySelectorAll("nav a");
+          links.forEach((link) => {
+            const href = (link.getAttribute("href") || "").split("/").pop();
+            if (href === current) {
+              link.className =
+                "font-headline-md text-2xl text-tertiary border-l-4 border-tertiary pl-4";
+            } else {
+              link.className =
+                "font-headline-md text-2xl text-white hover:text-tertiary transition-colors";
+            }
+          });
+        }
+
+        if (openMenuBtn && closeMenuBtn && mobileMenu) {
+          openMenuBtn.addEventListener("click", () => {
+            mobileMenu.classList.remove("translate-x-full");
+            document.body.classList.add("overflow-hidden");
+          });
+          closeMenuBtn.addEventListener("click", () => {
+            mobileMenu.classList.add("translate-x-full");
+            document.body.classList.remove("overflow-hidden");
+          });
+        }
       });
     </script>
   </body>

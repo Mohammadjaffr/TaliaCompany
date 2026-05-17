@@ -2,7 +2,6 @@
 
 <html class="light" lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-3NDQSXC8DM"
@@ -19,7 +18,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      TALIA Oilfield Services | Oilfield Logistics, Materials &amp; Industrial
+      TALIA Oilfield Services | Oilfield Logistics, Materials & Industrial
       Support
     </title>
     <meta
@@ -40,13 +39,12 @@
     />
     <link rel="canonical" href="https://taliaserv.com/" />
 
-    <!-- Open Graph / WhatsApp / Facebook / LinkedIn -->
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="TALIA Oilfield Services" />
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="TALIA Oilfield Services | Oilfield Logistics, Materials &amp; Industrial Support"
+      content="TALIA Oilfield Services | Oilfield Logistics, Materials & Industrial Support"
     />
     <meta
       property="og:description"
@@ -69,11 +67,10 @@
       content="TALIA Oilfield Services - Professional Oilfield Solutions"
     />
 
-    <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="TALIA Oilfield Services | Oilfield Logistics, Materials &amp; Industrial Support"
+      content="TALIA Oilfield Services | Oilfield Logistics, Materials & Industrial Support"
     />
     <meta
       name="twitter:description"
@@ -84,7 +81,6 @@
       content="https://taliaserv.com/assets/images/preview.png"
     />
 
-    <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="/assets/favicons/favicon.ico" />
     <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg" />
     <link
@@ -106,15 +102,14 @@
     />
     <link rel="manifest" href="/assets/favicons/site.webmanifest" />
 
-    <!-- Fonts & Libraries -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Manrope:wght@600;700;800&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -267,7 +262,6 @@
   <body
     class="bg-background text-on-background font-body-md antialiased selection:bg-industrial-red selection:text-white"
   >
-    <!-- TopNavBar -->
     <header
       class="sticky top-0 z-50 bg-white/95 backdrop-blur-md w-full border-b border-outline-variant/30 shadow-sm transition-all duration-300"
     >
@@ -318,12 +312,34 @@
         >
           Request a Quote
         </button>
-        <button class="md:hidden text-petroleum-navy">
+        <button id="open-menu" class="md:hidden text-white">
           <span class="material-symbols-outlined text-3xl">menu</span>
         </button>
       </div>
     </header>
-    <!-- Hero Section -->
+
+    <div id="mobile-menu" class="fixed inset-0 bg-primary/95 backdrop-blur-lg z-[100] transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col md:hidden">
+      <div class="flex justify-between items-center w-full px-margin py-4 border-b border-white/10">
+        <img alt="TALIA Logo" class="h-16 w-16 bg-white rounded-full p-1" src="/assets/images/logo.png" />
+        <button id="close-menu" class="text-white hover:text-secondary transition-colors">
+          <span class="material-symbols-outlined text-4xl">close</span>
+        </button>
+      </div>
+
+      <nav class="flex flex-col gap-6 px-margin mt-10 overflow-y-auto pb-10">
+        <a class="text-tertiary font-headline-md text-2xl border-l-4 border-tertiary pl-4" href="index.html">Home</a>
+        <a class="text-white font-headline-md text-2xl hover:text-tertiary transition-colors" href="services.html">Services</a>
+        <a class="text-white font-headline-md text-2xl hover:text-tertiary transition-colors" href="logistics.html">Logistics</a>
+        <a class="text-white font-headline-md text-2xl hover:text-tertiary transition-colors" href="safety_quality.html">Safety</a>
+        <a class="text-white font-headline-md text-2xl hover:text-tertiary transition-colors" href="about_us.html">About</a>
+        <a class="text-white font-headline-md text-2xl hover:text-tertiary transition-colors" href="contact.html">Contact</a>
+        
+        <button class="mt-8 bg-secondary text-white px-6 py-4 rounded-xl font-label-lg text-label-lg shadow-lg w-full">
+          Request a Quote
+        </button>
+      </nav>
+    </div>
+
     <section
       class="relative w-full min-h-[85vh] flex items-center bg-white overflow-hidden blueprint-overlay pt-20 pb-section-padding"
     >
@@ -361,7 +377,7 @@
           <img
             alt="Industrial logistics yard"
             class="w-full h-full object-cover"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSLpk3NPB9lx_pVvKbQPNmbZ54eGlOaxQgaAkjJVeGGV0Eq85CY07qm7i9OhVmR32nMifm7txonxL5qFpaibb2ir5O12cBStZM0ka_vJNp4QXfy0jfxn63d5gx45cg48aiQHSKfcFR5u-Di7nwEBLdKOpe7e8ZYLZ5dHN-dMYksLBwGUZp8rDB9739cHuK4fwHXIuOjIGZh__8AkrEDw6v_nJCTI46PbHQZpqJAfBbLKltd2lT3lzgmNOMRizNKfQ-Zp-suE3Qhh8i"
+            src="/assets/images/services/home_photo.png"
           />
           <div
             class="absolute inset-0 bg-gradient-to-t from-petroleum-navy/60 to-transparent"
@@ -369,7 +385,6 @@
         </div>
       </div>
     </section>
-    <!-- Stats Section -->
     <section class="bg-petroleum-navy py-20 w-full relative overflow-hidden">
       <div
         class="absolute top-0 right-0 w-64 h-64 bg-warm-sand/5 rounded-full -mr-32 -mt-32"
@@ -419,7 +434,6 @@
         </div>
       </div>
     </section>
-    <!-- About Preview -->
     <section class="py-section-padding bg-surface-bright">
       <div
         class="max-w-container-max mx-auto px-margin grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
@@ -430,7 +444,7 @@
           <img
             alt="Industrial storage yard"
             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6H0is68YByTYO_7rFkWfMMPPHFo1j7zQxduBBMxDbl4--JUe9wsEgebePcnly0_5lNsTOzmoGpQe8SRbGoRwhjJrUFvSvOJgNzJ2V-rAwKcqA65O4u_j6hsDA8aZZ79-NFZVMgyuh0F-mErQ1Lfm27zLkhGRebaVg5rj9-XQoplVsY-ZL95N31GWvSXlFMYSWachf4N3GEDzWq6Yn45RY0QoXMxQ4iOBwaq1eqtaAnAV9XtS7omLFVYoaDjSYfyaDKg5MvT0dknr2"
+            src="/assets/images/services/history_photo.png"
           />
           <div
             class="absolute inset-0 bg-petroleum-navy/10 group-hover:bg-transparent transition-colors duration-500"
@@ -467,7 +481,6 @@
         </div>
       </div>
     </section>
-    <!-- Core Services Grid -->
     <section
       id="services"
       class="py-section-padding bg-white blueprint-overlay border-t border-outline-variant/30"
@@ -502,13 +515,12 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <!-- Transportation -->
           <div
             class="bg-white border-b-4 border-transparent hover:border-industrial-red border-x border-t border-outline-variant/40 p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 group service-card reveal stagger-1"
           >
             <span
               class="material-symbols-outlined text-4xl text-petroleum-navy mb-6 group-hover:text-industrial-red transition-colors block"
-              style="font-variation-settings: &quot;wght&quot; 300"
+              style="font-variation-settings: 'wght' 300"
             >
               local_shipping
             </span>
@@ -526,13 +538,12 @@
             </p>
           </div>
 
-          <!-- Oilfield Material Supply -->
           <div
             class="bg-white border-b-4 border-transparent hover:border-industrial-red border-x border-t border-outline-variant/40 p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 group service-card reveal stagger-2"
           >
             <span
               class="material-symbols-outlined text-4xl text-petroleum-navy mb-6 group-hover:text-industrial-red transition-colors block"
-              style="font-variation-settings: &quot;wght&quot; 300"
+              style="font-variation-settings: 'wght' 300"
             >
               inventory_2
             </span>
@@ -550,13 +561,12 @@
             </p>
           </div>
 
-          <!-- Vehicle Rental -->
           <div
             class="bg-white border-b-4 border-transparent hover:border-industrial-red border-x border-t border-outline-variant/40 p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 group service-card reveal stagger-3"
           >
             <span
               class="material-symbols-outlined text-4xl text-petroleum-navy mb-6 group-hover:text-industrial-red transition-colors block"
-              style="font-variation-settings: &quot;wght&quot; 300"
+              style="font-variation-settings: 'wght' 300"
             >
               directions_car
             </span>
@@ -573,13 +583,12 @@
             </p>
           </div>
 
-          <!-- Workforce Supply -->
           <div
             class="bg-white border-b-4 border-transparent hover:border-industrial-red border-x border-t border-outline-variant/40 p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 group service-card reveal stagger-4"
           >
             <span
               class="material-symbols-outlined text-4xl text-petroleum-navy mb-6 group-hover:text-industrial-red transition-colors block"
-              style="font-variation-settings: &quot;wght&quot; 300"
+              style="font-variation-settings: 'wght' 300"
             >
               groups
             </span>
@@ -597,13 +606,12 @@
             </p>
           </div>
 
-          <!-- Repacking -->
           <div
             class="bg-white border-b-4 border-transparent hover:border-industrial-red border-x border-t border-outline-variant/40 p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 group service-card reveal stagger-1"
           >
             <span
               class="material-symbols-outlined text-4xl text-petroleum-navy mb-6 group-hover:text-industrial-red transition-colors block"
-              style="font-variation-settings: &quot;wght&quot; 300"
+              style="font-variation-settings: 'wght' 300"
             >
               package_2
             </span>
@@ -620,13 +628,12 @@
             </p>
           </div>
 
-          <!-- Industrial Chemicals -->
           <div
             class="bg-white border-b-4 border-transparent hover:border-industrial-red border-x border-t border-outline-variant/40 p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 group service-card reveal stagger-2"
           >
             <span
               class="material-symbols-outlined text-4xl text-petroleum-navy mb-6 group-hover:text-industrial-red transition-colors block"
-              style="font-variation-settings: &quot;wght&quot; 300"
+              style="font-variation-settings: 'wght' 300"
             >
               science
             </span>
@@ -643,13 +650,12 @@
             </p>
           </div>
 
-          <!-- Jumbo Bags -->
           <div
             class="bg-white border-b-4 border-transparent hover:border-industrial-red border-x border-t border-outline-variant/40 p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 group service-card reveal stagger-3"
           >
             <span
               class="material-symbols-outlined text-4xl text-petroleum-navy mb-6 group-hover:text-industrial-red transition-colors block"
-              style="font-variation-settings: &quot;wght&quot; 300"
+              style="font-variation-settings: 'wght' 300"
             >
               deployed_code
             </span>
@@ -666,13 +672,12 @@
             </p>
           </div>
 
-          <!-- General Support -->
           <div
             class="bg-white border-b-4 border-transparent hover:border-industrial-red border-x border-t border-outline-variant/40 p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 group service-card reveal stagger-4"
           >
             <span
               class="material-symbols-outlined text-4xl text-petroleum-navy mb-6 group-hover:text-industrial-red transition-colors block"
-              style="font-variation-settings: &quot;wght&quot; 300"
+              style="font-variation-settings: 'wght' 300"
             >
               support_agent
             </span>
@@ -692,7 +697,6 @@
         </div>
       </div>
     </section>
-    <!-- Footer -->
     <footer class="bg-petroleum-navy text-white border-t border-white/5 w-full">
       <div
         class="max-w-container-max mx-auto px-margin py-section-padding grid grid-cols-1 md:grid-cols-4 gap-gutter"
@@ -739,7 +743,7 @@
               <a
                 class="text-white/60 hover:text-industrial-red transition-colors font-body-md"
                 href="#"
-                >News &amp; Media</a
+                >News & Media</a
               >
             </li>
           </ul>
@@ -836,6 +840,25 @@
             header.classList.remove("scrolled");
           }
         });
+
+        // Mobile Menu Logic (تمت إضافة هذا الجزء هنا)
+        const mobileMenu = document.getElementById('mobile-menu');
+        const openMenuBtn = document.getElementById('open-menu');
+        const closeMenuBtn = document.getElementById('close-menu');
+
+        if (openMenuBtn && closeMenuBtn && mobileMenu) {
+          // فتح القائمة
+          openMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full'); // إزالة إزاحة الإخفاء
+            document.body.classList.add('overflow-hidden'); // منع تمرير الصفحة بالخلفية
+          });
+
+          // إغلاق القائمة
+          closeMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full'); // إعادة إزاحة الإخفاء
+            document.body.classList.remove('overflow-hidden'); // السماح بتمرير الصفحة مجدداً
+          });
+        }
       });
     </script>
   </body>

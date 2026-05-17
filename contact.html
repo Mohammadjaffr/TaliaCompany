@@ -309,11 +309,46 @@
         >
           Request a Quote
         </button>
-        <button class="md:hidden text-petroleum-navy">
+        <button id="open-menu" class="md:hidden text-petroleum-navy">
           <span class="material-symbols-outlined text-3xl">menu</span>
         </button>
       </div>
     </header>
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 bg-primary/95 backdrop-blur-lg z-[100] transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col md:hidden"
+    >
+      <div
+        class="flex justify-between items-center w-full px-margin py-4 border-b border-white/10"
+      >
+        <img
+          alt="TALIA Logo"
+          class="h-16 w-16 bg-white rounded-full p-1"
+          src="/assets/images/logo.png"
+        />
+        <button
+          id="close-menu"
+          class="text-white hover:text-secondary transition-colors"
+        >
+          <span class="material-symbols-outlined text-4xl">close</span>
+        </button>
+      </div>
+      <nav class="flex flex-col gap-6 px-margin mt-10 overflow-y-auto pb-10">
+        <a class="font-headline-md text-2xl" href="index.html">Home</a>
+        <a class="font-headline-md text-2xl" href="services.html">Services</a>
+        <a class="font-headline-md text-2xl" href="logistics.html">Logistics</a>
+        <a class="font-headline-md text-2xl" href="safety_quality.html"
+          >Safety</a
+        >
+        <a class="font-headline-md text-2xl" href="about_us.html">About</a>
+        <a class="font-headline-md text-2xl" href="contact.html">Contact</a>
+        <button
+          class="mt-8 bg-secondary text-white px-6 py-4 rounded-xl font-label-lg text-label-lg shadow-lg w-full"
+        >
+          Request a Quote
+        </button>
+      </nav>
+    </div>
     <main>
       <!-- Hero Section -->
       <section
@@ -380,7 +415,7 @@
             <div
               class="w-full h-64 rounded-xl overflow-hidden relative border border-outline-variant/50 shadow-sm bg-cover bg-center"
               style="
-                background-image: url(&quot;/assets/images/contact/contact-support.jpg&quot;);
+                background-image: url(&quot;/assets/images/services/contact-support.png&quot;);
               "
             >
               <div
@@ -1128,6 +1163,38 @@
             });
           });
         });
+
+        // Mobile Menu Logic
+        const mobileMenu = document.getElementById("mobile-menu");
+        const openMenuBtn = document.getElementById("open-menu");
+        const closeMenuBtn = document.getElementById("close-menu");
+
+        if (mobileMenu) {
+          const current =
+            window.location.pathname.split("/").pop() || "index.html";
+          const links = mobileMenu.querySelectorAll("nav a");
+          links.forEach((link) => {
+            const href = (link.getAttribute("href") || "").split("/").pop();
+            if (href === current) {
+              link.className =
+                "font-headline-md text-2xl text-tertiary border-l-4 border-tertiary pl-4";
+            } else {
+              link.className =
+                "font-headline-md text-2xl text-white hover:text-tertiary transition-colors";
+            }
+          });
+        }
+
+        if (openMenuBtn && closeMenuBtn && mobileMenu) {
+          openMenuBtn.addEventListener("click", () => {
+            mobileMenu.classList.remove("translate-x-full");
+            document.body.classList.add("overflow-hidden");
+          });
+          closeMenuBtn.addEventListener("click", () => {
+            mobileMenu.classList.add("translate-x-full");
+            document.body.classList.remove("overflow-hidden");
+          });
+        }
       });
     </script>
   </body>
