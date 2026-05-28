@@ -265,7 +265,7 @@
     class="bg-surface text-on-surface font-body-md selection:bg-secondary/20 selection:text-primary"
   >
     <!-- TopNavBar -->
-    <header
+     <header
       class="sticky top-0 z-50 bg-white/95 backdrop-blur-md w-full border-b border-outline-variant/30 shadow-sm transition-all duration-300"
     >
       <div
@@ -290,7 +290,7 @@
             >Services</a
           >
           <a
-            class="text-on-surface-variant hover:text-industrial-red transition-all duration-300 font-label-lg text-label-lg nav-link active"
+            class="text-on-surface-variant hover:text-industrial-red transition-all duration-300 font-label-lg text-label-lg nav-link"
             href="logistics.html"
             >Logistics</a
           >
@@ -300,7 +300,7 @@
             >Safety</a
           >
           <a
-            class="text-on-surface-variant hover:text-industrial-red transition-all duration-300 font-label-lg text-label-lg nav-link"
+            class="text-on-surface-variant hover:text-industrial-red transition-all duration-300 font-label-lg text-label-lg nav-link active"
             href="about_us.html"
             >About</a
           >
@@ -315,7 +315,7 @@
         >
           Request a Quote
         </button>
-        <button id="open-menu" class="md:hidden text-white">
+        <button id="open-menu" class="md:hidden text-petroleum-navy">
           <span class="material-symbols-outlined text-3xl">menu</span>
         </button>
       </div>
@@ -1062,48 +1062,55 @@
     </footer>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        // Header scroll effect
-        const header = document.querySelector("header");
-        window.addEventListener("scroll", () => {
-          if (window.scrollY > 50) {
-            header.classList.add("scrolled");
-          } else {
-            header.classList.remove("scrolled");
-          }
-        });
+        // Intersection Observer for Reveal Animations
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        };
 
-        // Scroll Reveal for sections and staggered children
-        const revealObserver = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("reveal-visible");
-                entry.target.classList.remove("reveal-hidden");
-
-                const items = entry.target.querySelectorAll(".stagger-item");
-                items.forEach((item, index) => {
-                  setTimeout(() => {
-                    item.style.transition =
-                      "opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)";
-                    item.style.opacity = "1";
-                    item.style.transform = "translateY(0)";
-                  }, index * 100);
-                });
-              }
-            });
-          },
-          { threshold: 0.15 },
-        );
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
 
         document
-          .querySelectorAll(".reveal-hidden")
-          .forEach((el) => revealObserver.observe(el));
+          .querySelectorAll(".reveal")
+          .forEach((el) => observer.observe(el));
+
+        // Header Scroll Effect
+        const header = document.querySelector("header");
+        const navLinks = header.querySelectorAll("nav a");
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 20) {
+            header.classList.add("header-scrolled");
+            header.classList.remove("bg-white/95");
+            navLinks.forEach((link) => {
+              if (!link.classList.contains("nav-link-active")) {
+                link.classList.add("text-white");
+                link.classList.remove("text-on-surface-variant");
+              }
+            });
+          } else {
+            header.classList.remove("header-scrolled");
+            header.classList.add("bg-white/95");
+            navLinks.forEach((link) => {
+              if (!link.classList.contains("nav-link-active")) {
+                link.classList.remove("text-white");
+                link.classList.add("text-on-surface-variant");
+              }
+            });
+          }
+        });
         // Mobile Menu Logic
         const mobileMenu = document.getElementById("mobile-menu");
         const openMenuBtn = document.getElementById("open-menu");
         const closeMenuBtn = document.getElementById("close-menu");
 
-        // Apply active link styling based on current filename
         if (mobileMenu) {
           const current =
             window.location.pathname.split("/").pop() || "index.html";

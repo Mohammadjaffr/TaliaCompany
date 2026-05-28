@@ -271,7 +271,7 @@
     class="bg-background text-on-background font-body-md min-h-screen flex flex-col antialiased"
   >
     <!-- TopNavBar -->
-    <header
+      <header
       class="sticky top-0 z-50 bg-white/95 backdrop-blur-md w-full border-b border-outline-variant/30 shadow-sm transition-all duration-300"
     >
       <div
@@ -286,7 +286,7 @@
         </div>
         <nav class="hidden md:flex items-center gap-8">
           <a
-            class="text-industrial-red font-bold pb-1 font-label-lg text-label-lg nav-link active"
+            class="text-industrial-red font-bold pb-1 font-label-lg text-label-lg nav-link"
             href="index.html"
             >Home</a
           >
@@ -306,7 +306,7 @@
             >Safety</a
           >
           <a
-            class="text-on-surface-variant hover:text-industrial-red transition-all duration-300 font-label-lg text-label-lg nav-link"
+            class="text-on-surface-variant hover:text-industrial-red transition-all duration-300 font-label-lg text-label-lg nav-link active"
             href="about_us.html"
             >About</a
           >
@@ -321,7 +321,7 @@
         >
           Request a Quote
         </button>
-        <button id="open-menu" class="md:hidden text-white">
+        <button id="open-menu" class="md:hidden text-petroleum-navy">
           <span class="material-symbols-outlined text-3xl">menu</span>
         </button>
       </div>
@@ -929,77 +929,51 @@
         </div>
       </div>
     </footer>
-    <script>
+   <script>
       document.addEventListener("DOMContentLoaded", () => {
-        gsap.registerPlugin(ScrollTrigger);
+        // Intersection Observer for Reveal Animations
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        };
 
-        // Header scroll interaction
-        const header = document.querySelector("nav");
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        document
+          .querySelectorAll(".reveal")
+          .forEach((el) => observer.observe(el));
+
+        // Header Scroll Effect
+        const header = document.querySelector("header");
+        const navLinks = header.querySelectorAll("nav a");
+
         window.addEventListener("scroll", () => {
-          if (window.scrollY > 50) {
-            header.classList.add("scrolled");
+          if (window.scrollY > 20) {
+            header.classList.add("header-scrolled");
+            header.classList.remove("bg-white/95");
+            navLinks.forEach((link) => {
+              if (!link.classList.contains("nav-link-active")) {
+                link.classList.add("text-white");
+                link.classList.remove("text-on-surface-variant");
+              }
+            });
           } else {
-            header.classList.remove("scrolled");
+            header.classList.remove("header-scrolled");
+            header.classList.add("bg-white/95");
+            navLinks.forEach((link) => {
+              if (!link.classList.contains("nav-link-active")) {
+                link.classList.remove("text-white");
+                link.classList.add("text-on-surface-variant");
+              }
+            });
           }
-        });
-
-        // Hero stagger entrance
-        gsap.to(".hero-stagger", {
-          opacity: 1,
-          y: 0,
-          stagger: 0.15,
-          duration: 0.8,
-          ease: "power3.out",
-          delay: 0.2,
-        });
-
-        // Reveal sections on scroll
-        document.querySelectorAll(".reveal-up").forEach((el) => {
-          ScrollTrigger.create({
-            trigger: el,
-            start: "top 85%",
-            onEnter: () => el.classList.add("active"),
-          });
-        });
-
-        // Material tags stagger
-        gsap.to(".material-tag", {
-          scrollTrigger: {
-            trigger: "#material-tags",
-            start: "top 90%",
-          },
-          opacity: 1,
-          y: 0,
-          stagger: 0.1,
-          duration: 0.6,
-          ease: "power2.out",
-        });
-
-        // Timeline steps progressive reveal and scale
-        const steps = document.querySelectorAll(".timeline-step");
-        steps.forEach((step, index) => {
-          const number = step.querySelector(".text-display-hero");
-          gsap.set(number, { scale: 0.5, opacity: 0 });
-
-          gsap.to(step, {
-            scrollTrigger: {
-              trigger: step,
-              start: "top 85%",
-            },
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            ease: "power3.out",
-            onStart: () => {
-              gsap.to(number, {
-                scale: 1,
-                opacity: 1,
-                duration: 0.6,
-                ease: "back.out(1.7)",
-                delay: 0.2,
-              });
-            },
-          });
         });
         // Mobile Menu Logic
         const mobileMenu = document.getElementById("mobile-menu");

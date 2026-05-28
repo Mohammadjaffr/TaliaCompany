@@ -266,7 +266,7 @@
   </head>
   <body class="bg-background text-on-background font-body-md antialiased">
     <!-- TopNavBar -->
-    <header
+     <header
       class="sticky top-0 z-50 bg-white/95 backdrop-blur-md w-full border-b border-outline-variant/30 shadow-sm transition-all duration-300"
     >
       <div
@@ -296,12 +296,12 @@
             >Logistics</a
           >
           <a
-            class="text-on-surface-variant hover:text-industrial-red transition-all duration-300 font-label-lg text-label-lg nav-link active"
+            class="text-on-surface-variant hover:text-industrial-red transition-all duration-300 font-label-lg text-label-lg nav-link"
             href="safety_quality.html"
             >Safety</a
           >
           <a
-            class="text-on-surface-variant hover:text-industrial-red transition-all duration-300 font-label-lg text-label-lg nav-link"
+            class="text-on-surface-variant hover:text-industrial-red transition-all duration-300 font-label-lg text-label-lg nav-link active"
             href="about_us.html"
             >About</a
           >
@@ -316,7 +316,7 @@
         >
           Request a Quote
         </button>
-        <button id="open-menu" class="md:hidden text-white">
+        <button id="open-menu" class="md:hidden text-petroleum-navy">
           <span class="material-symbols-outlined text-3xl">menu</span>
         </button>
       </div>
@@ -1019,115 +1019,51 @@
         </div>
       </div>
     </footer>
-    <script>
+   <script>
       document.addEventListener("DOMContentLoaded", () => {
-        gsap.registerPlugin(ScrollTrigger);
+        // Intersection Observer for Reveal Animations
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        };
 
-        // Header scroll behavior
-        const header = document.querySelector("header");
-        ScrollTrigger.create({
-          start: "top -80",
-          onUpdate: (self) => {
-            if (self.isActive) {
-              header.classList.add("bg-petroleum-navy", "py-2");
-              header.classList.remove("bg-surface/95", "py-4");
-              header.querySelectorAll("nav a").forEach((a) => {
-                if (!a.classList.contains("text-industrial-red")) {
-                  a.classList.remove("text-on-surface-variant");
-                  a.classList.add("text-white/80");
-                }
-              });
-            } else {
-              header.classList.remove("bg-petroleum-navy", "py-2");
-              header.classList.add("bg-surface/95", "py-4");
-              header.querySelectorAll("nav a").forEach((a) => {
-                if (!a.classList.contains("text-industrial-red")) {
-                  a.classList.add("text-on-surface-variant");
-                  a.classList.remove("text-white/80");
-                }
-              });
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+              observer.unobserve(entry.target);
             }
-          },
-        });
-
-        // Hero sequenced animation
-        const heroTl = gsap.timeline();
-        heroTl
-          .from("section:first-of-type span", {
-            y: 20,
-            opacity: 0,
-            duration: 0.7,
-            ease: "power2.out",
-          })
-          .from(
-            "section:first-of-type h1",
-            { y: 30, opacity: 0, duration: 0.7, ease: "power2.out" },
-            "-=0.5",
-          )
-          .from(
-            "section:first-of-type p",
-            { y: 30, opacity: 0, duration: 0.7, ease: "power2.out" },
-            "-=0.5",
-          )
-          .from(
-            "section:first-of-type .relative.h-\[560px\]",
-            { y: 40, opacity: 0, duration: 0.9, ease: "power2.out" },
-            "-=0.5",
-          );
-
-        // Global Section Reveal
-        gsap.utils.toArray(".reveal-on-scroll").forEach((section) => {
-          if (section.closest("main > section:first-of-type")) return;
-          gsap.from(section, {
-            scrollTrigger: {
-              trigger: section,
-              start: "top 85%",
-              toggleActions: "play none none none",
-            },
-            y: 40,
-            opacity: 0,
-            duration: 0.8,
-            ease: "power2.out",
           });
-        });
+        }, observerOptions);
 
-        // Stagger for cards
-        gsap.from(".grid > div", {
-          scrollTrigger: {
-            trigger: ".grid",
-            start: "top 80%",
-          },
-          y: 30,
-          opacity: 0,
-          duration: 0.8,
-          stagger: 0.15,
-          ease: "power3.out",
-        });
+        document
+          .querySelectorAll(".reveal")
+          .forEach((el) => observer.observe(el));
 
-        // Trust Badges stagger
-        gsap.from(".trust-badge", {
-          scrollTrigger: {
-            trigger: ".trust-badge",
-            start: "top 90%",
-          },
-          scale: 0.9,
-          opacity: 0,
-          duration: 0.6,
-          stagger: 0.1,
-          ease: "back.out(1.7)",
-        });
+        // Header Scroll Effect
+        const header = document.querySelector("header");
+        const navLinks = header.querySelectorAll("nav a");
 
-        // List items stagger
-        gsap.from(".check-item", {
-          scrollTrigger: {
-            trigger: ".check-item",
-            start: "top 85%",
-          },
-          x: -20,
-          opacity: 0,
-          duration: 0.5,
-          stagger: 0.1,
-          ease: "power1.out",
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 20) {
+            header.classList.add("header-scrolled");
+            header.classList.remove("bg-white/95");
+            navLinks.forEach((link) => {
+              if (!link.classList.contains("nav-link-active")) {
+                link.classList.add("text-white");
+                link.classList.remove("text-on-surface-variant");
+              }
+            });
+          } else {
+            header.classList.remove("header-scrolled");
+            header.classList.add("bg-white/95");
+            navLinks.forEach((link) => {
+              if (!link.classList.contains("nav-link-active")) {
+                link.classList.remove("text-white");
+                link.classList.add("text-on-surface-variant");
+              }
+            });
+          }
         });
         // Mobile Menu Logic
         const mobileMenu = document.getElementById("mobile-menu");

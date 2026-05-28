@@ -1086,84 +1086,52 @@
         </div>
       </div>
     </footer>
-    <script>
+  <script>
       document.addEventListener("DOMContentLoaded", () => {
-        gsap.registerPlugin(ScrollTrigger);
+        // Intersection Observer for Reveal Animations
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        };
 
-        // Header Scroll Interaction
-        const header = document.getElementById("main-header");
-        ScrollTrigger.create({
-          start: "top -50",
-          onUpdate: (self) => {
-            if (self.direction === 1) {
-              header.classList.add("bg-[#0B1D2D]", "shadow-lg");
-              header.classList.remove("bg-surface/95", "backdrop-blur-md");
-              header.querySelectorAll("nav a, .text-primary").forEach((el) => {
-                el.classList.add("text-white");
-                el.classList.remove("text-on-surface-variant", "text-primary");
-              });
-            } else if (self.scroll() < 50) {
-              header.classList.remove("bg-[#0B1D2D]", "shadow-lg");
-              header.classList.add("bg-surface/95", "backdrop-blur-md");
-              header.querySelectorAll("nav a, .text-primary").forEach((el) => {
-                el.classList.remove("text-white");
-                if (!el.classList.contains("text-secondary"))
-                  el.classList.add("text-on-surface-variant");
-              });
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+              observer.unobserve(entry.target);
             }
-          },
-        });
-
-        // Hero Staggered Entrance
-        gsap.from(".hero-animate", {
-          opacity: 0,
-          y: 30,
-          duration: 0.8,
-          stagger: 0.2,
-          ease: "power3.out",
-          delay: 0.3,
-        });
-
-        // Section Reveal
-        const revealSections = document.querySelectorAll(".reveal-section");
-        revealSections.forEach((section) => {
-          gsap.fromTo(
-            section,
-            { opacity: 0, y: 40 },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 0.7,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: section,
-                start: "top 85%",
-                toggleActions: "play none none none",
-              },
-            },
-          );
-        });
-
-        // Form Focus States
-        const inputs = document.querySelectorAll("input, select, textarea");
-        inputs.forEach((input) => {
-          input.addEventListener("focus", () => {
-            gsap.to(input, {
-              borderColor: "#E03131",
-              boxShadow: "0 0 0 4px rgba(224, 49, 49, 0.1)",
-              duration: 0.3,
-            });
           });
+        }, observerOptions);
 
-          input.addEventListener("blur", () => {
-            gsap.to(input, {
-              borderColor: "",
-              boxShadow: "0 0 0 0px rgba(224, 49, 49, 0)",
-              duration: 0.3,
+        document
+          .querySelectorAll(".reveal")
+          .forEach((el) => observer.observe(el));
+
+        // Header Scroll Effect
+        const header = document.querySelector("header");
+        const navLinks = header.querySelectorAll("nav a");
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 20) {
+            header.classList.add("header-scrolled");
+            header.classList.remove("bg-white/95");
+            navLinks.forEach((link) => {
+              if (!link.classList.contains("nav-link-active")) {
+                link.classList.add("text-white");
+                link.classList.remove("text-on-surface-variant");
+              }
             });
-          });
+          } else {
+            header.classList.remove("header-scrolled");
+            header.classList.add("bg-white/95");
+            navLinks.forEach((link) => {
+              if (!link.classList.contains("nav-link-active")) {
+                link.classList.remove("text-white");
+                link.classList.add("text-on-surface-variant");
+              }
+            });
+          }
         });
-
         // Mobile Menu Logic
         const mobileMenu = document.getElementById("mobile-menu");
         const openMenuBtn = document.getElementById("open-menu");

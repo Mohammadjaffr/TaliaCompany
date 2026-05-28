@@ -260,7 +260,7 @@
   <body
     class="bg-background text-on-surface antialiased min-h-screen flex flex-col"
   >
-    <header
+     <header
       class="sticky top-0 z-50 bg-white/95 backdrop-blur-md w-full border-b border-outline-variant/30 shadow-sm transition-all duration-300"
     >
       <div
@@ -280,7 +280,7 @@
             >Home</a
           >
           <a
-            class="text-on-surface-variant hover:text-industrial-red transition-all duration-300 font-label-lg text-label-lg nav-link active"
+            class="text-on-surface-variant hover:text-industrial-red transition-all duration-300 font-label-lg text-label-lg nav-link"
             href="services.html"
             >Services</a
           >
@@ -295,7 +295,7 @@
             >Safety</a
           >
           <a
-            class="text-on-surface-variant hover:text-industrial-red transition-all duration-300 font-label-lg text-label-lg nav-link"
+            class="text-on-surface-variant hover:text-industrial-red transition-all duration-300 font-label-lg text-label-lg nav-link active"
             href="about_us.html"
             >About</a
           >
@@ -310,7 +310,7 @@
         >
           Request a Quote
         </button>
-        <button id="open-menu" class="md:hidden text-white">
+        <button id="open-menu" class="md:hidden text-petroleum-navy">
           <span class="material-symbols-outlined text-3xl">menu</span>
         </button>
       </div>
@@ -635,8 +635,6 @@
                 </a>
               </div>
             </div>
-
-            
 
             <div
               class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center service-card-container bg-surface-container-lowest rounded-3xl shadow-card border border-outline-variant/30 p-6 sm:p-8 md:p-10"
@@ -1536,91 +1534,82 @@
     </footer>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        gsap.registerPlugin(ScrollTrigger);
+        // Intersection Observer for Reveal Animations
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        };
 
-        // 1. Header Scroll Logic
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        document
+          .querySelectorAll(".reveal")
+          .forEach((el) => observer.observe(el));
+
+        // Header Scroll Effect
         const header = document.querySelector("header");
-        ScrollTrigger.create({
-          start: "top -50",
-          onEnter: () => header.classList.add("scrolled"),
-          onLeaveBack: () => header.classList.remove("scrolled"),
-        });
+        const navLinks = header.querySelectorAll("nav a");
 
-        // 2. Hero Sequence Entrance
-        const heroTl = gsap.timeline();
-        heroTl
-          .fromTo(
-            ".hero-headline",
-            { opacity: 0, y: 30 },
-            { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
-          )
-          .fromTo(
-            ".hero-paragraph",
-            { opacity: 0, y: 20 },
-            { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
-            "-=0.5",
-          )
-          .fromTo(
-            ".hero-ctas",
-            { opacity: 0, y: 20 },
-            { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
-            "-=0.5",
-          );
-
-        // 3. Section Reveal
-        gsap.utils
-          .toArray(".reveal-section:not(.tech-grid)")
-          .forEach((section) => {
-            gsap.from(section, {
-              scrollTrigger: {
-                trigger: section,
-                start: "top 85%",
-                toggleActions: "play none none none",
-              },
-              opacity: 0,
-              y: 30,
-              duration: 0.7,
-              ease: "power1.out",
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 20) {
+            header.classList.add("header-scrolled");
+            header.classList.remove("bg-white/95");
+            navLinks.forEach((link) => {
+              if (!link.classList.contains("nav-link-active")) {
+                link.classList.add("text-white");
+                link.classList.remove("text-on-surface-variant");
+              }
             });
-          });
-
-        // 4. Staggered reveal for service components
-        const containers = gsap.utils.toArray(".service-card-container");
-        containers.forEach((container) => {
-          const elements = container.querySelectorAll(
-            "h2, p, li, a, .aspect-\\[4\\/3\\], .aspect-\\[4\\/5\\]",
-          );
-          gsap.from(elements, {
-            scrollTrigger: {
-              trigger: container,
-              start: "top 80%",
-            },
-            opacity: 0,
-            y: 20,
-            stagger: 0.1,
-            duration: 0.6,
-            ease: "power1.out",
-          });
+          } else {
+            header.classList.remove("header-scrolled");
+            header.classList.add("bg-white/95");
+            navLinks.forEach((link) => {
+              if (!link.classList.contains("nav-link-active")) {
+                link.classList.remove("text-white");
+                link.classList.add("text-on-surface-variant");
+              }
+            });
+          }
         });
+        // Mobile Menu Logic
+        const mobileMenu = document.getElementById("mobile-menu");
+        const openMenuBtn = document.getElementById("open-menu");
+        const closeMenuBtn = document.getElementById("close-menu");
+
+        if (mobileMenu) {
+          const current =
+            window.location.pathname.split("/").pop() || "index.html";
+          const links = mobileMenu.querySelectorAll("nav a");
+          links.forEach((link) => {
+            const href = (link.getAttribute("href") || "").split("/").pop();
+            if (href === current) {
+              link.className =
+                "font-headline-md text-2xl text-tertiary border-l-4 border-tertiary pl-4";
+            } else {
+              link.className =
+                "font-headline-md text-2xl text-white hover:text-tertiary transition-colors";
+            }
+          });
+        }
+
+        if (openMenuBtn && closeMenuBtn && mobileMenu) {
+          openMenuBtn.addEventListener("click", () => {
+            mobileMenu.classList.remove("translate-x-full");
+            document.body.classList.add("overflow-hidden");
+          });
+          closeMenuBtn.addEventListener("click", () => {
+            mobileMenu.classList.add("translate-x-full");
+            document.body.classList.remove("overflow-hidden");
+          });
+        }
       });
-      // Mobile Menu Logic
-      const mobileMenu = document.getElementById("mobile-menu");
-      const openMenuBtn = document.getElementById("open-menu");
-      const closeMenuBtn = document.getElementById("close-menu");
-
-      if (openMenuBtn && closeMenuBtn && mobileMenu) {
-        // فتح القائمة
-        openMenuBtn.addEventListener("click", () => {
-          mobileMenu.classList.remove("translate-x-full"); // إزالة إزاحة الإخفاء
-          document.body.classList.add("overflow-hidden"); // منع تمرير الصفحة بالخلفية
-        });
-
-        // إغلاق القائمة
-        closeMenuBtn.addEventListener("click", () => {
-          mobileMenu.classList.add("translate-x-full"); // إعادة إزاحة الإخفاء
-          document.body.classList.remove("overflow-hidden"); // السماح بتمرير الصفحة مجدداً
-        });
-      }
     </script>
   </body>
 </html>
